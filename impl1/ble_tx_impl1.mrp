@@ -1,0 +1,402 @@
+
+          Lattice Mapping Report File for Design Module 'topModule'
+
+
+Design Information
+------------------
+
+Command line:   map -a ECP5U -p LFE5U-25F -t CABGA256 -s 6 -oc Industrial
+     ble_tx_impl1.ngd -o ble_tx_impl1_map.ncd -pr ble_tx_impl1.prf -mp
+     ble_tx_impl1.mrp -lpf C:/work/tinysdr_fpga_ble_tx/impl1/ble_tx_impl1.lpf
+     -lpf C:/work/tinysdr_fpga_ble_tx/ble_tx.lpf -gui -msgset
+     C:/work/tinysdr_fpga_ble_tx/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LFE5U-25FCABGA256
+Target Performance:   6
+Mapper:  sa5p00,  version:  Diamond (64-bit) 3.10.3.144
+Mapped on:  04/24/19  12:26:43
+
+Design Summary
+--------------
+
+   Number of registers:    110 out of 24879 (0%)
+      PFU registers:          110 out of 24288 (0%)
+      PIO registers:            0 out of   591 (0%)
+   Number of SLICEs:       139 out of 12144 (1%)
+      SLICEs as Logic/ROM:    139 out of 12144 (1%)
+      SLICEs as RAM:            0 out of  9108 (0%)
+      SLICEs as Carry:         56 out of 12144 (0%)
+   Number of LUT4s:        248 out of 24288 (1%)
+      Number used as logic LUTs:        136
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      112
+      Number used as shift registers:     0
+   Number of PIO sites used: 11 out of 197 (6%)
+      Number of PIO sites used for single ended IOs: 7
+      Number of PIO sites used for differential IOs: 4 (represented by 2 PIO
+     comps in NCD)
+   Number of block RAMs:  0 out of 56 (0%)
+   Number of GSRs:  0 out of 1 (0%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 4 (0%)
+   Number of DCC:  0 out of 60 (0%)
+   Number of DCS:  0 out of 2 (0%)
+   Number of PLLs:  1 out of 2 (50%)
+   Number of DDRDLLs:  0 out of 4 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 10 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+
+        Number Of Mapped DSP Components:
+   --------------------------------
+   MULT18X18D          0
+
+                                    Page 1
+
+
+
+
+Design:  topModule                                     Date:  04/24/19  12:26:43
+
+Design Summary (cont)
+---------------------
+   MULT9X9D            0
+   ALU54B              0
+   ALU24B              0
+   PRADD18A            0
+   PRADD9A             0
+   --------------------------------
+   Number of Used DSP MULT Sites:  0 out of 56 (0 %)
+   Number of Used DSP ALU Sites:  0 out of 28 (0 %)
+   Number of Used DSP PRADD Sites:  0 out of 56 (0 %)
+   Number of clocks:  4
+     Net clockDivider_clk_4M: 47 loads, 32 rising, 15 falling (Driver:
+     clockDivider_0/clkOut_23 )
+     Net top_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO top_clk )
+     Net top_test2_c: 22 loads, 14 rising, 8 falling (Driver:
+     my_pll_instance/PLLInst_0 )
+     Net my_pll_instance/CLKIt: 1 loads, 1 rising, 0 falling (Driver:
+     my_pll_instance/PLLRefcs_0 )
+   Number of Clock Enables:  4
+     Net fskModule_1/clockDivider_clk_4M_enable_1: 1 loads, 1 LSLICEs
+     Net clockDivider_clk_4M_enable_9: 4 loads, 4 LSLICEs
+     Net packetGen_1/next_state_3__N_126: 1 loads, 1 LSLICEs
+     Net clockDivider_0/lockCounter_7: 1 loads, 1 LSLICEs
+   Number of LSRs:  11
+     Net fskModule_1/fskModule_start: 6 loads, 6 LSLICEs
+     Net counter_0_countDone: 16 loads, 16 LSLICEs
+     Net IQSerializer_start: 4 loads, 4 LSLICEs
+     Net fskModule_1/n2381: 1 loads, 1 LSLICEs
+     Net fskModule_1/n2732: 5 loads, 5 LSLICEs
+     Net clockDivider_clkLock: 1 loads, 1 LSLICEs
+     Net counter_0/n1596: 14 loads, 14 LSLICEs
+     Net pll_lock: 7 loads, 7 LSLICEs
+     Net IQSerializer_1/n1597: 2 loads, 2 LSLICEs
+     Net IQSerializer_1/n1598: 2 loads, 2 LSLICEs
+     Net clockDivider_0/n394: 5 loads, 5 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net counter_0_countDone: 26 loads
+     Net symCounter_1: 22 loads
+     Net symCounter_2: 22 loads
+     Net symCounter_3: 22 loads
+     Net symCounter_6: 19 loads
+     Net counter_0/n1596: 14 loads
+     Net fskModule_1/n23: 12 loads
+     Net next_state_3__N_125: 11 loads
+     Net symCounter_0: 10 loads
+     Net symCounter_7: 10 loads
+
+
+
+
+   Number of warnings:  12
+   Number of errors:    0
+     
+
+
+
+
+                                    Page 2
+
+
+
+
+Design:  topModule                                     Date:  04/24/19  12:26:43
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: input pad net 'top_rst' has no legal load.
+WARNING - map: input pad net 'spi_mosi' has no legal load.
+WARNING - map: input pad net 'spi_sclk' has no legal load.
+WARNING - map: input pad net 'spi_cs' has no legal load.
+WARNING - map: input pad net 'sim_clk' has no legal load.
+WARNING - map: input pad net 'sim_lock' has no legal load.
+WARNING - map: IO buffer missing for top level port top_rst...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port spi_mosi...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port spi_sclk...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port spi_cs...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port sim_clk...logic will be
+     discarded.
+WARNING - map: IO buffer missing for top level port sim_lock...logic will be
+     discarded.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| top_clk             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test2           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| osc_en              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test1           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| clk_test            | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| LED                 | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| serial_clk          | OUTPUT    | LVDS      |            |
++---------------------+-----------+-----------+------------+
+| serial_iq           | OUTPUT    | LVDS      |            |
++---------------------+-----------+-----------+------------+
+| spi_miso            | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+Removed logic
+-------------
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Signal clk_N_146 was merged into signal clockDivider_clk_4M
+Signal n1595 was merged into signal clockDivider_clkLock
+Signal clockDivider_0/pll_lock_N_26 was merged into signal pll_lock
+Signal clk_N_291 was merged into signal top_test2_c
+Signal VCC_net undriven or does not drive anything - clipped.
+Signal clockDivider_0/lockCounter_373_add_4_1/S0 undriven or does not drive
+
+                                    Page 3
+
+
+
+
+Design:  topModule                                     Date:  04/24/19  12:26:43
+
+Removed logic (cont)
+--------------------
+     anything - clipped.
+Signal clockDivider_0/lockCounter_373_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal clockDivider_0/counter_372_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/counter_372_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/counter_372_add_4_9/S1 undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/counter_372_add_4_9/CO undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/lockCounter_373_add_4_9/S1 undriven or does not drive
+     anything - clipped.
+Signal clockDivider_0/lockCounter_373_add_4_9/CO undriven or does not drive
+     anything - clipped.
+Signal add_1222_2/S1 undriven or does not drive anything - clipped.
+Signal add_1222_2/S0 undriven or does not drive anything - clipped.
+Signal add_1222_2/CI undriven or does not drive anything - clipped.
+Signal add_1221_9/S1 undriven or does not drive anything - clipped.
+Signal add_1221_9/S0 undriven or does not drive anything - clipped.
+Signal add_1222_4/S1 undriven or does not drive anything - clipped.
+Signal add_1222_4/S0 undriven or does not drive anything - clipped.
+Signal add_1222_6/S1 undriven or does not drive anything - clipped.
+Signal add_1222_6/S0 undriven or does not drive anything - clipped.
+Signal add_1222_8/S1 undriven or does not drive anything - clipped.
+Signal add_1222_8/S0 undriven or does not drive anything - clipped.
+Signal add_1222_10/S1 undriven or does not drive anything - clipped.
+Signal add_1222_10/S0 undriven or does not drive anything - clipped.
+Signal add_1222_12/S1 undriven or does not drive anything - clipped.
+Signal add_1222_12/S0 undriven or does not drive anything - clipped.
+Signal add_1222_14/S1 undriven or does not drive anything - clipped.
+Signal add_1222_14/S0 undriven or does not drive anything - clipped.
+Signal add_1222_16/S1 undriven or does not drive anything - clipped.
+Signal add_1222_16/S0 undriven or does not drive anything - clipped.
+Signal add_1222_18/S1 undriven or does not drive anything - clipped.
+Signal add_1222_18/S0 undriven or does not drive anything - clipped.
+Signal add_1222_20/S1 undriven or does not drive anything - clipped.
+Signal add_1222_20/S0 undriven or does not drive anything - clipped.
+Signal add_1222_cout/S1 undriven or does not drive anything - clipped.
+Signal add_1222_cout/CO undriven or does not drive anything - clipped.
+Signal add_1221_11/S1 undriven or does not drive anything - clipped.
+Signal add_1221_11/S0 undriven or does not drive anything - clipped.
+Signal add_1221_13/S1 undriven or does not drive anything - clipped.
+Signal add_1221_13/S0 undriven or does not drive anything - clipped.
+Signal add_1221_15/S1 undriven or does not drive anything - clipped.
+Signal add_1221_15/S0 undriven or does not drive anything - clipped.
+Signal counter_0/waitcount_375_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal counter_0/waitcount_375_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal counter_0/waitcount_375_add_4_27/S1 undriven or does not drive anything -
+     clipped.
+Signal counter_0/waitcount_375_add_4_27/CO undriven or does not drive anything -
+     clipped.
+Signal add_1221_17/S1 undriven or does not drive anything - clipped.
+Signal add_1221_17/S0 undriven or does not drive anything - clipped.
+
+                                    Page 4
+
+
+
+
+Design:  topModule                                     Date:  04/24/19  12:26:43
+
+Removed logic (cont)
+--------------------
+Signal add_1221_19/S1 undriven or does not drive anything - clipped.
+Signal add_1221_19/S0 undriven or does not drive anything - clipped.
+Signal _add_1_642_add_4_13/S1 undriven or does not drive anything - clipped.
+Signal _add_1_642_add_4_13/CO undriven or does not drive anything - clipped.
+Signal add_1221_21/S1 undriven or does not drive anything - clipped.
+Signal add_1221_21/S0 undriven or does not drive anything - clipped.
+Signal add_1221_23/S1 undriven or does not drive anything - clipped.
+Signal add_1221_23/S0 undriven or does not drive anything - clipped.
+Signal add_1221_1/S1 undriven or does not drive anything - clipped.
+Signal add_1221_1/S0 undriven or does not drive anything - clipped.
+Signal add_1221_1/CI undriven or does not drive anything - clipped.
+Signal _add_1_642_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal _add_1_642_add_4_1/CI undriven or does not drive anything - clipped.
+Signal add_1221_25/S1 undriven or does not drive anything - clipped.
+Signal add_1221_25/S0 undriven or does not drive anything - clipped.
+Signal add_1221_27/S0 undriven or does not drive anything - clipped.
+Signal add_1221_27/CO undriven or does not drive anything - clipped.
+Signal add_1221_3/S1 undriven or does not drive anything - clipped.
+Signal add_1221_3/S0 undriven or does not drive anything - clipped.
+Signal add_1221_5/S1 undriven or does not drive anything - clipped.
+Signal add_1221_5/S0 undriven or does not drive anything - clipped.
+Signal add_1221_7/S1 undriven or does not drive anything - clipped.
+Signal add_1221_7/S0 undriven or does not drive anything - clipped.
+Block clockDivider_0/i1921 was optimized away.
+Block clockDivider_0/i885_1_lut was optimized away.
+Block clockDivider_0/pll_lock_I_0_1_lut was optimized away.
+Block my_pll_instance/i1922 was optimized away.
+Block i2 was optimized away.
+
+Memory Usage
+------------
+
+
+     
+
+PLL/DLL Summary
+---------------
+
+PLL 1:                                     Pin/Node Value
+  PLL Instance Name:                                my_pll_instance/PLLInst_0
+  PLL Type:                                         EHXPLLL
+  Input Clock:                             NODE     GND_net
+  Input Clock2:                            PIN      top_clk_c
+  Input Clock select:                               NONE
+  Output Clock(P):                         PIN,NODE top_test2_c
+  Feedback Signal:                         NODE     top_test2_c
+  Reset Signal:                                     NONE
+  Standby Signal:                          NODE     GND_net
+  PLL LOCK signal:                         NODE     pll_lock
+  Input Clock Frequency (MHz):                      32.0000
+  Output Clock(P) Frequency (MHz):                  64.0000
+  CLKOP Post Divider A Input:                       DIVA
+  CLKOS Post Divider B Input:                       DIVB
+  CLKOS2 Post Divider C Input:                      DIVC
+  CLKOS3 Post Divider D Input:                      DIVD
+  Pre Divider A Input:                              NONE
+
+                                    Page 5
+
+
+
+
+Design:  topModule                                     Date:  04/24/19  12:26:43
+
+PLL/DLL Summary (cont)
+----------------------
+  Pre Divider B Input:                              NONE
+  Pre Divider C Input:                              NONE
+  Pre Divider D Input:                              NONE
+  FB_MODE:                                          CLKOP
+  CLKI Divider:                                     1
+  CLKFB Divider:                                    2
+  CLKOP Divider:                                    9
+  CLKOS Divider:                                    1
+  CLKOS2 Divider:                                   1
+  CLKOS3 Divider:                                   1
+  Fractional N Divider:                             NONE
+  CLKOP Desired Phase Shift(degree):                0
+  CLKOP Trim Option Rising/Falling:                 FALLING
+  CLKOP Trim Option Delay:                          0
+  CLKOS Desired Phase Shift(degree):                0
+  CLKOS Trim Option Rising/Falling:                 FALLING
+  CLKOS Trim Option Delay:                          0
+  CLKOS2 Desired Phase Shift(degree):               0
+  CLKOS2 Trim Option Rising/Falling:                NONE
+  CLKOS2 Trim Option Delay:                         NONE
+  CLKOS3 Desired Phase Shift(degree):               0
+  CLKOS3 Trim Option Rising/Falling:                NONE
+  CLKOS3 Trim Option Delay:                         NONE
+
+ASIC Components
+---------------
+
+Instance Name: my_pll_instance/PLLRefcs_0
+         Type: PLLREFCS
+Instance Name: my_pll_instance/PLLInst_0
+         Type: EHXPLLL
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 110 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 6
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights
+     reserved.

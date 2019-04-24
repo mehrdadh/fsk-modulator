@@ -1,0 +1,8 @@
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/radioDefines.v"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/bleDefines.v"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/topModule.v"
+"C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/cos_table.v"
+"C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/sin_table.v"
+"C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.v"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/FSKModulator.v"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/packetGenerator.v"

@@ -1,0 +1,1372 @@
+
+Loading design for application trce from file ble_tx_impl1.ncd.
+Design name: topModule
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-25F
+Package:     CABGA256
+Performance: 6
+Loading device for application trce from file 'sa5p25.nph' in environment: C:/lscc/diamond/3.10_x64/ispfpga.
+Package Status:                     Final          Version 1.33.
+Performance Hardware Data Status:   Final          Version 55.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.10.3.144
+Wed Apr 24 12:27:01 2019
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o ble_tx_impl1.twr -gui -msgset C:/work/tinysdr_fpga_ble_tx/promote.xml ble_tx_impl1.ncd ble_tx_impl1.prf 
+Design file:     ble_tx_impl1.ncd
+Preference file: ble_tx_impl1.prf
+Device,speed:    LFE5U-25F,6
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "top_test2_c" 64.000000 MHz ;
+            215 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 3.954ns (weighted slack = 7.908ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/ICounter_377__i3  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               4.117ns  (28.9% logic, 71.1% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.117ns physical path delay SLICE_57 to IQSerializer_1/SLICE_59 meets
+      7.813ns delay constraint less
+      0.000ns skew and
+     -0.258ns DIN_SET requirement (totaling 8.071ns) by 3.954ns
+
+ Physical Path Details:
+
+      Data path SLICE_57 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R21C31A.CLK to     R21C31A.Q0 SLICE_57 (from top_test2_c)
+ROUTE         8     1.109     R21C31A.Q0 to     R21C32A.A0 ICounter_3
+CTOF_DEL    ---     0.234     R21C32A.A0 to     R21C32A.F0 IQSerializer_1/SLICE_119
+ROUTE         1     0.741     R21C32A.F0 to     R21C32A.B1 IQSerializer_1/n2643
+CTOF_DEL    ---     0.234     R21C32A.B1 to     R21C32A.F1 IQSerializer_1/SLICE_119
+ROUTE         1     1.077     R21C32A.F1 to     R20C31B.B0 IQSerializer_1/n2648
+CTOF_DEL    ---     0.234     R20C31B.B0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    4.117   (28.9% logic, 71.1% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to SLICE_57:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R21C31A.CLK top_test2_c
+                  --------
+                    2.141   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.141   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 8.454ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_Q__i2  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               4.156ns  (32.5% logic, 67.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.156ns physical path delay fskModule_1/SLICE_81 to IQSerializer_1/SLICE_58 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.232ns DIN_SET requirement (totaling 12.610ns) by 8.454ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_81 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.485    R22C30A.CLK to     R22C30A.Q1 fskModule_1/SLICE_81 (from clockDivider_clk_4M)
+ROUTE         2     0.976     R22C30A.Q1 to     R21C30D.B0 fskModule_Q_2
+CTOOFX_DEL  ---     0.398     R21C30D.B0 to   R21C30D.OFX0 IQSerializer_1/i1853/SLICE_104
+ROUTE         1     1.261   R21C30D.OFX0 to     R20C31D.B1 IQSerializer_1/n2747
+CTOF_DEL    ---     0.234     R20C31D.B1 to     R20C31D.F1 IQSerializer_1/SLICE_58
+ROUTE         1     0.568     R20C31D.F1 to     R20C31D.A0 IQSerializer_1/n2700
+CTOF_DEL    ---     0.234     R20C31D.A0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    4.156   (32.5% logic, 67.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C30A.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.583ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_I__i11  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               4.053ns  (29.4% logic, 70.6% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.053ns physical path delay fskModule_1/SLICE_80 to IQSerializer_1/SLICE_59 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.258ns DIN_SET requirement (totaling 12.636ns) by 8.583ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_80 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R22C32A.CLK to     R22C32A.Q0 fskModule_1/SLICE_80 (from clockDivider_clk_4M)
+ROUTE         3     1.045     R22C32A.Q0 to     R21C32A.C0 fskModule_I_11
+CTOF_DEL    ---     0.234     R21C32A.C0 to     R21C32A.F0 IQSerializer_1/SLICE_119
+ROUTE         1     0.741     R21C32A.F0 to     R21C32A.B1 IQSerializer_1/n2643
+CTOF_DEL    ---     0.234     R21C32A.B1 to     R21C32A.F1 IQSerializer_1/SLICE_119
+ROUTE         1     1.077     R21C32A.F1 to     R20C31B.B0 IQSerializer_1/n2648
+CTOF_DEL    ---     0.234     R20C31B.B0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    4.053   (29.4% logic, 70.6% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_80:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C32A.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.626ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_Q__i12  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               4.010ns  (35.5% logic, 64.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      4.010ns physical path delay fskModule_1/SLICE_84 to IQSerializer_1/SLICE_59 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.258ns DIN_SET requirement (totaling 12.636ns) by 8.626ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_84 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R22C29C.CLK to     R22C29C.Q0 fskModule_1/SLICE_84 (from clockDivider_clk_4M)
+ROUTE         1     1.186     R22C29C.Q0 to     R21C30C.B0 fskModule_Q_12
+CTOF_DEL    ---     0.234     R21C30C.B0 to     R21C30C.F0 IQSerializer_1/SLICE_120
+ROUTE         1     0.375     R21C30C.F0 to     R21C30C.D1 IQSerializer_1/n2652
+CTOF_DEL    ---     0.234     R21C30C.D1 to     R21C30C.F1 IQSerializer_1/SLICE_120
+ROUTE         1     0.650     R21C30C.F1 to     R20C31B.D1 IQSerializer_1/n2653
+CTOF_DEL    ---     0.234     R20C31B.D1 to     R20C31B.F1 IQSerializer_1/SLICE_59
+ROUTE         1     0.375     R20C31B.F1 to     R20C31B.D0 IQSerializer_1/n2655
+CTOF_DEL    ---     0.234     R20C31B.D0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    4.010   (35.5% logic, 64.5% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_84:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C29C.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.644ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_Q__i7  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               3.966ns  (34.1% logic, 65.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.966ns physical path delay fskModule_1/SLICE_82 to IQSerializer_1/SLICE_58 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.232ns DIN_SET requirement (totaling 12.610ns) by 8.644ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_82 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.485    R22C30D.CLK to     R22C30D.Q1 fskModule_1/SLICE_82 (from clockDivider_clk_4M)
+ROUTE         2     0.786     R22C30D.Q1 to     R21C30D.B1 fskModule_Q_7
+CTOOFX_DEL  ---     0.398     R21C30D.B1 to   R21C30D.OFX0 IQSerializer_1/i1853/SLICE_104
+ROUTE         1     1.261   R21C30D.OFX0 to     R20C31D.B1 IQSerializer_1/n2747
+CTOF_DEL    ---     0.234     R20C31D.B1 to     R20C31D.F1 IQSerializer_1/SLICE_58
+ROUTE         1     0.568     R20C31D.F1 to     R20C31D.A0 IQSerializer_1/n2700
+CTOF_DEL    ---     0.234     R20C31D.A0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    3.966   (34.1% logic, 65.9% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_82:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C30D.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.666ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_Q__i0  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               3.970ns  (34.1% logic, 65.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.970ns physical path delay fskModule_1/SLICE_81 to IQSerializer_1/SLICE_59 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.258ns DIN_SET requirement (totaling 12.636ns) by 8.666ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_81 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R22C30A.CLK to     R22C30A.Q0 fskModule_1/SLICE_81 (from clockDivider_clk_4M)
+ROUTE         1     0.972     R22C30A.Q0 to     R21C30A.A0 fskModule_Q_0
+CTOOFX_DEL  ---     0.398     R21C30A.A0 to   R21C30A.OFX0 IQSerializer_1/i1794/SLICE_103
+ROUTE         1     1.269   R21C30A.OFX0 to     R20C31B.A1 IQSerializer_1/n2651
+CTOF_DEL    ---     0.234     R20C31B.A1 to     R20C31B.F1 IQSerializer_1/SLICE_59
+ROUTE         1     0.375     R20C31B.F1 to     R20C31B.D0 IQSerializer_1/n2655
+CTOF_DEL    ---     0.234     R20C31B.D0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    3.970   (34.1% logic, 65.9% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C30A.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.749ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_I__i11  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               3.861ns  (35.1% logic, 64.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.861ns physical path delay fskModule_1/SLICE_80 to IQSerializer_1/SLICE_58 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.232ns DIN_SET requirement (totaling 12.610ns) by 8.749ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_80 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R22C32A.CLK to     R22C32A.Q0 fskModule_1/SLICE_80 (from clockDivider_clk_4M)
+ROUTE         3     1.038     R22C32A.Q0 to     R21C32D.B1 fskModule_I_11
+CTOOFX_DEL  ---     0.398     R21C32D.B1 to   R21C32D.OFX0 IQSerializer_1/i1851/SLICE_102
+ROUTE         1     0.901   R21C32D.OFX0 to     R20C31D.C1 IQSerializer_1/n2744
+CTOF_DEL    ---     0.234     R20C31D.C1 to     R20C31D.F1 IQSerializer_1/SLICE_58
+ROUTE         1     0.568     R20C31D.F1 to     R20C31D.A0 IQSerializer_1/n2700
+CTOF_DEL    ---     0.234     R20C31D.A0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    3.861   (35.1% logic, 64.9% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_80:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C32A.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.835ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_I__i0  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               3.801ns  (31.3% logic, 68.7% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.801ns physical path delay fskModule_1/SLICE_78 to IQSerializer_1/SLICE_59 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.258ns DIN_SET requirement (totaling 12.636ns) by 8.835ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_78 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.488    R22C32B.CLK to     R22C32B.Q0 fskModule_1/SLICE_78 (from clockDivider_clk_4M)
+ROUTE         1     0.793     R22C32B.Q0 to     R21C32A.B0 fskModule_I_0
+CTOF_DEL    ---     0.234     R21C32A.B0 to     R21C32A.F0 IQSerializer_1/SLICE_119
+ROUTE         1     0.741     R21C32A.F0 to     R21C32A.B1 IQSerializer_1/n2643
+CTOF_DEL    ---     0.234     R21C32A.B1 to     R21C32A.F1 IQSerializer_1/SLICE_119
+ROUTE         1     1.077     R21C32A.F1 to     R20C31B.B0 IQSerializer_1/n2648
+CTOF_DEL    ---     0.234     R20C31B.B0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    3.801   (31.3% logic, 68.7% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_78:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C32B.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.849ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_Q__i2  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+
+   Delay:               3.787ns  (35.7% logic, 64.3% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.787ns physical path delay fskModule_1/SLICE_81 to IQSerializer_1/SLICE_59 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.258ns DIN_SET requirement (totaling 12.636ns) by 8.849ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_81 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.485    R22C30A.CLK to     R22C30A.Q1 fskModule_1/SLICE_81 (from clockDivider_clk_4M)
+ROUTE         2     0.792     R22C30A.Q1 to     R21C30A.B1 fskModule_Q_2
+CTOOFX_DEL  ---     0.398     R21C30A.B1 to   R21C30A.OFX0 IQSerializer_1/i1794/SLICE_103
+ROUTE         1     1.269   R21C30A.OFX0 to     R20C31B.A1 IQSerializer_1/n2651
+CTOF_DEL    ---     0.234     R20C31B.A1 to     R20C31B.F1 IQSerializer_1/SLICE_59
+ROUTE         1     0.375     R20C31B.F1 to     R20C31B.D0 IQSerializer_1/n2655
+CTOF_DEL    ---     0.234     R20C31B.D0 to     R20C31B.F0 IQSerializer_1/SLICE_59
+ROUTE         1     0.000     R20C31B.F0 to    R20C31B.DI0 IQSerializer_1/DEDFF_0/Q1 (to top_test2_c)
+                  --------
+                    3.787   (35.7% logic, 64.3% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_81:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C30A.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_59:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31B.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+
+Passed: The following path meets requirements by 8.979ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              fskModule_1/FSK_I__i2  (from clockDivider_clk_4M -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               3.631ns  (37.2% logic, 62.8% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.631ns physical path delay fskModule_1/SLICE_78 to IQSerializer_1/SLICE_58 meets
+     15.625ns delay constraint less
+      3.247ns skew and
+      0.000ns feedback compensation and
+     -0.232ns DIN_SET requirement (totaling 12.610ns) by 8.979ns
+
+ Physical Path Details:
+
+      Data path fskModule_1/SLICE_78 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.485    R22C32B.CLK to     R22C32B.Q1 fskModule_1/SLICE_78 (from clockDivider_clk_4M)
+ROUTE         3     0.811     R22C32B.Q1 to     R21C32D.A1 fskModule_I_2
+CTOOFX_DEL  ---     0.398     R21C32D.A1 to   R21C32D.OFX0 IQSerializer_1/i1851/SLICE_102
+ROUTE         1     0.901   R21C32D.OFX0 to     R20C31D.C1 IQSerializer_1/n2744
+CTOF_DEL    ---     0.234     R20C31D.C1 to     R20C31D.F1 IQSerializer_1/SLICE_58
+ROUTE         1     0.568     R20C31D.F1 to     R20C31D.A0 IQSerializer_1/n2700
+CTOF_DEL    ---     0.234     R20C31D.A0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    3.631   (37.2% logic, 62.8% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path SLICE_142 to fskModule_1/SLICE_78:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+REG_DEL     ---     0.522    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67
+ROUTE        48     2.725     R38C31A.Q0 to    R22C32B.CLK clockDivider_clk_4M
+                  --------
+                    6.092   (8.6% logic, 91.4% route), 3 logic levels.
+
+      Source Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+      Destination Clock Path SLICE_142 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE         2     0.704      R48C2B.F0 to *EFCS_BL0.CLK0 GND_net
+CLK0OUT_DE  ---     0.000 *EFCS_BL0.CLK0 to *_BL0.PLLCSOUT my_pll_instance/PLLRefcs_0
+ROUTE         1     0.000 *_BL0.PLLCSOUT to   PLL_BL0.CLKI my_pll_instance/CLKIt
+CLKI2OP_DE  ---     0.000   PLL_BL0.CLKI to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.141  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    2.845   (0.0% logic, 100.0% route), 2 logic levels.
+
+      Destination Clock f/b:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+CLKFB2OP_D  ---     0.000  PLL_BL0.CLKFB to  PLL_BL0.CLKOP my_pll_instance/PLLInst_0
+ROUTE        25     2.241  PLL_BL0.CLKOP to  PLL_BL0.CLKFB top_test2_c
+                  --------
+                    2.241   (0.0% logic, 100.0% route), 1 logic levels.
+
+Report:  129.601MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "my_pll_instance/CLKIt" 32.000000 MHz ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "top_test2_c" 64.000000   |             |             |
+MHz ;                                   |   64.000 MHz|  129.601 MHz|   4  
+                                        |             |             |
+FREQUENCY NET "my_pll_instance/CLKIt"   |             |             |
+32.000000 MHz ;                         |            -|            -|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 3 clocks:
+
+Clock Domain: my_pll_instance/CLKIt   Source: my_pll_instance/PLLRefcs_0.PLLCSOUT   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: top_test2_c   Source: my_pll_instance/PLLInst_0.CLKOP   Loads: 25
+   Covered under: FREQUENCY NET "top_test2_c" 64.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clockDivider_clk_4M   Source: clockDivider_0/SLICE_67.Q0
+      Covered under: FREQUENCY NET "top_test2_c" 64.000000 MHz ;   Transfers: 20
+
+Clock Domain: clockDivider_clk_4M   Source: clockDivider_0/SLICE_67.Q0   Loads: 48
+   No transfer within this clock domain is found
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 228 paths, 2 nets, and 260 connections (31.10% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.10.3.144
+Wed Apr 24 12:27:01 2019
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o ble_tx_impl1.twr -gui -msgset C:/work/tinysdr_fpga_ble_tx/promote.xml ble_tx_impl1.ncd ble_tx_impl1.prf 
+Design file:     ble_tx_impl1.ncd
+Preference file: ble_tx_impl1.prf
+Device,speed:    LFE5U-25F,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+1 potential circuit loop found in timing analysis.
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "top_test2_c" 64.000000 MHz ;
+            215 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.167ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/ICounter_377__i3  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/ICounter_377__i3  (to top_test2_c -)
+
+   Delay:               0.284ns  (79.9% logic, 20.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.284ns physical path delay SLICE_57 to SLICE_57 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.167ns
+
+ Physical Path Details:
+
+      Data path SLICE_57 to SLICE_57:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R21C31A.CLK to     R21C31A.Q0 SLICE_57 (from top_test2_c)
+ROUTE         8     0.057     R21C31A.Q0 to     R21C31A.D0 ICounter_3
+CTOF_DEL    ---     0.075     R21C31A.D0 to     R21C31A.F0 SLICE_57
+ROUTE         1     0.000     R21C31A.F0 to    R21C31A.DI0 n2218 (to top_test2_c)
+                  --------
+                    0.284   (79.9% logic, 20.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to SLICE_57:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R21C31A.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to SLICE_57:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R21C31A.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.175ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              clockDivider_0/clkOut_23  (from top_test2_c +)
+   Destination:    FF         Data in        clockDivider_0/clkOut_23  (to top_test2_c +)
+
+   Delay:               0.293ns  (80.9% logic, 19.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.293ns physical path delay clockDivider_0/SLICE_67 to clockDivider_0/SLICE_67 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.175ns
+
+ Physical Path Details:
+
+      Data path clockDivider_0/SLICE_67 to clockDivider_0/SLICE_67:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.162    R38C31A.CLK to     R38C31A.Q0 clockDivider_0/SLICE_67 (from top_test2_c)
+ROUTE        48     0.056     R38C31A.Q0 to     R38C31A.D0 clockDivider_clk_4M
+CTOF_DEL    ---     0.075     R38C31A.D0 to     R38C31A.F0 clockDivider_0/SLICE_67
+ROUTE         1     0.000     R38C31A.F0 to    R38C31A.DI0 clockDivider_0/clkOut_N_36 (to top_test2_c)
+                  --------
+                    0.293   (80.9% logic, 19.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to clockDivider_0/SLICE_67:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to clockDivider_0/SLICE_67:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R38C31A.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.180ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/QCounter_380__i1  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/QCounter_380__i1  (to top_test2_c -)
+
+   Delay:               0.297ns  (76.4% logic, 23.6% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.297ns physical path delay IQSerializer_1/SLICE_60 to IQSerializer_1/SLICE_60 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.180ns
+
+ Physical Path Details:
+
+      Data path IQSerializer_1/SLICE_60 to IQSerializer_1/SLICE_60:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R20C30D.CLK to     R20C30D.Q0 IQSerializer_1/SLICE_60 (from top_test2_c)
+ROUTE         6     0.070     R20C30D.Q0 to     R20C30D.C0 IQSerializer_1/QCounter_1
+CTOF_DEL    ---     0.075     R20C30D.C0 to     R20C30D.F0 IQSerializer_1/SLICE_60
+ROUTE         1     0.000     R20C30D.F0 to    R20C30D.DI0 IQSerializer_1/n87 (to top_test2_c)
+                  --------
+                    0.297   (76.4% logic, 23.6% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_60:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30D.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_60:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30D.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.181ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/ICounter_377__i1  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/ICounter_377__i1  (to top_test2_c -)
+
+   Delay:               0.298ns  (76.2% logic, 23.8% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.298ns physical path delay SLICE_56 to SLICE_56 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.181ns
+
+ Physical Path Details:
+
+      Data path SLICE_56 to SLICE_56:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R21C32C.CLK to     R21C32C.Q0 SLICE_56 (from top_test2_c)
+ROUTE         7     0.071     R21C32C.Q0 to     R21C32C.C0 ICounter_1
+CTOF_DEL    ---     0.075     R21C32C.C0 to     R21C32C.F0 SLICE_56
+ROUTE         1     0.000     R21C32C.F0 to    R21C32C.DI0 n1846 (to top_test2_c)
+                  --------
+                    0.298   (76.2% logic, 23.8% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to SLICE_56:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R21C32C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to SLICE_56:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R21C32C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.227ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              clockDivider_0/lockCounter_373__i7  (from top_test2_c +)
+   Destination:    FF         Data in        clockDivider_0/clkLock_25  (to top_test2_c +)
+
+   Delay:               0.287ns  (56.4% logic, 43.6% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay clockDivider_0/SLICE_46 to clockDivider_0/SLICE_66 meets
+      0.060ns CE_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.060ns) by 0.227ns
+
+ Physical Path Details:
+
+      Data path clockDivider_0/SLICE_46 to clockDivider_0/SLICE_66:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.162    R38C28A.CLK to     R38C28A.Q0 clockDivider_0/SLICE_46 (from top_test2_c)
+ROUTE         2     0.125     R38C28A.Q0 to     R38C28B.CE clockDivider_0/lockCounter_7 (to top_test2_c)
+                  --------
+                    0.287   (56.4% logic, 43.6% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to clockDivider_0/SLICE_46:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R38C28A.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to clockDivider_0/SLICE_66:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R38C28B.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.234ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/QCounter_380__i2  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/QCounter_380__i3  (to top_test2_c -)
+
+   Delay:               0.351ns  (64.4% logic, 35.6% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.351ns physical path delay IQSerializer_1/SLICE_60 to IQSerializer_1/SLICE_61 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.234ns
+
+ Physical Path Details:
+
+      Data path IQSerializer_1/SLICE_60 to IQSerializer_1/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.151    R20C30D.CLK to     R20C30D.Q1 IQSerializer_1/SLICE_60 (from top_test2_c)
+ROUTE         7     0.125     R20C30D.Q1 to     R20C30B.D0 IQSerializer_1/QCounter_2
+CTOF_DEL    ---     0.075     R20C30B.D0 to     R20C30B.F0 IQSerializer_1/SLICE_61
+ROUTE         1     0.000     R20C30B.F0 to    R20C30B.DI0 IQSerializer_1/n22 (to top_test2_c)
+                  --------
+                    0.351   (64.4% logic, 35.6% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_60:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30D.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30B.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.244ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/current_state_FSM_i3  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               0.361ns  (62.9% logic, 37.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.361ns physical path delay IQSerializer_1/SLICE_63 to IQSerializer_1/SLICE_58 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.244ns
+
+ Physical Path Details:
+
+      Data path IQSerializer_1/SLICE_63 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R20C31C.CLK to     R20C31C.Q0 IQSerializer_1/SLICE_63 (from top_test2_c)
+ROUTE         3     0.134     R20C31C.Q0 to     R20C31D.D0 IQSerializer_1/next_state_3__N_316
+CTOF_DEL    ---     0.075     R20C31D.D0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    0.361   (62.9% logic, 37.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C31C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.248ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/QCounter_380__i3  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/QCounter_380__i3  (to top_test2_c -)
+
+   Delay:               0.365ns  (62.2% logic, 37.8% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.365ns physical path delay IQSerializer_1/SLICE_61 to IQSerializer_1/SLICE_61 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.248ns
+
+ Physical Path Details:
+
+      Data path IQSerializer_1/SLICE_61 to IQSerializer_1/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R20C30B.CLK to     R20C30B.Q0 IQSerializer_1/SLICE_61 (from top_test2_c)
+ROUTE         5     0.138     R20C30B.Q0 to     R20C30B.C0 IQSerializer_1/QCounter_3
+CTOF_DEL    ---     0.075     R20C30B.C0 to     R20C30B.F0 IQSerializer_1/SLICE_61
+ROUTE         1     0.000     R20C30B.F0 to    R20C30B.DI0 IQSerializer_1/n22 (to top_test2_c)
+                  --------
+                    0.365   (62.2% logic, 37.8% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30B.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_61:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C30B.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.255ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/current_state_FSM_i4  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/DEDFF_0/neg_edge_15  (to top_test2_c -)
+
+   Delay:               0.372ns  (61.0% logic, 39.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.372ns physical path delay SLICE_62 to IQSerializer_1/SLICE_58 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.255ns
+
+ Physical Path Details:
+
+      Data path SLICE_62 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.152    R21C31C.CLK to     R21C31C.Q0 SLICE_62 (from top_test2_c)
+ROUTE         2     0.145     R21C31C.Q0 to     R20C31D.C0 IQSerializer_1/next_state_3__N_314
+CTOF_DEL    ---     0.075     R20C31D.C0 to     R20C31D.F0 IQSerializer_1/SLICE_58
+ROUTE         1     0.000     R20C31D.F0 to    R20C31D.DI0 IQSerializer_1/DEDFF_0/Q2 (to top_test2_c)
+                  --------
+                    0.372   (61.0% logic, 39.0% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to SLICE_62:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R21C31C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_58:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C31D.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.262ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              IQSerializer_1/current_state_FSM_i2  (from top_test2_c -)
+   Destination:    FF         Data in        IQSerializer_1/current_state_FSM_i2  (to top_test2_c -)
+
+   Delay:               0.379ns  (59.6% logic, 40.4% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.379ns physical path delay IQSerializer_1/SLICE_63 to IQSerializer_1/SLICE_63 meets
+      0.117ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.117ns) by 0.262ns
+
+ Physical Path Details:
+
+      Data path IQSerializer_1/SLICE_63 to IQSerializer_1/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.151    R20C31C.CLK to     R20C31C.Q1 IQSerializer_1/SLICE_63 (from top_test2_c)
+ROUTE         5     0.153     R20C31C.Q1 to     R20C31C.A1 IQSerializer_1/next_state_3__N_317
+CTOF_DEL    ---     0.075     R20C31C.A1 to     R20C31C.F1 IQSerializer_1/SLICE_63
+ROUTE         1     0.000     R20C31C.F1 to    R20C31C.DI1 IQSerializer_1/n1393 (to top_test2_c)
+                  --------
+                    0.379   (59.6% logic, 40.4% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C31C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path my_pll_instance/PLLInst_0 to IQSerializer_1/SLICE_63:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        25     0.633  PLL_BL0.CLKOP to    R20C31C.CLK top_test2_c
+                  --------
+                    0.633   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "my_pll_instance/CLKIt" 32.000000 MHz ;
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "top_test2_c" 64.000000   |             |             |
+MHz ;                                   |     0.000 ns|     0.167 ns|   2  
+                                        |             |             |
+FREQUENCY NET "my_pll_instance/CLKIt"   |             |             |
+32.000000 MHz ;                         |            -|            -|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 3 clocks:
+
+Clock Domain: my_pll_instance/CLKIt   Source: my_pll_instance/PLLRefcs_0.PLLCSOUT   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: top_test2_c   Source: my_pll_instance/PLLInst_0.CLKOP   Loads: 25
+   Covered under: FREQUENCY NET "top_test2_c" 64.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: clockDivider_clk_4M   Source: clockDivider_0/SLICE_67.Q0
+      Covered under: FREQUENCY NET "top_test2_c" 64.000000 MHz ;   Transfers: 20
+
+Clock Domain: clockDivider_clk_4M   Source: clockDivider_0/SLICE_67.Q0   Loads: 48
+   No transfer within this clock domain is found
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 228 paths, 2 nets, and 260 connections (31.10% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,120 @@
+#Start recording tcl command: 4/23/2019 14:27:52
+#Project Location: C:/work/tinysdr_fpga_ble_tx; Project name: ble_tx
+prj_project open "C:/work/tinysdr_fpga_ble_tx/ble_tx.ldf"
+pgr_project open "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+sbp_design open -dsgn "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.sbx"
+sbp_resource remove -ip {ble_tx_clarity/cos_table}
+sbp_resource remove -ip {ble_tx_clarity/sin_table}
+sbp_resource remove -ip {ble_tx_clarity/my_pll_64mhz}
+sbp_design save
+sbp_design gen
+prj_src remove "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/my_pll_64mhz/my_pll_64mhz_prim.v"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/pll_64M"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/pll_64M/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/pll_64M"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/pll_64M/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_builder export_add -comp {ble_tx_clarity/pll_64M}
+prj_run Export -impl impl1 -task Bitgen
+sbp_design gen
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_project close
+pgr_project open "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_project close
+pgr_project open "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_src exclude "C:/work/tinysdr_fpga_ble_tx/impl1/source/counter.v"
+prj_src remove "C:/work/tinysdr_fpga_ble_tx/impl1/source/counter.v"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/packetCounter.v"
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+pgr_program set -port FTUSB-1
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/ble_packet.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapVerilogSimFile
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_project save
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_project close
+#Stop recording: 4/23/2019 18:55:17

@@ -1,0 +1,118 @@
+----------------------------------------------------------------------
+Report for cell topModule.TECH
+Register bits:  110 of 24879 (0.442%)
+I/O cells:      9
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        56          100.0
+                            EHXPLLL         1          100.0
+                            FD1P3IX        11          100.0
+                            FD1S3AX         5          100.0
+                            FD1S3IX        81          100.0
+                            FD1S3JX        13          100.0
+                                GSR         1          100.0
+                                 IB         1          100.0
+                                INV         2          100.0
+                               LUT4       119          100.0
+                                 OB         8          100.0
+                              PFUMX         4          100.0
+                           PLLREFCS         1          100.0
+                          ROM256X1A         1          100.0
+SUB MODULES
+                              DEDFF         1
+                       FSKModulator         1
+                       IQSerializer         1
+                       clockDivider         1
+                          cosModule         1
+                      packetCounter         1
+                    packetGenerator         1
+                            pll_64M         1
+                          sinModule         1
+                              TOTAL       313
+----------------------------------------------------------------------
+Report for cell FSKModulator.v1
+Instance Path : fskModule_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3IX         1            9.1
+                            FD1S3AX         3           60.0
+                            FD1S3IX        22           27.2
+                            FD1S3JX        13          100.0
+                               LUT4        55           46.2
+SUB MODULES
+                          cosModule         1
+                          sinModule         1
+                              TOTAL        96
+----------------------------------------------------------------------
+Report for cell sinModule.v1
+Instance Path : fskModule_1.sin_instance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         4            3.4
+                              TOTAL         4
+----------------------------------------------------------------------
+Report for cell cosModule.v1
+Instance Path : fskModule_1.cos_instance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        12           10.1
+                              TOTAL        12
+----------------------------------------------------------------------
+Report for cell packetCounter.v1
+Instance Path : counter_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        14           25.0
+                            FD1S3IX        27           33.3
+                               LUT4         2            1.7
+                              TOTAL        43
+----------------------------------------------------------------------
+Report for cell packetGenerator.v1
+Instance Path : packetGen_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3IX         9           81.8
+                            FD1S3AX         1           20.0
+                            FD1S3IX         3            3.7
+                               LUT4        23           19.3
+                              TOTAL        36
+----------------------------------------------------------------------
+Report for cell pll_64M.v1
+Instance Path : my_pll_instance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            EHXPLLL         1          100.0
+                                INV         1           50.0
+                           PLLREFCS         1          100.0
+                              TOTAL         3
+----------------------------------------------------------------------
+Report for cell IQSerializer.v1
+Instance Path : IQSerializer_1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         1           20.0
+                            FD1S3IX        12           14.8
+                               LUT4        29           24.4
+                              PFUMX         4          100.0
+SUB MODULES
+                              DEDFF         1
+                              TOTAL        47
+----------------------------------------------------------------------
+Report for cell DEDFF.v1
+Instance Path : IQSerializer_1.DEDFF_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            2.5
+                               LUT4         3            2.5
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell clockDivider.v1
+Instance Path : clockDivider_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        10           17.9
+                            FD1P3IX         1            9.1
+                            FD1S3IX        17           21.0
+                                INV         1           50.0
+                               LUT4         8            6.7
+                              TOTAL        37

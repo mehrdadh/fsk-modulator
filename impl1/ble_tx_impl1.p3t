@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "ble_tx_impl1.log"
+-o "ble_tx_impl1.csv"
+-pr "ble_tx_impl1.prf"

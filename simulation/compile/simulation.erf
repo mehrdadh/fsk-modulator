@@ -1,0 +1,68 @@
+MESSAGE "Pass 1. Scanning modules hierarchy."
+MESSAGE_SP VCP2113 "Module \$root found in current working library."
+BEGINPROGRESS Compiling...
+UPDATEPROGRESS 2
+UPDATEPROGRESS 4
+UPDATEPROGRESS 6
+UPDATEPROGRESS 8
+UPDATEPROGRESS 10
+UPDATEPROGRESS 13
+UPDATEPROGRESS 15
+UPDATEPROGRESS 17
+UPDATEPROGRESS 19
+UPDATEPROGRESS 21
+UPDATEPROGRESS 24
+UPDATEPROGRESS 26
+UPDATEPROGRESS 28
+UPDATEPROGRESS 30
+UPDATEPROGRESS 32
+UPDATEPROGRESS 35
+MESSAGE "Pass 2. Processing instantiations."
+MESSAGE_SP VCP2876 "Implicit net declaration, symbol top_rst has not been declared in module FSKModulator_tb." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/FSKModulator_tb.v" 24  27
+UPDATEPROGRESS 40
+MESSAGE_SP VCP2876 "Implicit net declaration, symbol top_rst has not been declared in module topModule_old_tb." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_old_tb.v" 24  27
+MESSAGE_SP VCP2876 "Implicit net declaration, symbol top_rst has not been declared in module topModule_tb." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_tb.v" 24  27
+UPDATEPROGRESS 45
+WARNING VCP2597 "Some unconnected ports remain at instance: UUT. Module FSKModulator has unconnected  port(s) : start." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/FSKModulator_tb.v" 52  1
+WARNING VCP2597 "Some unconnected ports remain at instance: UUT. Module topModule has unconnected  port(s) : top_test1, top_test2, sim_lock." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_old_tb.v" 50  1
+WARNING VCP2597 "Some unconnected ports remain at instance: UUT. Module topModule has unconnected  port(s) : top_test1, top_test2." "c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_tb.v" 51  1
+MESSAGE "Pass 3. Processing behavioral statements."
+UPDATEPROGRESS 49
+UPDATEPROGRESS 53
+UPDATEPROGRESS 58
+UPDATEPROGRESS 62
+UPDATEPROGRESS 66
+UPDATEPROGRESS 71
+UPDATEPROGRESS 80
+MESSAGE "Parameters in case labels, will not check for overlapping labels (c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/packetGenerator.v, ln 68)."
+MESSAGE "Parameters in case labels, will not check for overlapping labels (c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/IQSerializer.v, ln 40)."
+MESSAGE "Parameters in case labels, will not check for overlapping labels (c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/IQSerializer.v, ln 112)."
+MESSAGE "Case expression too large, will not check for overlapping labels (c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/ble_packet.v, ln 10)."
+MESSAGE "Running Optimizer."
+MESSAGE "ELB/DAG code generating."
+MESSAGE_SP VCP2113 "Module \$root found in current working library."
+UPDATEPROGRESS 81
+UPDATEPROGRESS 82
+UPDATEPROGRESS 83
+UPDATEPROGRESS 84
+UPDATEPROGRESS 85
+UPDATEPROGRESS 86
+UPDATEPROGRESS 87
+UPDATEPROGRESS 88
+UPDATEPROGRESS 89
+UPDATEPROGRESS 90
+UPDATEPROGRESS 91
+UPDATEPROGRESS 92
+UPDATEPROGRESS 93
+UPDATEPROGRESS 94
+UPDATEPROGRESS 95
+UPDATEPROGRESS 96
+UPDATEPROGRESS 97
+UPDATEPROGRESS 98
+MESSAGE "Unit top modules: ble_tx_clarity FSKModulator_tb topModule_old_tb topModule_tb."
+MESSAGE "$root top modules: ble_tx_clarity FSKModulator_tb topModule_tb topModule_old_tb."
+UPDATEPROGRESS 100
+ENDPROGRESS Compiling...
+SUCCESS "Compile success 0 Errors 3 Warnings  Analysis time: 0[s]."
+WARNING ALOG: "The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available."
+MESSAGE "done"

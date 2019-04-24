@@ -1,0 +1,94 @@
+[ START MERGED ]
+clk_N_146 clockDivider_clk_4M
+n1595 clockDivider_clkLock
+clk_N_291 top_test2_c
+clockDivider_0/pll_lock_N_26 pll_lock
+[ END MERGED ]
+[ START CLIPPED ]
+VCC_net
+clockDivider_0/lockCounter_373_add_4_1/S0
+clockDivider_0/lockCounter_373_add_4_1/CI
+clockDivider_0/counter_372_add_4_1/S0
+clockDivider_0/counter_372_add_4_1/CI
+clockDivider_0/counter_372_add_4_9/S1
+clockDivider_0/counter_372_add_4_9/CO
+clockDivider_0/lockCounter_373_add_4_9/S1
+clockDivider_0/lockCounter_373_add_4_9/CO
+add_1222_2/S1
+add_1222_2/S0
+add_1222_2/CI
+add_1221_9/S1
+add_1221_9/S0
+add_1222_4/S1
+add_1222_4/S0
+add_1222_6/S1
+add_1222_6/S0
+add_1222_8/S1
+add_1222_8/S0
+add_1222_10/S1
+add_1222_10/S0
+add_1222_12/S1
+add_1222_12/S0
+add_1222_14/S1
+add_1222_14/S0
+add_1222_16/S1
+add_1222_16/S0
+add_1222_18/S1
+add_1222_18/S0
+add_1222_20/S1
+add_1222_20/S0
+add_1222_cout/S1
+add_1222_cout/CO
+add_1221_11/S1
+add_1221_11/S0
+add_1221_13/S1
+add_1221_13/S0
+add_1221_15/S1
+add_1221_15/S0
+counter_0/waitcount_375_add_4_1/S0
+counter_0/waitcount_375_add_4_1/CI
+counter_0/waitcount_375_add_4_27/S1
+counter_0/waitcount_375_add_4_27/CO
+add_1221_17/S1
+add_1221_17/S0
+add_1221_19/S1
+add_1221_19/S0
+_add_1_642_add_4_13/S1
+_add_1_642_add_4_13/CO
+add_1221_21/S1
+add_1221_21/S0
+add_1221_23/S1
+add_1221_23/S0
+add_1221_1/S1
+add_1221_1/S0
+add_1221_1/CI
+_add_1_642_add_4_1/S0
+_add_1_642_add_4_1/CI
+add_1221_25/S1
+add_1221_25/S0
+add_1221_27/S0
+add_1221_27/CO
+add_1221_3/S1
+add_1221_3/S0
+add_1221_5/S1
+add_1221_5/S0
+add_1221_7/S1
+add_1221_7/S0
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.10.3.144 -- WARNING: Map write only section -- Wed Apr 24 12:26:44 2019
+
+SYSCONFIG SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=ENABLE SLAVE_PARALLEL_PORT=DISABLE BACKGROUND_RECONFIG=OFF DONE_EX=OFF DONE_OD=ON DONE_PULL=ON MCCLK_FREQ=2.4 TRANSFR=OFF CONFIG_IOVOLTAGE=1.8 CONFIG_SECURE=OFF WAKE_UP=21 COMPRESS_CONFIG=OFF CONFIG_MODE=JTAG INBUF=OFF ;
+LOCATE COMP "top_clk" SITE "M2" ;
+LOCATE COMP "top_test2" SITE "A12" ;
+LOCATE COMP "osc_en" SITE "T2" ;
+LOCATE COMP "top_test1" SITE "F15" ;
+LOCATE COMP "clk_test" SITE "G16" ;
+LOCATE COMP "LED" SITE "B1" ;
+LOCATE COMP "serial_clk" SITE "N1" ;
+LOCATE COMP "serial_iq" SITE "L1" ;
+FREQUENCY NET "top_test2_c" 64.000000 MHz ;
+FREQUENCY NET "my_pll_instance/CLKIt" 32.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

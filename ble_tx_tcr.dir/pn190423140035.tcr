@@ -1,0 +1,134 @@
+#Start recording tcl command: 4/21/2019 15:17:25
+#Project Location: C:/work/tinysdr_fpga_ble_tx; Project name: ble_tx
+prj_project open "C:/work/tinysdr_fpga_ble_tx/ble_tx.ldf"
+sbp_design open -dsgn "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design save
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_builder export_add -comp {ble_tx_clarity/cos_table}
+sbp_design save
+sbp_design gen
+sbp_design drc
+sbp_design gen
+sbp_design drc
+sbp_design open -dsgn "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.sbx"
+sbp_design gen
+sbp_design drc
+sbp_design open -dsgn "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design save
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/simulation/simulation.spf"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/simulation/simulation.spf"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/simulation/simulation.spf"
+prj_run Map -impl impl1 -task MapTrace
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table"
+source "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design save
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/sinModule.v"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/cosModule.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_project save
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace -forceOne
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/IQSerializer.v"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/clockDivider.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/FSKModulator.v"
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/DEDFF.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/impl1/source/counter.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+sbp_design gen
+sbp_builder export_add -port {ble_tx_clarity/sin_table/Cosine}
+sbp_builder export_rem -port {ble_tx_clarity/sin_table/Cosine}
+sbp_builder export_add -port {ble_tx_clarity/sin_table/Cosine}
+sbp_builder export_rem -port {ble_tx_clarity/sin_table/Cosine}
+sbp_builder export_add -port {ble_tx_clarity/my_pll_64mhz/RST}
+sbp_design save
+sbp_design gen
+prj_run Map -impl impl1 -task MapTrace
+prj_run Map -impl impl1 -task MapTrace
+prj_src add "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/my_pll_64mhz/my_pll_64mhz_prim.v"
+prj_run Map -impl impl1 -task MapTrace
+prj_run Export -impl impl1 -task Bitgen
+prj_src remove "C:/work/tinysdr_fpga_ble_tx/ble_tx_sim/ble_tx_sim.spf"
+prj_src add -exclude "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.ldc"
+prj_src enable "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.ldc"
+prj_src remove "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.ldc"
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_src add -exclude "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_src enable "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_project save
+pgr_project save "C:/work/tinysdr_fpga_ble_tx/ble_tx_prog.xcf"
+prj_project close
+#Stop recording: 4/23/2019 14:00:35

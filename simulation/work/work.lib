@@ -1,0 +1,169 @@
+timestamp=1556124311477
+
+[~A]
+C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.v=0*14827*15630
+C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/cos_table/cos_table.v=0*4722*8491
+C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/sin_table/sin_table.v=0*9876*13629
+C:/work/tinysdr_fpga_ble_tx/impl1/source/FSKModulator.v=0*16776*17847
+C:/work/tinysdr_fpga_ble_tx/impl1/source/bleDefines.v=0*1155*1472
+C:/work/tinysdr_fpga_ble_tx/impl1/source/packetGenerator.v=0*18989*21072
+C:/work/tinysdr_fpga_ble_tx/impl1/source/radioDefines.v=0*150*469
+C:/work/tinysdr_fpga_ble_tx/impl1/source/topModule.v=0*2495*3371
+C:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_FSKModulator_tb.v=0*86923*96350
+C:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/FSKModulator_tb.v=0*82138*83176
+LastVerilogToplevel=topModule_tb
+ModifyID=98
+Version=74
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/FSKModulator.v=0*409073*410271
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_clockDivider.v_DEDFF.v_IQSerializer.v_packetCounter.v_FSKModulator_tb.v_topModule_old_tb.v_topModule_tb.v=0*1379085*1386728
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_clockDivider.v_DEDFF.v_IQSerializer.v_packetCounter.v_ble_packet.v_FSKModulator_tb.v_topModule_old_tb.v_topModule_tb.v=0*1391754*1399682
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_FSKModulator_tb.v=0*186626*199542
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_FSKModulator_tb.v=0*416682*430182
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_FSKModulator_tb.v_topModule_tb.v=0*1235758*1249897
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_clockDivider.v_DEDFF.v_IQSerializer.v_FSKModulator_tb.v_topModule_old_tb.v_topModule_tb.v=0*1346055*1362059
+c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/radioDefines.v_bleDefines.v_topModule.v_cos_table.v_sin_table.v_ble_tx_clarity.v_FSKModulator.v_packetGenerator.v_cosModule.v_sinModule.v_clockDivider.v_DEDFF.v_IQSerializer.v_FSKModulator_tb.v_topModule_tb.v=0*1255582*1271519
+c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/FSKModulator_tb.v=0*411387*412457
+c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_old_tb.v=0*1273070*1274222
+c:/work/tinysdr_fpga_ble_tx/simulation/src/TestBench/topModule_tb.v=0*1022218*1023350
+
+[$root]
+A/$root=22|||1*7446579
+BinI32/$root=3*1593596
+SLP=3*1593700
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|c73a565f2ade592f8ac1c68f484c9216bcaf2b0b3bfd10c5085574c018d7478b
+
+[DEDFF]
+A/DEDFF=22|./../../impl1/source/DEDFF.v|21|1*7468838
+BinI32/DEDFF=3*1613479
+R=./../../impl1/source/DEDFF.v|21
+SLP=3*1614499
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|0a01f94f4492355fd739dc76b28cfe300e13bdde3ae99823a8abaa8c4cc18c69
+
+[FSKModulator]
+A/FSKModulator=22|./../../impl1/source/FSKModulator.v|5|1*7457932
+BinI32/FSKModulator=3*1599600
+R=./../../impl1/source/FSKModulator.v|5
+SLP=3*1601018
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|26e4931c200a57b04eb816b07b7dfc31a81f37f27b8c6fdbd0a358c42e9648ab3bf3474630fb1e4714d1f459c033f715
+
+[FSKModulator_tb]
+A/FSKModulator_tb=22|./../src/TestBench/FSKModulator_tb.v|22|1*7470883
+BinI32/FSKModulator_tb=3*1614823
+R=./../src/TestBench/FSKModulator_tb.v|22
+SLP=3*1618830
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|f642b3f96e2eee15048dd2862fb3bb9b322d957cc6fcb13f51ca5d79d4869786ec323008bbd5dd1284d6ad903143a113
+
+[IQSerializer]
+A/IQSerializer=22|./../../impl1/source/IQSerializer.v|3|1*7460943
+BinI32/IQSerializer=3*1601989
+R=./../../impl1/source/IQSerializer.v|3
+SLP=3*1603675
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|df01907e3268fe972d2f834dc126d179a45b7e3f80bf8f318501eda1ab790535a7fbc301089c8392a808302de0ff735d
+
+[ble_packet]
+A/ble_packet=22|./../../impl1/source/ble_packet.v|1|1*7467920
+BinI32/ble_packet=3*1607026
+R=./../../impl1/source/ble_packet.v|1
+SLP=3*1609573
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|a2b64d52997e42538a487c700dba14d9cbc99b1a7728b4a512d073ab68f11b1210e779002da3185f3663796b1df74451
+
+[ble_tx_clarity]
+A/ble_tx_clarity=22|./../../ble_tx_clarity/ble_tx_clarity.v|11|1*7464707
+BinI32/ble_tx_clarity=3*1605058
+R=./../../ble_tx_clarity/ble_tx_clarity.v|11
+SLP=3*1605171
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|dc913bca6360cf20313be55e8774b46c718548a17e05fcd6572df5dd1c2108e5c72584640ffb359b2dc58b854b197dff
+
+[clockDivider]
+A/clockDivider=22|./../../impl1/source/clockDivider.v|14|1*7452338
+BinI32/clockDivider=3*1594700
+R=./../../impl1/source/clockDivider.v|14
+SLP=3*1595755
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|3a0093ef327c5c5d76837818eb93add0762693420cdc6b7a53f40d8d72d327e59a2c090985117af9cbb7d8682dde036e
+
+[cosModule]
+A/cosModule=22|./../../impl1/source/cosModule.v|3|1*7466960
+BinI32/cosModule=3*1606158
+R=./../../impl1/source/cosModule.v|3
+SLP=3*1606637
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|fa787a96ad883d0ae7900f3feaadb6678ee445333f6a5fe2caeb6b0ac32a540408ef431fec8efffaf51d9fe3b60b7a50
+
+[cos_table]
+A/cos_table=22|./../../ble_tx_clarity/cos_table/cos_table.v|8|1*7275761
+BinI32/cos_table=3*1511604
+R=./../../ble_tx_clarity/cos_table/cos_table.v|8
+SLP=3*1511712
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|c96242022b066a8a08364b9fd539b57c068f673cb80690eb3befc401eddf8c981f69798fa425350bbf42c8fb65141864
+
+[packetCounter]
+A/packetCounter=22|./../../impl1/source/packetCounter.v|5|1*7453940
+BinI32/packetCounter=3*1596349
+R=./../../impl1/source/packetCounter.v|5
+SLP=3*1596840
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|28519ca55171e8327b58e080f80a8ecd8c7e006f96f33375119dfa356f06a7448bc6749b400323fa796b315d506d5cf4
+
+[packetGenerator]
+A/packetGenerator=22|./../../impl1/source/packetGenerator.v|4|1*7455041
+BinI32/packetGenerator=3*1597211
+R=./../../impl1/source/packetGenerator.v|4
+SLP=3*1598730
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|66dc6d9074accb69f6b6d0fa4bd1a4f2a243a4a01db5e6797bfa729f45a735647740070b903cde8915610ed65c21dcd7
+
+[sinModule]
+A/sinModule=22|./../../impl1/source/sinModule.v|3|1*7466000
+BinI32/sinModule=3*1605292
+R=./../../impl1/source/sinModule.v|3
+SLP=3*1605770
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|dea4a90dc18b8e4f14f1c91b20d6300630d46a2eb8864816a5523e42c10817288117a42e9524cd2e702328bb7d3ec50a
+
+[sin_table]
+A/sin_table=22|./../../ble_tx_clarity/sin_table/sin_table.v|8|1*7304314
+BinI32/sin_table=3*1512032
+R=./../../ble_tx_clarity/sin_table/sin_table.v|8
+SLP=3*1512140
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|2da211b2159031d4c401afc2b33d44e27847c06a4beeea0b43e2cdf34fe5e3d7d700f6bf7ccef9a52b6906f7e2ede8ca
+
+[topModule]
+A/topModule=22|./../../impl1/source/topModule.v|4|1*7447001
+BinI32/topModule=3*1593768
+R=./../../impl1/source/topModule.v|4
+SLP=3*1594356
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|9636b3128203f5159620afa530a470285fb4070a7fdfd8da59b6a7357a41e9dc84e357c431b19374448790921b007d4e
+
+[topModule_old_tb]
+A/topModule_old_tb=22|./../src/TestBench/topModule_old_tb.v|22|1*7474084
+BinI32/topModule_old_tb=3*1620260
+R=./../src/TestBench/topModule_old_tb.v|22
+SLP=3*1622731
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|9e914287aa315134fd91eb779806be1c112f3057ad71c46d6c717208988a5eda5155f0a03c74c9bb3c8ada1bde244c93
+
+[topModule_tb]
+A/topModule_tb=22|./../src/TestBench/topModule_tb.v|22|1*7477871
+BinI32/topModule_tb=3*1623655
+R=./../src/TestBench/topModule_tb.v|22
+SLP=3*1626212
+Version=10.3.3558.6081  (Windows)|0000000b789cd3f53752d02d2e33ca3634020010aa02e5|03eec7df876cbc9e91384e8e2b376788a7d8ac651c548895dde3cd1c506d1b0bf7e09b00d299e14f8882e7ececb1aad8
+
+[~MFT]
+0=17|0work.mgf|1399682|971851
+1=29|1work.mgf|7477871|7364975
+3=58|3work.mgf|1626212|1592605
+
+[~U]
+$root=12|0*1387691|
+DEDFF=12|0*1390678|
+FSKModulator=12|0*1389209|
+FSKModulator_tb=12|0*1390905||0x10
+IQSerializer=12|0*1389526|
+ble_packet=12|0*1390483|
+ble_tx_clarity=12|0*1389844||0x10
+clockDivider=12|0*1388444|
+cosModule=12|0*1390287|
+cos_table=12|0*1342852|
+packetCounter=12|0*1388686|
+packetGenerator=12|0*1388892|
+sinModule=12|0*1390091|
+sin_table=12|0*1343424|
+topModule=12|0*1388001|
+topModule_old_tb=12|0*1391160||0x10
+topModule_tb=12|0*1391462||0x10
