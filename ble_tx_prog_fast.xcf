@@ -20,7 +20,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/work/tinysdr_fpga_ble_tx/impl1/ble_tx_impl1.bit</File>
-			<FileTime>04/24/19 12:27:06</FileTime>
+			<FileTime>05/09/19 18:42:00</FileTime>
 			<JedecChecksum>N/A</JedecChecksum>
 			<Operation>Erase Only</Operation>
 			<Option>
@@ -47,11 +47,7 @@
 	</ProjectOptions>
 	<CableOptions>
 		<CableName>USB2</CableName>
-		<PortAdd>FTUSB-1</PortAdd>
-		<USBID>Lattice HW-USBN-2B Ch A Location 0003 Serial VER00001A</USBID>
-		<JTAGPinSetting>
-			TRST	ABSENT;
-			ISPEN	ABSENT;
-		</JTAGPinSetting>
+		<PortAdd>FTUSB-0</PortAdd>
+		<USBID>Lattice HW-USBN-2B Ch A Location 0000 Serial VER00001A</USBID>
 	</CableOptions>
 </ispXCF>

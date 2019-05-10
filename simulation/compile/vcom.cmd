@@ -1,0 +1,1 @@
+-w -erf c:/work/tinysdr_fpga_ble_tx/simulation/compile/simulation.erf -d c:/work/tinysdr_fpga_ble_tx/simulation/compile -s c:/work/tinysdr_fpga_ble_tx/simulation/library.cfg -j c:/work/tinysdr_fpga_ble_tx/simulation/projlib.cfg -work work -O3 -e 100 -work work -2008 c:/work/tinysdr_fpga_ble_tx/simulation/../impl1/source/spi_slave_digikey.vhd 

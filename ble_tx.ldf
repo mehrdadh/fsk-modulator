@@ -2,7 +2,7 @@
 <BaliProject version="3.2" title="ble_tx" device="LFE5U-25F-6BG256I" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="ble_tx_clarity" top="topModule"/>
+        <Options HDL_PARAM="cpol='0';cpha='1'" def_top="spi3" top="topModule"/>
         <Source name="impl1/source/topModule.v" type="Verilog" type_short="Verilog">
             <Options top_module="topModule"/>
         </Source>
@@ -42,6 +42,33 @@
         <Source name="impl1/source/ble_packet.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="impl1/source/spi_h.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi_slave.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi_slave_digikey.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi2.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="test.sch" type="Schematic" type_short="Schematic">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi3.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi_slave_open.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/spi2_test.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
         <Source name="ble_tx.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>
@@ -52,6 +79,9 @@
             <Options/>
         </Source>
         <Source name="simulation/simulation.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="timing.ldc" type="LSE Design Constraints File" type_short="LDC">
             <Options/>
         </Source>
     </Implementation>

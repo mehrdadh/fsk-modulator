@@ -13,3 +13,4 @@ i<>.\..\impl1\source\DEDFF.v
 i<>.\..\impl1\source\IQSerializer.v
 i<>.\..\impl1\source\packetCounter.v
 i<>.\..\impl1\source\ble_packet.v
+i<>.\src\TestBench\spi_slave_digikey_tb.v

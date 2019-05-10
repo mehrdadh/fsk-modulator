@@ -1,4 +1,4 @@
-98
+114
 ~M 0 "" 0 $root
 ~A 1 "" 0 $root
 ~M 1 "./../../impl1/source/DEDFF.v" 21 DEDFF
@@ -19,16 +19,18 @@
 ~A 1 "./../../impl1/source/cosModule.v" 3 cosModule
 ~M 1 "./../../ble_tx_clarity/cos_table/cos_table.v" 8 cos_table
 ~A 1 "./../../ble_tx_clarity/cos_table/cos_table.v" 8 cos_table
-~M 1 "./../../impl1/source/packetCounter.v" 5 packetCounter
-~A 1 "./../../impl1/source/packetCounter.v" 5 packetCounter
-~M 1 "./../../impl1/source/packetGenerator.v" 4 packetGenerator
-~A 1 "./../../impl1/source/packetGenerator.v" 4 packetGenerator
+~M 1 "./../../impl1/source/packetCounter.v" 6 packetCounter
+~A 1 "./../../impl1/source/packetCounter.v" 6 packetCounter
+~M 1 "./../../impl1/source/packetGenerator.v" 3 packetGenerator
+~A 1 "./../../impl1/source/packetGenerator.v" 3 packetGenerator
 ~M 1 "./../../impl1/source/sinModule.v" 3 sinModule
 ~A 1 "./../../impl1/source/sinModule.v" 3 sinModule
 ~M 1 "./../../ble_tx_clarity/sin_table/sin_table.v" 8 sin_table
 ~A 1 "./../../ble_tx_clarity/sin_table/sin_table.v" 8 sin_table
-~M 1 "./../../impl1/source/topModule.v" 4 topModule
-~A 1 "./../../impl1/source/topModule.v" 4 topModule
+~E 1 "./../../impl1/source/spi_slave_digikey.vhd" 29 spi_slave_digikey
+~A 1 "./../../impl1/source/spi_slave_digikey.vhd" 53 logic
+~M 1 "./../../impl1/source/topModule.v" 5 topModule
+~A 1 "./../../impl1/source/topModule.v" 5 topModule
 ~M 3 "./../src/TestBench/topModule_old_tb.v" 22 topModule_old_tb
 ~A 1 "./../src/TestBench/topModule_old_tb.v" 22 topModule_old_tb
 ~M 3 "./../src/TestBench/topModule_tb.v" 22 topModule_tb

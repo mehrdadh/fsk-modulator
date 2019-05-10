@@ -11,6 +11,8 @@
 .\..\impl1\source\IQSerializer.v
 .\..\impl1\source\packetCounter.v
 .\..\impl1\source\ble_packet.v
+.\..\impl1\source\spi_slave_digikey.vhd
 .\src\TestBench\FSKModulator_tb.v
 .\src\TestBench\topModule_old_tb.v
 .\src\TestBench\topModule_tb.v
+.\src\TestBench\spi_slave_digikey_tb.v

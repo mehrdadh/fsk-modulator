@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Wed Apr 24 12:26:42 2019
+Thu May 09 19:09:46 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -11,15 +11,128 @@ Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
 Report Information
 ------------------
 Design:     topModule
-Constraint file:  
+Constraint file: topModule_temp_lse.sdc 
 Report level:    verbose report, limited to 3 items per constraint
 --------------------------------------------------------------------------------
 
 
 
 ================================================================================
-Constraint: create_clock -period 5.000000 -name clk1 [get_nets clockDivider_clk_4M]
-            1437 items scored, 821 timing errors detected.
+Constraint: create_clock -period 5.000000 -name clk502 [get_nets top_test0_c]
+            369 items scored, 248 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 6.598ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \spi_0/spi_slave_0/rx_buf[7]_235  (from top_test0_c +)
+   Destination:    FD1S3AX    D              \spi_0/spi_slave_0/miso_269  (to top_test0_c +)
+
+   Delay:                   9.273ns  (14.7% logic, 85.3% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.273ns data_path \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/miso_269 violates
+      2.500ns delay constraint less
+     -0.175ns L_S requirement (totaling 2.675ns) by 6.598ns
+
+ Path Details: \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/miso_269
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.365             CK to Q              \spi_0/spi_slave_0/rx_buf[7]_235 (from top_test0_c)
+Route         1   e 1.020                                  \spi_0/spi_slave_0/rx_buf[7]
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i3245_4_lut_4_lut
+Route         2   e 1.158                                  spi_rx_data[7]
+LUT4        ---     0.166              C to Z              \counter_0/i3213_4_lut_4_lut_4_lut
+Route         4   e 1.297                                  spi_tx_data[7]
+LUT4        ---     0.166              A to Z              \spi_0/spi_slave_0/i3279_4_lut_4_lut_3_lut_4_lut
+Route         2   e 1.158                                  \spi_0/spi_slave_0/n4833
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i1286_3_lut
+Route         3   e 1.239                                  \spi_0/spi_slave_0/tx_buf[7]
+LUT4        ---     0.166              A to Z              \spi_0/spi_slave_0/tx_buf_7__I_0_4_lut
+Route         1   e 1.020                                  \spi_0/spi_slave_0/miso_N_556
+LUT4        ---     0.166              D to Z              \spi_0/spi_slave_0/miso_I_0_3_lut_4_lut
+Route         1   e 1.020                                  \spi_0/spi_slave_0/miso_N_555
+                  --------
+                    9.273  (14.7% logic, 85.3% route), 7 logic levels.
+
+
+Error:  The following path violates requirements by 5.550ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \spi_0/spi_slave_0/rx_buf[7]_235  (from top_test0_c +)
+   Destination:    FD1S3DX    D              \spi_0/spi_slave_0/tx_buf_i0_i0_1256_1257_reset  (to top_test0_c +)
+
+   Delay:                   8.225ns  (14.5% logic, 85.5% route), 6 logic levels.
+
+ Constraint Details:
+
+      8.225ns data_path \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/tx_buf_i0_i0_1256_1257_reset violates
+      2.500ns delay constraint less
+     -0.175ns L_S requirement (totaling 2.675ns) by 5.550ns
+
+ Path Details: \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/tx_buf_i0_i0_1256_1257_reset
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.365             CK to Q              \spi_0/spi_slave_0/rx_buf[7]_235 (from top_test0_c)
+Route         1   e 1.020                                  \spi_0/spi_slave_0/rx_buf[7]
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i3245_4_lut_4_lut
+Route         2   e 1.158                                  spi_rx_data[7]
+LUT4        ---     0.166              C to Z              \counter_0/i3213_4_lut_4_lut_4_lut
+Route         4   e 1.297                                  spi_tx_data[7]
+LUT4        ---     0.166              A to Z              \spi_0/spi_slave_0/i3279_4_lut_4_lut_3_lut_4_lut
+Route         2   e 1.158                                  \spi_0/spi_slave_0/n4833
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i1286_3_lut
+Route         3   e 1.239                                  \spi_0/spi_slave_0/tx_buf[7]
+LUT4        ---     0.166              B to Z              \spi_0/spi_slave_0/tx_buf_i1_i1_3_lut
+Route         2   e 1.158                                  \spi_0/spi_slave_0/n16
+                  --------
+                    8.225  (14.5% logic, 85.5% route), 6 logic levels.
+
+
+Error:  The following path violates requirements by 5.550ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \spi_0/spi_slave_0/rx_buf[7]_235  (from top_test0_c +)
+   Destination:    FD1S3DX    D              \spi_0/spi_slave_0/tx_buf_i0_i7_1284_1285_reset  (to top_test0_c +)
+
+   Delay:                   8.225ns  (14.5% logic, 85.5% route), 6 logic levels.
+
+ Constraint Details:
+
+      8.225ns data_path \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/tx_buf_i0_i7_1284_1285_reset violates
+      2.500ns delay constraint less
+     -0.175ns L_S requirement (totaling 2.675ns) by 5.550ns
+
+ Path Details: \spi_0/spi_slave_0/rx_buf[7]_235 to \spi_0/spi_slave_0/tx_buf_i0_i7_1284_1285_reset
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.365             CK to Q              \spi_0/spi_slave_0/rx_buf[7]_235 (from top_test0_c)
+Route         1   e 1.020                                  \spi_0/spi_slave_0/rx_buf[7]
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i3245_4_lut_4_lut
+Route         2   e 1.158                                  spi_rx_data[7]
+LUT4        ---     0.166              C to Z              \counter_0/i3213_4_lut_4_lut_4_lut
+Route         4   e 1.297                                  spi_tx_data[7]
+LUT4        ---     0.166              A to Z              \spi_0/spi_slave_0/i3279_4_lut_4_lut_3_lut_4_lut
+Route         2   e 1.158                                  \spi_0/spi_slave_0/n4833
+LUT4        ---     0.166              C to Z              \spi_0/spi_slave_0/i1286_3_lut
+Route         3   e 1.239                                  \spi_0/spi_slave_0/tx_buf[7]
+LUT4        ---     0.166              A to Z              \spi_0/spi_slave_0/tx_buf_i1_i8_3_lut
+Route         2   e 1.158                                  \spi_0/spi_slave_0/n9
+                  --------
+                    8.225  (14.5% logic, 85.5% route), 6 logic levels.
+
+Warning: 9.098 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk501 [get_nets clockDivider_clk_4M]
+            1465 items scored, 834 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -27,62 +140,30 @@ Error:  The following path violates requirements by 4.145ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3JX    CK             \fskModule_1/sampleCount_i11  (from clockDivider_clk_4M +)
-   Destination:    FD1P3IX    SP             \fskModule_1/lastSym_53  (to clockDivider_clk_4M +)
+   Source:         FD1S3JX    CK             \fskModule_0/sampleCount_i7  (from clockDivider_clk_4M +)
+   Destination:    FD1P3IX    SP             \fskModule_0/lastSym_53  (to clockDivider_clk_4M +)
 
    Delay:                   6.724ns  (15.3% logic, 84.7% route), 5 logic levels.
 
  Constraint Details:
 
-      6.724ns data_path \fskModule_1/sampleCount_i11 to \fskModule_1/lastSym_53 violates
+      6.724ns data_path \fskModule_0/sampleCount_i7 to \fskModule_0/lastSym_53 violates
       2.500ns delay constraint less
      -0.079ns LCE_S requirement (totaling 2.579ns) by 4.145ns
 
- Path Details: \fskModule_1/sampleCount_i11 to \fskModule_1/lastSym_53
+ Path Details: \fskModule_0/sampleCount_i7 to \fskModule_0/lastSym_53
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \fskModule_1/sampleCount_i11 (from clockDivider_clk_4M)
-Route         2   e 1.258                                  sampleCount[11]
-LUT4        ---     0.166              B to Z              \fskModule_1/i1_4_lut_adj_25
-Route         3   e 1.239                                  \fskModule_1/n17
-LUT4        ---     0.166              C to Z              \fskModule_1/i1695_2_lut_3_lut
-Route         1   e 1.020                                  \fskModule_1/n2534
-LUT4        ---     0.166              A to Z              \fskModule_1/i1_4_lut
-Route         2   e 1.158                                  \fskModule_1/lastSym_N_233
-LUT4        ---     0.166              B to Z              \fskModule_1/i390_2_lut_2_lut
-Route         1   e 1.020                                  \fskModule_1/clockDivider_clk_4M_enable_1
-                  --------
-                    6.724  (15.3% logic, 84.7% route), 5 logic levels.
-
-
-Error:  The following path violates requirements by 4.145ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1S3JX    CK             \fskModule_1/sampleCount_i7  (from clockDivider_clk_4M +)
-   Destination:    FD1P3IX    SP             \fskModule_1/lastSym_53  (to clockDivider_clk_4M +)
-
-   Delay:                   6.724ns  (15.3% logic, 84.7% route), 5 logic levels.
-
- Constraint Details:
-
-      6.724ns data_path \fskModule_1/sampleCount_i7 to \fskModule_1/lastSym_53 violates
-      2.500ns delay constraint less
-     -0.079ns LCE_S requirement (totaling 2.579ns) by 4.145ns
-
- Path Details: \fskModule_1/sampleCount_i7 to \fskModule_1/lastSym_53
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \fskModule_1/sampleCount_i7 (from clockDivider_clk_4M)
+L_CO        ---     0.365             CK to Q              \fskModule_0/sampleCount_i7 (from clockDivider_clk_4M)
 Route         2   e 1.258                                  sampleCount[7]
-LUT4        ---     0.166              A to Z              \fskModule_1/i1_4_lut_adj_25
-Route         3   e 1.239                                  \fskModule_1/n17
-LUT4        ---     0.166              C to Z              \fskModule_1/i1695_2_lut_3_lut
-Route         1   e 1.020                                  \fskModule_1/n2534
-LUT4        ---     0.166              A to Z              \fskModule_1/i1_4_lut
-Route         2   e 1.158                                  \fskModule_1/lastSym_N_233
-LUT4        ---     0.166              B to Z              \fskModule_1/i390_2_lut_2_lut
-Route         1   e 1.020                                  \fskModule_1/clockDivider_clk_4M_enable_1
+LUT4        ---     0.166              A to Z              \fskModule_0/i1_4_lut_adj_110
+Route         3   e 1.239                                  \fskModule_0/n17
+LUT4        ---     0.166              C to Z              \fskModule_0/i3072_2_lut_3_lut
+Route         1   e 1.020                                  \fskModule_0/n3941
+LUT4        ---     0.166              A to Z              \fskModule_0/i1_4_lut
+Route         2   e 1.158                                  \fskModule_0/lastSym_N_311
+LUT4        ---     0.166              B to Z              \fskModule_0/i639_2_lut_2_lut
+Route         1   e 1.020                                  \fskModule_0/clockDivider_clk_4M_enable_1
                   --------
                     6.724  (15.3% logic, 84.7% route), 5 logic levels.
 
@@ -91,30 +172,62 @@ Error:  The following path violates requirements by 4.145ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3JX    CK             \fskModule_1/sampleCount_i6  (from clockDivider_clk_4M +)
-   Destination:    FD1P3IX    SP             \fskModule_1/lastSym_53  (to clockDivider_clk_4M +)
+   Source:         FD1S3JX    CK             \fskModule_0/sampleCount_i6  (from clockDivider_clk_4M +)
+   Destination:    FD1P3IX    SP             \fskModule_0/lastSym_53  (to clockDivider_clk_4M +)
 
    Delay:                   6.724ns  (15.3% logic, 84.7% route), 5 logic levels.
 
  Constraint Details:
 
-      6.724ns data_path \fskModule_1/sampleCount_i6 to \fskModule_1/lastSym_53 violates
+      6.724ns data_path \fskModule_0/sampleCount_i6 to \fskModule_0/lastSym_53 violates
       2.500ns delay constraint less
      -0.079ns LCE_S requirement (totaling 2.579ns) by 4.145ns
 
- Path Details: \fskModule_1/sampleCount_i6 to \fskModule_1/lastSym_53
+ Path Details: \fskModule_0/sampleCount_i6 to \fskModule_0/lastSym_53
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \fskModule_1/sampleCount_i6 (from clockDivider_clk_4M)
+L_CO        ---     0.365             CK to Q              \fskModule_0/sampleCount_i6 (from clockDivider_clk_4M)
 Route         2   e 1.258                                  sampleCount[6]
-LUT4        ---     0.166              C to Z              \fskModule_1/i1_4_lut_adj_25
-Route         3   e 1.239                                  \fskModule_1/n17
-LUT4        ---     0.166              C to Z              \fskModule_1/i1695_2_lut_3_lut
-Route         1   e 1.020                                  \fskModule_1/n2534
-LUT4        ---     0.166              A to Z              \fskModule_1/i1_4_lut
-Route         2   e 1.158                                  \fskModule_1/lastSym_N_233
-LUT4        ---     0.166              B to Z              \fskModule_1/i390_2_lut_2_lut
-Route         1   e 1.020                                  \fskModule_1/clockDivider_clk_4M_enable_1
+LUT4        ---     0.166              C to Z              \fskModule_0/i1_4_lut_adj_110
+Route         3   e 1.239                                  \fskModule_0/n17
+LUT4        ---     0.166              C to Z              \fskModule_0/i3072_2_lut_3_lut
+Route         1   e 1.020                                  \fskModule_0/n3941
+LUT4        ---     0.166              A to Z              \fskModule_0/i1_4_lut
+Route         2   e 1.158                                  \fskModule_0/lastSym_N_311
+LUT4        ---     0.166              B to Z              \fskModule_0/i639_2_lut_2_lut
+Route         1   e 1.020                                  \fskModule_0/clockDivider_clk_4M_enable_1
+                  --------
+                    6.724  (15.3% logic, 84.7% route), 5 logic levels.
+
+
+Error:  The following path violates requirements by 4.145ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3JX    CK             \fskModule_0/sampleCount_i2  (from clockDivider_clk_4M +)
+   Destination:    FD1P3IX    SP             \fskModule_0/lastSym_53  (to clockDivider_clk_4M +)
+
+   Delay:                   6.724ns  (15.3% logic, 84.7% route), 5 logic levels.
+
+ Constraint Details:
+
+      6.724ns data_path \fskModule_0/sampleCount_i2 to \fskModule_0/lastSym_53 violates
+      2.500ns delay constraint less
+     -0.079ns LCE_S requirement (totaling 2.579ns) by 4.145ns
+
+ Path Details: \fskModule_0/sampleCount_i2 to \fskModule_0/lastSym_53
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.365             CK to Q              \fskModule_0/sampleCount_i2 (from clockDivider_clk_4M)
+Route         2   e 1.258                                  sampleCount[2]
+LUT4        ---     0.166              D to Z              \fskModule_0/i1_4_lut_adj_110
+Route         3   e 1.239                                  \fskModule_0/n17
+LUT4        ---     0.166              C to Z              \fskModule_0/i3072_2_lut_3_lut
+Route         1   e 1.020                                  \fskModule_0/n3941
+LUT4        ---     0.166              A to Z              \fskModule_0/i1_4_lut
+Route         2   e 1.158                                  \fskModule_0/lastSym_N_311
+LUT4        ---     0.166              B to Z              \fskModule_0/i639_2_lut_2_lut
+Route         1   e 1.020                                  \fskModule_0/clockDivider_clk_4M_enable_1
                   --------
                     6.724  (15.3% logic, 84.7% route), 5 logic levels.
 
@@ -123,108 +236,120 @@ Warning: 6.645 ns is the maximum delay for this constraint.
 
 
 ================================================================================
-Constraint: create_clock -period 5.000000 -name clk0 [get_nets top_test2_c]
-            218 items scored, 89 timing errors detected.
+Constraint: create_clock -period 5.000000 -name clk500 [get_nets serial_clk_c]
+            225 items scored, 93 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error:  The following path violates requirements by 3.912ns
+Error:  The following path violates requirements by 4.337ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             \IQSerializer_1/QCounter_380__i1  (from top_test2_c +)
-   Destination:    FD1S3IX    D              \IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+   Source:         FD1S3IX    CK             \IQSerializer_0/QCounter_582__i1  (from serial_clk_c +)
+   Destination:    FD1S3IX    D              \IQSerializer_0/DEDFF_0/pose_edge_14  (to serial_clk_c +)
 
-   Delay:                   6.587ns  (15.6% logic, 84.4% route), 5 logic levels.
+   Delay:                   7.012ns  (16.5% logic, 83.5% route), 6 logic levels.
 
  Constraint Details:
 
-      6.587ns data_path \IQSerializer_1/QCounter_380__i1 to \IQSerializer_1/DEDFF_0/pose_edge_14 violates
+      7.012ns data_path \IQSerializer_0/QCounter_582__i1 to \IQSerializer_0/DEDFF_0/pose_edge_14 violates
       2.500ns delay constraint less
-     -0.175ns L_S requirement (totaling 2.675ns) by 3.912ns
+     -0.175ns L_S requirement (totaling 2.675ns) by 4.337ns
 
- Path Details: \IQSerializer_1/QCounter_380__i1 to \IQSerializer_1/DEDFF_0/pose_edge_14
+ Path Details: \IQSerializer_0/QCounter_582__i1 to \IQSerializer_0/DEDFF_0/pose_edge_14
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \IQSerializer_1/QCounter_380__i1 (from top_test2_c)
-Route         6   e 1.478                                  \IQSerializer_1/QCounter[1]
-LUT4        ---     0.166              A to Z              \IQSerializer_1/fskModule_Q[11]_bdd_3_lut
-Route         1   e 1.020                                  \IQSerializer_1/n2652
-LUT4        ---     0.166              A to Z              \IQSerializer_1/n2652_bdd_3_lut
-Route         1   e 1.020                                  \IQSerializer_1/n2653
-LUT4        ---     0.166              A to Z              \IQSerializer_1/spi_miso_c_0_bdd_2_lut_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/n2655
-LUT4        ---     0.166              B to Z              \IQSerializer_1/DEDFF_0/neg_edge_I_0_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/DEDFF_0/Q1
+L_CO        ---     0.365             CK to Q              \IQSerializer_0/QCounter_582__i1 (from serial_clk_c)
+Route        12   e 1.616                                  QCounter[1]
+LUT4        ---     0.166              B to Z              \IQSerializer_0/i2616_1_lut_2_lut
+Route         2   e 1.158                                  \IQSerializer_0/DEDFF_D0_N_415[2]
+MOFX0       ---     0.179             C0 to Z              \IQSerializer_0/i3092
+Route         1   e 0.020                                  \IQSerializer_0/n3963
+MUXL5       ---     0.116             D1 to Z              \IQSerializer_0/i3093
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_D0_N_414
+LUT4        ---     0.166              A to Z              \IQSerializer_0/select_463_Select_0_i1_2_lut
+Route         1   e 1.020                                  \IQSerializer_0/n1
+LUT4        ---     0.166              C to Z              \IQSerializer_0/DEDFF_0/neg_edge_I_0_4_lut
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_0/Q1
                   --------
-                    6.587  (15.6% logic, 84.4% route), 5 logic levels.
+                    7.012  (16.5% logic, 83.5% route), 6 logic levels.
 
 
-Error:  The following path violates requirements by 2.919ns
+Error:  The following path violates requirements by 4.337ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             \IQSerializer_1/ICounter_377__i3  (from top_test2_c +)
-   Destination:    FD1S3IX    D              \IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+   Source:         FD1S3IX    CK             \IQSerializer_0/QCounter_582__i1  (from serial_clk_c +)
+   Destination:    FD1S3IX    D              \IQSerializer_0/DEDFF_0/pose_edge_14  (to serial_clk_c +)
 
-   Delay:                   5.594ns  (17.5% logic, 82.5% route), 5 logic levels.
+   Delay:                   7.012ns  (16.5% logic, 83.5% route), 6 logic levels.
 
  Constraint Details:
 
-      5.594ns data_path \IQSerializer_1/ICounter_377__i3 to \IQSerializer_1/DEDFF_0/pose_edge_14 violates
+      7.012ns data_path \IQSerializer_0/QCounter_582__i1 to \IQSerializer_0/DEDFF_0/pose_edge_14 violates
       2.500ns delay constraint less
-     -0.175ns L_S requirement (totaling 2.675ns) by 2.919ns
+     -0.175ns L_S requirement (totaling 2.675ns) by 4.337ns
 
- Path Details: \IQSerializer_1/ICounter_377__i3 to \IQSerializer_1/DEDFF_0/pose_edge_14
+ Path Details: \IQSerializer_0/QCounter_582__i1 to \IQSerializer_0/DEDFF_0/pose_edge_14
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \IQSerializer_1/ICounter_377__i3 (from top_test2_c)
-Route         8   e 1.535                                  ICounter[3]
-LUT4        ---     0.166              C to Z              \IQSerializer_1/fskModule_I[4]_bdd_3_lut_1840
-Route         1   e 0.020                                  \IQSerializer_1/n2645
-MUXL5       ---     0.116           BLUT to Z              \IQSerializer_1/i1792
-Route         1   e 1.020                                  \IQSerializer_1/n2646
-LUT4        ---     0.166              A to Z              \IQSerializer_1/spi_miso_c_0_bdd_2_lut_1796_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/n2648
-LUT4        ---     0.166              C to Z              \IQSerializer_1/DEDFF_0/neg_edge_I_0_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/DEDFF_0/Q1
+L_CO        ---     0.365             CK to Q              \IQSerializer_0/QCounter_582__i1 (from serial_clk_c)
+Route        12   e 1.616                                  QCounter[1]
+LUT4        ---     0.166              B to Z              \IQSerializer_0/i2616_1_lut_2_lut
+Route         2   e 1.158                                  \IQSerializer_0/DEDFF_D0_N_415[2]
+MOFX0       ---     0.179             C0 to Z              \IQSerializer_0/i3091
+Route         1   e 0.020                                  \IQSerializer_0/n3962
+MUXL5       ---     0.116             D0 to Z              \IQSerializer_0/i3093
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_D0_N_414
+LUT4        ---     0.166              A to Z              \IQSerializer_0/select_463_Select_0_i1_2_lut
+Route         1   e 1.020                                  \IQSerializer_0/n1
+LUT4        ---     0.166              C to Z              \IQSerializer_0/DEDFF_0/neg_edge_I_0_4_lut
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_0/Q1
                   --------
-                    5.594  (17.5% logic, 82.5% route), 5 logic levels.
+                    7.012  (16.5% logic, 83.5% route), 6 logic levels.
 
 
-Error:  The following path violates requirements by 2.919ns
+Error:  The following path violates requirements by 4.230ns
 
  Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
 
-   Source:         FD1S3IX    CK             \IQSerializer_1/ICounter_377__i3  (from top_test2_c +)
-   Destination:    FD1S3IX    D              \IQSerializer_1/DEDFF_0/pose_edge_14  (to top_test2_c +)
+   Source:         FD1S3IX    CK             \IQSerializer_0/QCounter_582__i2  (from serial_clk_c +)
+   Destination:    FD1S3IX    D              \IQSerializer_0/DEDFF_0/pose_edge_14  (to serial_clk_c +)
 
-   Delay:                   5.594ns  (17.5% logic, 82.5% route), 5 logic levels.
+   Delay:                   6.905ns  (16.8% logic, 83.2% route), 6 logic levels.
 
  Constraint Details:
 
-      5.594ns data_path \IQSerializer_1/ICounter_377__i3 to \IQSerializer_1/DEDFF_0/pose_edge_14 violates
+      6.905ns data_path \IQSerializer_0/QCounter_582__i2 to \IQSerializer_0/DEDFF_0/pose_edge_14 violates
       2.500ns delay constraint less
-     -0.175ns L_S requirement (totaling 2.675ns) by 2.919ns
+     -0.175ns L_S requirement (totaling 2.675ns) by 4.230ns
 
- Path Details: \IQSerializer_1/ICounter_377__i3 to \IQSerializer_1/DEDFF_0/pose_edge_14
+ Path Details: \IQSerializer_0/QCounter_582__i2 to \IQSerializer_0/DEDFF_0/pose_edge_14
 
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.365             CK to Q              \IQSerializer_1/ICounter_377__i3 (from top_test2_c)
-Route         8   e 1.535                                  ICounter[3]
-LUT4        ---     0.166              C to Z              \IQSerializer_1/fskModule_I[4]_bdd_3_lut_1791
-Route         1   e 0.020                                  \IQSerializer_1/n2644
-MUXL5       ---     0.116           ALUT to Z              \IQSerializer_1/i1792
-Route         1   e 1.020                                  \IQSerializer_1/n2646
-LUT4        ---     0.166              A to Z              \IQSerializer_1/spi_miso_c_0_bdd_2_lut_1796_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/n2648
-LUT4        ---     0.166              C to Z              \IQSerializer_1/DEDFF_0/neg_edge_I_0_4_lut
-Route         1   e 1.020                                  \IQSerializer_1/DEDFF_0/Q1
+L_CO        ---     0.365             CK to Q              \IQSerializer_0/QCounter_582__i2 (from serial_clk_c)
+Route         7   e 1.509                                  QCounter[2]
+LUT4        ---     0.166              A to Z              \IQSerializer_0/i2616_1_lut_2_lut
+Route         2   e 1.158                                  \IQSerializer_0/DEDFF_D0_N_415[2]
+MOFX0       ---     0.179             C0 to Z              \IQSerializer_0/i3091
+Route         1   e 0.020                                  \IQSerializer_0/n3962
+MUXL5       ---     0.116             D0 to Z              \IQSerializer_0/i3093
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_D0_N_414
+LUT4        ---     0.166              A to Z              \IQSerializer_0/select_463_Select_0_i1_2_lut
+Route         1   e 1.020                                  \IQSerializer_0/n1
+LUT4        ---     0.166              C to Z              \IQSerializer_0/DEDFF_0/neg_edge_I_0_4_lut
+Route         1   e 1.020                                  \IQSerializer_0/DEDFF_0/Q1
                   --------
-                    5.594  (17.5% logic, 82.5% route), 5 logic levels.
+                    6.905  (16.8% logic, 83.2% route), 6 logic levels.
 
-Warning: 6.412 ns is the maximum delay for this constraint.
+Warning: 6.837 ns is the maximum delay for this constraint.
 
+
+
+================================================================================
+Constraint: create_clock -period 31.250000 -waveform { 0.000000 15.625000 } -name top_clk [ get_ports { top_clk } ]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
 
 Timing Report Summary
 --------------
@@ -233,42 +358,51 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets clockDivider_clk_4M]     |     5.000 ns|    13.290 ns|     5 *
+clk502 [get_nets top_test0_c]           |     5.000 ns|    18.196 ns|     7 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets top_test2_c]             |     5.000 ns|    12.824 ns|     5 *
+clk501 [get_nets clockDivider_clk_4M]   |     5.000 ns|    13.290 ns|     5 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk500 [get_nets serial_clk_c]          |     5.000 ns|    13.674 ns|     6 *
+                                        |             |             |
+create_clock -period 31.250000          |             |             |
+-waveform { 0.000000 15.625000 } -name  |             |             |
+top_clk [ get_ports { top_clk } ]       |            -|            -|     0  
                                         |             |             |
 --------------------------------------------------------------------------------
 
 
-2 constraints not met.
+3 constraints not met.
 
 --------------------------------------------------------------------------------
 Critical Nets                           |   Loads|  Errors| % of total
 --------------------------------------------------------------------------------
-\counter_0/n1596                        |      26|     546|     60.00%
+\counter_0/n2033                        |      26|     546|     46.47%
                                         |        |        |
-cout                                    |       1|     546|     60.00%
+cout_adj_573                            |       1|     546|     46.47%
                                         |        |        |
-n2189                                   |       1|     546|     60.00%
+n3406                                   |       1|     546|     46.47%
                                         |        |        |
-n2188                                   |       1|     494|     54.29%
+n3405                                   |       1|     494|     42.04%
                                         |        |        |
-n2187                                   |       1|     442|     48.57%
+n3404                                   |       1|     442|     37.62%
                                         |        |        |
-n2186                                   |       1|     390|     42.86%
+n3403                                   |       1|     390|     33.19%
                                         |        |        |
-n2185                                   |       1|     338|     37.14%
+n3402                                   |       1|     338|     28.77%
                                         |        |        |
-n2184                                   |       1|     286|     31.43%
+n3401                                   |       1|     286|     24.34%
                                         |        |        |
-n2183                                   |       1|     234|     25.71%
+n3400                                   |       1|     234|     19.91%
                                         |        |        |
-n2182                                   |       1|     182|     20.00%
+n3399                                   |       1|     182|     15.49%
                                         |        |        |
-n2181                                   |       1|     130|     14.29%
+\spi_0/spi_slave_0/n3704                |       8|     160|     13.62%
                                         |        |        |
-\fskModule_1/n23                        |      12|     120|     13.19%
+n3398                                   |       1|     130|     11.06%
+                                        |        |        |
+\fskModule_0/n23                        |      12|     120|     10.21%
                                         |        |        |
 --------------------------------------------------------------------------------
 
@@ -276,10 +410,10 @@ n2181                                   |       1|     130|     14.29%
 Timing summary:
 ---------------
 
-Timing errors: 910  Score: 868184
+Timing errors: 1175  Score: 1600568
 
-Constraints cover  1655 paths, 325 nets, and 771 connections (91.0% coverage)
+Constraints cover  2059 paths, 488 nets, and 1115 connections (78.2% coverage)
 
 
-Peak memory: 83890176 bytes, TRCE: 1449984 bytes, DLYMAN: 0 bytes
+Peak memory: 132091904 bytes, TRCE: 1662976 bytes, DLYMAN: 167936 bytes
 CPU_TIME_REPORT: 0 secs 

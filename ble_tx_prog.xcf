@@ -18,10 +18,13 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/work/tinysdr_fpga_ble_tx/impl1/ble_tx_impl1.bit</File>
-			<FileTime>04/24/19 11:38:20</FileTime>
+			<FileTime>05/09/19 19:10:44</FileTime>
+			<JedecChecksum>N/A</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
+				<SVFProcessor>SVF Processor</SVFProcessor>
+				<Usercode>0x00000000</Usercode>
 				<AccessMode>SPI Flash Background Programming</AccessMode>
 			</Option>
 			<FPGALoader>
@@ -46,6 +49,7 @@
 						<IOState>HighZ</IOState>
 						<PreloadLength>409</PreloadLength>
 						<IOVectorData>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</IOVectorData>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 						<AccessMode>JTAG</AccessMode>
 					</Option>
 				</Device>
@@ -80,6 +84,7 @@
 					</LocalChainList>
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 					</Option>
 				</Device>
 			</FPGADevice>
@@ -98,7 +103,7 @@
 	</ProjectOptions>
 	<CableOptions>
 		<CableName>USB2</CableName>
-		<PortAdd>FTUSB-1</PortAdd>
-		<USBID>Lattice HW-USBN-2B Ch A Location 0003 Serial VER00001A</USBID>
+		<PortAdd>FTUSB-0</PortAdd>
+		<USBID>Lattice HW-USBN-2B Ch A Location 0000 Serial VER00001A</USBID>
 	</CableOptions>
 </ispXCF>
