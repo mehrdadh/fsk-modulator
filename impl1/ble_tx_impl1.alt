@@ -1,17 +1,17 @@
 NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
 NOTE All Rights Reserved *
-NOTE DATE CREATED: Thu May 09 19:10:44 2019 *
+NOTE DATE CREATED: Wed May 15 14:08:23 2019 *
 NOTE DESIGN NAME: topModule *
 NOTE DEVICE NAME: LFE5U-25F-6CABGA256 *
 NOTE PIN ASSIGNMENTS *
-NOTE PINS top_test1 : F15 : out *
-NOTE PINS top_test0 : G16 : out *
-NOTE PINS LED : B1 : out *
-NOTE PINS serial_clk : M12 : out *
-NOTE PINS serial_iq : N16 : out *
-NOTE PINS top_test2 : A12 : out *
 NOTE PINS osc_en : T2 : out *
+NOTE PINS serial_iq : L3 : out *
+NOTE PINS serial_clk : M3 : out *
 NOTE PINS top_spi_miso : T4 : out *
+NOTE PINS LED : B1 : out *
+NOTE PINS top_test0 : G16 : out *
+NOTE PINS top_test1 : F15 : out *
+NOTE PINS top_test2 : A12 : out *
 NOTE PINS top_test3 : A11 : out *
 NOTE PINS top_test4 : A10 : out *
 NOTE PINS top_test5 : A9 : out *

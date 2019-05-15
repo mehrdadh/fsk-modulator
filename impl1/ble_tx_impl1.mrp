@@ -14,22 +14,22 @@ Target Vendor:  LATTICE
 Target Device:  LFE5U-25FCABGA256
 Target Performance:   6
 Mapper:  sa5p00,  version:  Diamond (64-bit) 3.10.3.144
-Mapped on:  05/09/19  19:09:46
+Mapped on:  05/15/19  14:07:07
 
 Design Summary
 --------------
 
-   Number of registers:    165 out of 24879 (1%)
-      PFU registers:          165 out of 24288 (1%)
+   Number of registers:     79 out of 24879 (0%)
+      PFU registers:           79 out of 24288 (0%)
       PIO registers:            0 out of   591 (0%)
-   Number of SLICEs:       225 out of 12144 (2%)
-      SLICEs as Logic/ROM:    225 out of 12144 (2%)
+   Number of SLICEs:       109 out of 12144 (1%)
+      SLICEs as Logic/ROM:    109 out of 12144 (1%)
       SLICEs as RAM:            0 out of  9108 (0%)
-      SLICEs as Carry:         56 out of 12144 (0%)
-   Number of LUT4s:        367 out of 24288 (2%)
-      Number used as logic LUTs:        255
+      SLICEs as Carry:         10 out of 12144 (0%)
+   Number of LUT4s:        156 out of 24288 (1%)
+      Number used as logic LUTs:        136
       Number used as distributed RAM:     0
-      Number used as ripple logic:      112
+      Number used as ripple logic:       20
       Number used as shift registers:     0
    Number of PIO sites used: 17 out of 197 (9%)
    Number of block RAMs:  0 out of 56 (0%)
@@ -66,7 +66,7 @@ Design Summary
 
 
 
-Design:  topModule                                     Date:  05/09/19  19:09:46
+Design:  topModule                                     Date:  05/15/19  14:07:07
 
 Design Summary (cont)
 ---------------------
@@ -77,87 +77,75 @@ Design Summary (cont)
    Number of Used DSP ALU Sites:  0 out of 28 (0 %)
    Number of Used DSP PRADD Sites:  0 out of 56 (0 %)
    Number of clocks:  5
-     Net serial_clk_c: 26 loads, 18 rising, 8 falling (Driver: LED_I_0/PLLInst_0
-     )
-     Net top_test0_c: 40 loads, 27 rising, 13 falling (Driver: spi_sclk_150 )
-     Net clockDivider_clk_4M: 49 loads, 34 rising, 15 falling (Driver:
-     clockDivider_0/clkOut_23 )
+     Net pll_clko: 16 loads, 16 rising, 0 falling (Driver:
+     pll_lock_I_0_112/PLLInst_0 )
+     Net top_test0_c: 39 loads, 13 rising, 26 falling (Driver: spi_sclk_96 )
+     Net clkDivider_clko: 7 loads, 7 rising, 0 falling (Driver:
+     clockDivider_0/clkOut_28 )
      Net top_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO top_clk )
-     Net LED_I_0/CLKIt: 1 loads, 1 rising, 0 falling (Driver: LED_I_0/PLLRefcs_0
-     )
-   Number of Clock Enables:  17
-     Net spi_0/spi_slave_0/rx_buf_5__N_448: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/miso_N_558: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_0__N_458: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_1__N_456: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_2__N_454: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_3__N_452: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_4__N_450: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_6__N_446: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/sclk_N_444_enable_1: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/sclk_N_444_enable_2: 1 loads, 1 LSLICEs
+     Net pll_lock_I_0_112/CLKIt: 1 loads, 1 rising, 0 falling (Driver:
+     pll_lock_I_0_112/PLLRefcs_0 )
+   Number of Clock Enables:  13
      Net spi_0/spi_slave_0/bit_cnt_2: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_7__N_439: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_7__N_287: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_6__N_292: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_5__N_294: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_4__N_296: 1 loads, 1 LSLICEs
      Net spi_0/spi_slave_0/bit_cnt_1: 1 loads, 1 LSLICEs
-     Net fskModule_0/clockDivider_clk_4M_enable_1: 1 loads, 1 LSLICEs
-     Net clockDivider_clk_4M_enable_9: 4 loads, 4 LSLICEs
-     Net packetGen_0/next_state_3__N_204: 1 loads, 1 LSLICEs
-     Net clockDivider_0/lockCounter_7: 1 loads, 1 LSLICEs
-   Number of LSRs:  32
+     Net spi_0/spi_slave_0/rx_buf_3__N_298: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_2__N_300: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_1__N_302: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/top_test0_c_enable_1: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/sclk_N_384_enable_1: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/top_test0_c_enable_2: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/top_test0_c_enable_3: 1 loads, 1 LSLICEs
+   Number of LSRs:  24
      Net spi_rst: 8 loads, 8 LSLICEs
-     Net top_test6_c: 3 loads, 3 LSLICEs
-     Net LED_c: 7 loads, 7 LSLICEs
-     Net top_rst_n_N_63: 1 loads, 0 LSLICEs
-     Net spi_0/spi_slave_0/n4522: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4515: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4516: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/roe_N_552: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/trdy_N_542: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rrdy_N_548: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4519: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4520: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4518: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4517: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4514: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4513: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4512: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4511: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4510: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4507: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4509: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n4521: 1 loads, 1 LSLICEs
+     Net clockDivider_0/n573: 5 loads, 5 LSLICEs
+     Net pll_lock: 6 loads, 6 LSLICEs
+     Net n1924: 7 loads, 7 LSLICEs
+     Net top_rst_n_N_66: 1 loads, 0 LSLICEs
+     Net spi_0/spi_slave_0/n1927: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1926: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1925: 1 loads, 1 LSLICEs
+     Net trdy_N_389: 1 loads, 1 LSLICEs
+     Net rrdy_N_394: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1919: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1922: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1921: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1928: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1929: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1930: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1931: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1932: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1933: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1934: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1935: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1936: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n1937: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/roe_N_398: 1 loads, 1 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
 
                                     Page 2
 
 
 
 
-Design:  topModule                                     Date:  05/09/19  19:09:46
+Design:  topModule                                     Date:  05/15/19  14:07:07
 
 Design Summary (cont)
 ---------------------
-     Net spi_0/spi_slave_0/n4508: 1 loads, 1 LSLICEs
-     Net counter_0_countDone: 16 loads, 16 LSLICEs
-     Net counter_0/n2033: 14 loads, 14 LSLICEs
-     Net IQSerializer_start: 4 loads, 4 LSLICEs
-     Net IQSerializer_0/n2034: 2 loads, 2 LSLICEs
-     Net IQSerializer_0/n2035: 2 loads, 2 LSLICEs
-     Net fskModule_0/n623: 5 loads, 5 LSLICEs
-     Net fskModule_0/fskModule_start: 6 loads, 6 LSLICEs
-     Net fskModule_0/n3737: 1 loads, 1 LSLICEs
-     Net clockDivider_0/n626: 5 loads, 5 LSLICEs
-   Number of nets driven by tri-state buffers:  0
-   Top 10 highest fanout non-clock nets:
-     Net spi_rst: 48 loads
-     Net top_test3_c_2: 30 loads
-     Net counter_0_countDone: 26 loads
-     Net symCounter_1: 22 loads
-     Net symCounter_2: 22 loads
-     Net symCounter_3: 22 loads
-     Net top_test6_c: 22 loads
+     Net spi_rst: 55 loads
+     Net spi_next_state_3_N_261_3: 31 loads
      Net spi_tx_load_en: 19 loads
-     Net symCounter_6: 19 loads
-     Net spi_0/spi_slave_0/wr_add: 15 loads
+     Net top_test6_c: 15 loads
+     Net top_test1_c: 14 loads
+     Net n1987: 13 loads
+     Net spi_0/spi_slave_0/rd_add: 12 loads
+     Net pll_lock: 10 loads
+     Net spi_tx_data_7__N_248: 10 loads
+     Net spi_0/spi_slave_0/n1409: 9 loads
 
 
 
@@ -181,39 +169,39 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| top_test1           | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| top_test0           | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| LED                 | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| serial_clk          | OUTPUT    | LVCMOS25  |            |
+| osc_en              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | serial_iq           | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| top_test2           | OUTPUT    | LVCMOS18  |            |
+| serial_clk          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_spi_miso        | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| LED                 | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| top_test0           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test1           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test2           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test3           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test4           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test5           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test6           | OUTPUT    | LVCMOS25  |            |
 
                                     Page 3
 
 
 
 
-Design:  topModule                                     Date:  05/09/19  19:09:46
+Design:  topModule                                     Date:  05/15/19  14:07:07
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| osc_en              | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| top_spi_miso        | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| top_test3           | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| top_test4           | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| top_test5           | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| top_test6           | OUTPUT    | LVCMOS18  |            |
 +---------------------+-----------+-----------+------------+
 | top_clk             | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -229,121 +217,31 @@ IO (PIO) Attributes (cont)
 Removed logic
 -------------
 
-Signal sclk_N_444 was merged into signal top_test0_c
-Signal clk_N_369 was merged into signal serial_clk_c
-Signal clk_N_224 was merged into signal clockDivider_clk_4M
-Signal clockDivider_0/pll_lock_N_104 was merged into signal LED_c
-Signal n4535 was merged into signal top_test6_c
-Signal n1688 was merged into signal spi_0/spi_slave_0/miso_N_537
-Signal spi_0/spi_slave_0/n4529 was merged into signal spi_rst
+Signal sclk_N_384 was merged into signal top_test0_c
+Signal n659 was merged into signal spi_0/spi_slave_0/miso_N_383
+Signal spi_0/spi_slave_0/n1942 was merged into signal spi_rst
+Signal n1946 was merged into signal pll_lock
 Signal VCC_net undriven or does not drive anything - clipped.
-Signal add_2449_23/S1 undriven or does not drive anything - clipped.
-Signal add_2449_23/S0 undriven or does not drive anything - clipped.
-Signal add_2449_25/S1 undriven or does not drive anything - clipped.
-Signal add_2449_25/S0 undriven or does not drive anything - clipped.
-Signal add_2449_27/S0 undriven or does not drive anything - clipped.
-Signal add_2449_27/CO undriven or does not drive anything - clipped.
-Signal add_2448_2/S1 undriven or does not drive anything - clipped.
-Signal add_2448_2/S0 undriven or does not drive anything - clipped.
-Signal add_2448_2/CI undriven or does not drive anything - clipped.
-Signal clockDivider_0/counter_577_add_4_9/S1 undriven or does not drive anything
-     - clipped.
-Signal clockDivider_0/counter_577_add_4_9/CO undriven or does not drive anything
-     - clipped.
-Signal clockDivider_0/lockCounter_578_add_4_9/S1 undriven or does not drive
+Signal clockDivider_0/lockCounter_244_add_4_9/S1 undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/lockCounter_578_add_4_9/CO undriven or does not drive
+Signal clockDivider_0/lockCounter_244_add_4_9/CO undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/lockCounter_578_add_4_1/S0 undriven or does not drive
-     anything - clipped.
-Signal clockDivider_0/lockCounter_578_add_4_1/CI undriven or does not drive
-     anything - clipped.
-
-                                    Page 4
-
-
-
-
-Design:  topModule                                     Date:  05/09/19  19:09:46
-
-Removed logic (cont)
---------------------
-Signal clockDivider_0/counter_577_add_4_1/S0 undriven or does not drive anything
+Signal clockDivider_0/counter_243_add_4_9/S1 undriven or does not drive anything
      - clipped.
-Signal clockDivider_0/counter_577_add_4_1/CI undriven or does not drive anything
+Signal clockDivider_0/counter_243_add_4_9/CO undriven or does not drive anything
      - clipped.
-Signal add_2448_4/S1 undriven or does not drive anything - clipped.
-Signal add_2448_4/S0 undriven or does not drive anything - clipped.
-Signal add_2448_6/S1 undriven or does not drive anything - clipped.
-Signal add_2448_6/S0 undriven or does not drive anything - clipped.
-Signal add_2448_8/S1 undriven or does not drive anything - clipped.
-Signal add_2448_8/S0 undriven or does not drive anything - clipped.
-Signal add_2448_10/S1 undriven or does not drive anything - clipped.
-Signal add_2448_10/S0 undriven or does not drive anything - clipped.
-Signal add_2448_12/S1 undriven or does not drive anything - clipped.
-Signal add_2448_12/S0 undriven or does not drive anything - clipped.
-Signal _add_1_918_add_4_1/S0 undriven or does not drive anything - clipped.
-Signal _add_1_918_add_4_1/CI undriven or does not drive anything - clipped.
-Signal add_2448_14/S1 undriven or does not drive anything - clipped.
-Signal add_2448_14/S0 undriven or does not drive anything - clipped.
-Signal counter_0/waitcount_580_add_4_1/S0 undriven or does not drive anything -
-     clipped.
-Signal counter_0/waitcount_580_add_4_1/CI undriven or does not drive anything -
-     clipped.
-Signal counter_0/waitcount_580_add_4_27/S1 undriven or does not drive anything -
-     clipped.
-Signal counter_0/waitcount_580_add_4_27/CO undriven or does not drive anything -
-     clipped.
-Signal add_2448_16/S1 undriven or does not drive anything - clipped.
-Signal add_2448_16/S0 undriven or does not drive anything - clipped.
-Signal add_2448_18/S1 undriven or does not drive anything - clipped.
-Signal add_2448_18/S0 undriven or does not drive anything - clipped.
-Signal add_2448_20/S1 undriven or does not drive anything - clipped.
-Signal add_2448_20/S0 undriven or does not drive anything - clipped.
-Signal add_2448_cout/S1 undriven or does not drive anything - clipped.
-Signal add_2448_cout/CO undriven or does not drive anything - clipped.
-Signal add_2449_1/S1 undriven or does not drive anything - clipped.
-Signal add_2449_1/S0 undriven or does not drive anything - clipped.
-Signal add_2449_1/CI undriven or does not drive anything - clipped.
-Signal add_2449_3/S1 undriven or does not drive anything - clipped.
-Signal add_2449_3/S0 undriven or does not drive anything - clipped.
-Signal add_2449_5/S1 undriven or does not drive anything - clipped.
-Signal add_2449_5/S0 undriven or does not drive anything - clipped.
-Signal add_2449_7/S1 undriven or does not drive anything - clipped.
-Signal add_2449_7/S0 undriven or does not drive anything - clipped.
-Signal add_2449_9/S1 undriven or does not drive anything - clipped.
-Signal add_2449_9/S0 undriven or does not drive anything - clipped.
-Signal add_2449_11/S1 undriven or does not drive anything - clipped.
-Signal add_2449_11/S0 undriven or does not drive anything - clipped.
-Signal _add_1_918_add_4_13/S1 undriven or does not drive anything - clipped.
-Signal _add_1_918_add_4_13/CO undriven or does not drive anything - clipped.
-Signal add_2449_13/S1 undriven or does not drive anything - clipped.
-Signal add_2449_13/S0 undriven or does not drive anything - clipped.
-Signal add_2449_15/S1 undriven or does not drive anything - clipped.
-Signal add_2449_15/S0 undriven or does not drive anything - clipped.
-Signal add_2449_17/S1 undriven or does not drive anything - clipped.
-Signal add_2449_17/S0 undriven or does not drive anything - clipped.
-Signal add_2449_19/S1 undriven or does not drive anything - clipped.
-
-                                    Page 5
-
-
-
-
-Design:  topModule                                     Date:  05/09/19  19:09:46
-
-Removed logic (cont)
---------------------
-Signal add_2449_19/S0 undriven or does not drive anything - clipped.
-Signal add_2449_21/S1 undriven or does not drive anything - clipped.
-Signal add_2449_21/S0 undriven or does not drive anything - clipped.
-Block i3679 was optimized away.
-Block LED_I_0/i3680 was optimized away.
-Block clockDivider_0/i3681 was optimized away.
-Block clockDivider_0/pll_lock_I_0_1_lut was optimized away.
-Block counter_0/top_test6_I_0_1_lut_rep_70 was optimized away.
-Block spi_0/spi_slave_0/i971_1_lut was optimized away.
-Block spi_0/spi_slave_0/reset_n_I_0_1_lut_rep_64 was optimized away.
+Signal clockDivider_0/lockCounter_244_add_4_1/S0 undriven or does not drive
+     anything - clipped.
+Signal clockDivider_0/lockCounter_244_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal clockDivider_0/counter_243_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/counter_243_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Block i1588 was optimized away.
+Block spi_0/spi_slave_0/i319_1_lut was optimized away.
+Block spi_0/spi_slave_0/reset_n_I_0_1_lut_rep_56 was optimized away.
+Block pll_lock_I_0_1_lut_rep_60 was optimized away.
 Block i2 was optimized away.
 
 Memory Usage
@@ -356,16 +254,26 @@ PLL/DLL Summary
 ---------------
 
 PLL 1:                                     Pin/Node Value
-  PLL Instance Name:                                LED_I_0/PLLInst_0
+  PLL Instance Name:                                pll_lock_I_0_112/PLLInst_0
   PLL Type:                                         EHXPLLL
   Input Clock:                             NODE     GND_net
   Input Clock2:                            PIN      top_clk_c
+
+                                    Page 4
+
+
+
+
+Design:  topModule                                     Date:  05/15/19  14:07:07
+
+PLL/DLL Summary (cont)
+----------------------
   Input Clock select:                               NONE
-  Output Clock(P):                         PIN,NODE serial_clk_c
-  Feedback Signal:                         NODE     serial_clk_c
-  Reset Signal:                            NODE     top_rst_n_N_63
+  Output Clock(P):                         NODE     pll_clko
+  Feedback Signal:                         NODE     pll_clko
+  Reset Signal:                            NODE     top_rst_n_N_66
   Standby Signal:                          NODE     GND_net
-  PLL LOCK signal:                         PIN,NODE LED_c
+  PLL LOCK signal:                         NODE     pll_lock
   Input Clock Frequency (MHz):                      32.0000
   Output Clock(P) Frequency (MHz):                  64.0000
   CLKOP Post Divider A Input:                       DIVA
@@ -390,16 +298,6 @@ PLL 1:                                     Pin/Node Value
   CLKOS Desired Phase Shift(degree):                0
   CLKOS Trim Option Rising/Falling:                 FALLING
   CLKOS Trim Option Delay:                          0
-
-                                    Page 6
-
-
-
-
-Design:  topModule                                     Date:  05/09/19  19:09:46
-
-PLL/DLL Summary (cont)
-----------------------
   CLKOS2 Desired Phase Shift(degree):               0
   CLKOS2 Trim Option Rising/Falling:                NONE
   CLKOS2 Trim Option Delay:                         NONE
@@ -410,9 +308,9 @@ PLL/DLL Summary (cont)
 ASIC Components
 ---------------
 
-Instance Name: LED_I_0/PLLInst_0
+Instance Name: pll_lock_I_0_112/PLLInst_0
          Type: EHXPLLL
-Instance Name: LED_I_0/PLLRefcs_0
+Instance Name: pll_lock_I_0_112/PLLRefcs_0
          Type: PLLREFCS
 
 GSR Usage
@@ -421,11 +319,21 @@ GSR Usage
 GSR Component:
    The Global Set Reset (GSR) resource has been used to implement a global reset
         of the design. The reset signal used for GSR control is
-        'bit_cnt_16__N_437'.
+        'bit_cnt_15__N_285'.
         
 
      GSR Property:
    The design components with GSR property set to ENABLED will respond to global
+
+                                    Page 5
+
+
+
+
+Design:  topModule                                     Date:  05/15/19  14:07:07
+
+GSR Usage (cont)
+----------------
         set reset while the components with GSR property set to DISABLED will
         not.
         
@@ -434,195 +342,90 @@ GSR Component:
 -------------------------------------
 
      These components have the GSR property set to DISABLED. The components will
-     not respond to the reset signal 'bit_cnt_16__N_437' via the GSR component.
+     not respond to the reset signal 'bit_cnt_15__N_285' via the GSR component.
 
      Type and number of components of the type: 
-   Register = 146 
+   Register = 61 
 
      Type and instance name of component: 
-   Register : spi_mosi_152
-   Register : top_spi_miso_153
-   Register : spi_sclk_150
-   Register : spi_current_state__i1
-   Register : spi_cs_151
-   Register : spi_0/spi_slave_0/tx_buf_i0_i5_1276_1277_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i4_1272_1273_reset
-   Register : spi_0/spi_slave_0/rx_buf_0__242
-   Register : spi_0/spi_slave_0/rx_buf_1__241
-   Register : spi_0/spi_slave_0/rx_buf_2__240
-   Register : spi_0/spi_slave_0/rx_buf_3__239
-   Register : spi_0/spi_slave_0/rx_buf_4__238
-   Register : spi_0/spi_slave_0/rx_buf_5__237
-   Register : spi_0/spi_slave_0/tx_buf_i0_i4_1272_1273_set
-   Register : spi_0/spi_slave_0/rx_buf_6__236
-   Register : spi_0/spi_slave_0/roe_234
+   Register : spi_mosi_98
+   Register : top_spi_miso_99
+   Register : spi_sclk_96
+   Register : clockDivider_0/clkOut_28
+   Register : clockDivider_0/counter_243__i7
+   Register : clockDivider_0/counter_243__i6
+   Register : clockDivider_0/counter_243__i5
+   Register : clockDivider_0/counter_243__i4
+   Register : clockDivider_0/counter_243__i3
+   Register : clockDivider_0/counter_243__i2
+   Register : clockDivider_0/counter_243__i1
+   Register : clockDivider_0/lockCounter_244__i7
+   Register : clockDivider_0/lockCounter_244__i6
+   Register : clockDivider_0/lockCounter_244__i5
+   Register : clockDivider_0/lockCounter_244__i4
+   Register : clockDivider_0/lockCounter_244__i3
+   Register : clockDivider_0/lockCounter_244__i2
+   Register : clockDivider_0/lockCounter_244__i1
+   Register : clockDivider_0/lockCounter_244__i0
+   Register : clockDivider_0/counter_243__i0
+   Register : spi_cs_97
+   Register : spi_0/spi_slave_0/tx_buf_i0_i7_409_410_reset
+   Register : spi_0/spi_slave_0/rd_add_230
+   Register : spi_0/spi_slave_0/rx_buf_7__234
+   Register : spi_0/spi_slave_0/rx_buf_6__235
+   Register : spi_0/spi_slave_0/rx_buf_5__236
+   Register : spi_0/spi_slave_0/tx_buf_i0_i7_409_410_set
+   Register : spi_0/spi_slave_0/rx_buf_4__237
+   Register : spi_0/spi_slave_0/tx_buf_i0_i0_401_402_set
+   Register : spi_0/spi_slave_0/rx_buf_3__238
+   Register : spi_0/spi_slave_0/rx_buf_2__239
+   Register : spi_0/spi_slave_0/rx_buf_1__240
+   Register : spi_0/spi_slave_0/rx_buf_0__241
+   Register : spi_0/spi_slave_0/trdy_231
+   Register : spi_0/spi_slave_0/rrdy_232
+   Register : spi_0/spi_slave_0/wr_add_229
+   Register : spi_0/spi_slave_0/tx_buf_i0_i0_401_402_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i6_413_414_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i6_413_414_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i5_417_418_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i5_417_418_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i4_421_422_set
 
-                                    Page 7
-
-
-
-
-Design:  topModule                                     Date:  05/09/19  19:09:46
-
-GSR Usage (cont)
-----------------
-   Register : spi_0/spi_slave_0/rd_add_231
-   Register : spi_0/spi_slave_0/trdy_232
-   Register : spi_0/spi_slave_0/rrdy_233
-   Register : spi_0/spi_slave_0/rx_buf_7__235
-   Register : spi_0/spi_slave_0/tx_buf_i0_i3_1268_1269_reset
-   Register : spi_0/spi_slave_0/wr_add_230
-   Register : spi_0/spi_slave_0/tx_buf_i0_i3_1268_1269_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i0_1256_1257_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i7_1284_1285_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i7_1284_1285_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i6_1280_1281_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i6_1280_1281_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i2_1264_1265_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i1_1260_1261_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i5_1276_1277_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i0_1256_1257_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i1_1260_1261_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i2_1264_1265_reset
-   Register : spi_current_state__i3
-   Register : spi_current_state__i2
-   Register : counter_0/countDone_13
-   Register : counter_0/waitcount_580__i0
-   Register : counter_0/waitcount_580__i1
-   Register : counter_0/waitcount_580__i2
-   Register : counter_0/waitcount_580__i3
-   Register : counter_0/waitcount_580__i4
-   Register : counter_0/waitcount_580__i5
-   Register : counter_0/waitcount_580__i6
-   Register : counter_0/waitcount_580__i7
-   Register : counter_0/waitcount_580__i8
-   Register : counter_0/waitcount_580__i9
-   Register : counter_0/waitcount_580__i10
-   Register : counter_0/waitcount_580__i11
-   Register : counter_0/waitcount_580__i12
-   Register : counter_0/waitcount_580__i13
-   Register : counter_0/waitcount_580__i14
-   Register : counter_0/waitcount_580__i15
-   Register : counter_0/waitcount_580__i16
-   Register : counter_0/waitcount_580__i17
-   Register : counter_0/waitcount_580__i18
-   Register : counter_0/waitcount_580__i19
-   Register : counter_0/waitcount_580__i20
-   Register : counter_0/waitcount_580__i21
-   Register : counter_0/waitcount_580__i22
-   Register : counter_0/waitcount_580__i23
-   Register : counter_0/waitcount_580__i24
-   Register : counter_0/waitcount_580__i25
-   Register : IQSerializer_0/current_state_FSM_i0
-   Register : IQSerializer_0/ICounter_585__i1
-   Register : IQSerializer_0/QCounter_582__i1
-   Register : IQSerializer_0/current_state_FSM_i4
-   Register : IQSerializer_0/current_state_FSM_i3
-   Register : IQSerializer_0/current_state_FSM_i2
-   Register : IQSerializer_0/current_state_FSM_i1
-   Register : IQSerializer_0/QCounter_582__i2
-   Register : IQSerializer_0/QCounter_582__i3
-
-                                    Page 8
+                                    Page 6
 
 
 
 
-Design:  topModule                                     Date:  05/09/19  19:09:46
+Design:  topModule                                     Date:  05/15/19  14:07:07
 
 GSR Usage (cont)
 ----------------
-   Register : IQSerializer_0/ICounter_585__i2
-   Register : IQSerializer_0/ICounter_585__i3
-   Register : IQSerializer_0/DEDFF_0/pose_edge_14
-   Register : IQSerializer_0/DEDFF_0/neg_edge_15
-   Register : fskModule_0/symDone_57
-   Register : fskModule_0/cos_phase_FSM_i1
-   Register : fskModule_0/lastSym_53
-   Register : fskModule_0/FSK_I__i0
-   Register : fskModule_0/sampleCount_i0
-   Register : fskModule_0/firstFlag_54
-   Register : fskModule_0/start_55
-   Register : fskModule_0/FSK_Q__i0
-   Register : fskModule_0/sin_phase_583__i0
-   Register : fskModule_0/sampleCount_i11
-   Register : fskModule_0/sampleCount_i10
-   Register : fskModule_0/sampleCount_i9
-   Register : fskModule_0/sampleCount_i8
-   Register : fskModule_0/sampleCount_i7
-   Register : fskModule_0/sampleCount_i6
-   Register : fskModule_0/sampleCount_i5
-   Register : fskModule_0/sampleCount_i4
-   Register : fskModule_0/sampleCount_i3
-   Register : fskModule_0/sampleCount_i2
-   Register : fskModule_0/sampleCount_i1
-   Register : fskModule_0/FSK_I__i12
-   Register : fskModule_0/FSK_I__i11
-   Register : fskModule_0/FSK_I__i7
-   Register : fskModule_0/FSK_I__i4
-   Register : fskModule_0/FSK_I__i2
-   Register : fskModule_0/cos_phase_FSM_i8
-   Register : fskModule_0/cos_phase_FSM_i7
-   Register : fskModule_0/cos_phase_FSM_i6
-   Register : fskModule_0/cos_phase_FSM_i5
-   Register : fskModule_0/cos_phase_FSM_i4
-   Register : fskModule_0/cos_phase_FSM_i3
-   Register : fskModule_0/cos_phase_FSM_i2
-   Register : fskModule_0/FSK_Q__i2
-   Register : fskModule_0/FSK_Q__i4
-   Register : fskModule_0/FSK_Q__i6
-   Register : fskModule_0/FSK_Q__i7
-   Register : fskModule_0/FSK_Q__i12
-   Register : fskModule_0/sin_phase_583__i1
-   Register : fskModule_0/sin_phase_583__i2
-   Register : packetGen_0/symCounter__i0
-   Register : packetGen_0/symVal_43
-   Register : packetGen_0/current_state_FSM_i1
-   Register : packetGen_0/current_state_FSM_i4
-   Register : packetGen_0/current_state_FSM_i3
-   Register : packetGen_0/current_state_FSM_i2
-   Register : packetGen_0/symCounter__i7
-   Register : packetGen_0/symCounter__i6
-   Register : packetGen_0/symCounter__i5
-   Register : packetGen_0/symCounter__i4
-   Register : packetGen_0/symCounter__i3
-   Register : packetGen_0/symCounter__i2
-   Register : packetGen_0/symCounter__i1
-
-                                    Page 9
-
-
-
-
-Design:  topModule                                     Date:  05/09/19  19:09:46
-
-GSR Usage (cont)
-----------------
-   Register : clockDivider_0/clkOut_23
-   Register : clockDivider_0/clkLock_25
-   Register : clockDivider_0/lockCounter_578__i0
-   Register : clockDivider_0/counter_577__i0
-   Register : clockDivider_0/lockCounter_578__i1
-   Register : clockDivider_0/lockCounter_578__i2
-   Register : clockDivider_0/lockCounter_578__i3
-   Register : clockDivider_0/lockCounter_578__i4
-   Register : clockDivider_0/lockCounter_578__i5
-   Register : clockDivider_0/lockCounter_578__i6
-   Register : clockDivider_0/lockCounter_578__i7
-   Register : clockDivider_0/counter_577__i1
-   Register : clockDivider_0/counter_577__i2
-   Register : clockDivider_0/counter_577__i3
-   Register : clockDivider_0/counter_577__i4
-   Register : clockDivider_0/counter_577__i5
-   Register : clockDivider_0/counter_577__i6
-   Register : clockDivider_0/counter_577__i7
+   Register : spi_0/spi_slave_0/tx_buf_i0_i4_421_422_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i3_425_426_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i3_425_426_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i2_429_430_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i2_429_430_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i1_433_434_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i1_433_434_reset
+   Register : spi_0/spi_slave_0/roe_233
+   Register : spi_ctrl_0/spi_current_state_FSM_i4
+   Register : spi_ctrl_0/spi_current_state_FSM_i3
+   Register : spi_ctrl_0/spi_current_state_FSM_i11
+   Register : spi_ctrl_0/spi_current_state_FSM_i10
+   Register : spi_ctrl_0/spi_current_state_FSM_i9
+   Register : spi_ctrl_0/spi_current_state_FSM_i8
+   Register : spi_ctrl_0/spi_current_state_FSM_i7
+   Register : spi_ctrl_0/spi_current_state_FSM_i6
+   Register : spi_ctrl_0/spi_current_state_FSM_i5
+   Register : spi_ctrl_0/spi_current_state_FSM_i2
+   Register : spi_ctrl_0/spi_current_state_FSM_i1
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 110 MB
+   Peak Memory Usage: 109 MB
         
 
 
@@ -654,8 +457,7 @@ Run Time and Memory Usage
 
 
 
-
-                                   Page 10
+                                    Page 7
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

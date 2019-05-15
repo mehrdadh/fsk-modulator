@@ -20,7 +20,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/work/tinysdr_fpga_ble_tx/impl1/ble_tx_impl1.bit</File>
-			<FileTime>05/09/19 18:42:00</FileTime>
+			<FileTime>05/12/19 17:14:58</FileTime>
 			<JedecChecksum>N/A</JedecChecksum>
 			<Operation>Erase Only</Operation>
 			<Option>

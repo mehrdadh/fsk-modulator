@@ -1,94 +1,31 @@
 [ START MERGED ]
-n4535 top_test6_c
-n1688 spi_0/spi_slave_0/miso_N_537
-sclk_N_444 top_test0_c
-spi_0/spi_slave_0/n4529 spi_rst
-clk_N_369 serial_clk_c
-clockDivider_0/pll_lock_N_104 LED_c
-clk_N_224 clockDivider_clk_4M
+n1946 pll_lock
+n659 spi_0/spi_slave_0/miso_N_383
+sclk_N_384 top_test0_c
+spi_0/spi_slave_0/n1942 spi_rst
 [ END MERGED ]
 [ START CLIPPED ]
 VCC_net
-add_2449_23/S1
-add_2449_23/S0
-add_2449_25/S1
-add_2449_25/S0
-add_2449_27/S0
-add_2449_27/CO
-add_2448_2/S1
-add_2448_2/S0
-add_2448_2/CI
-clockDivider_0/counter_577_add_4_9/S1
-clockDivider_0/counter_577_add_4_9/CO
-clockDivider_0/lockCounter_578_add_4_9/S1
-clockDivider_0/lockCounter_578_add_4_9/CO
-clockDivider_0/lockCounter_578_add_4_1/S0
-clockDivider_0/lockCounter_578_add_4_1/CI
-clockDivider_0/counter_577_add_4_1/S0
-clockDivider_0/counter_577_add_4_1/CI
-add_2448_4/S1
-add_2448_4/S0
-add_2448_6/S1
-add_2448_6/S0
-add_2448_8/S1
-add_2448_8/S0
-add_2448_10/S1
-add_2448_10/S0
-add_2448_12/S1
-add_2448_12/S0
-_add_1_918_add_4_1/S0
-_add_1_918_add_4_1/CI
-add_2448_14/S1
-add_2448_14/S0
-counter_0/waitcount_580_add_4_1/S0
-counter_0/waitcount_580_add_4_1/CI
-counter_0/waitcount_580_add_4_27/S1
-counter_0/waitcount_580_add_4_27/CO
-add_2448_16/S1
-add_2448_16/S0
-add_2448_18/S1
-add_2448_18/S0
-add_2448_20/S1
-add_2448_20/S0
-add_2448_cout/S1
-add_2448_cout/CO
-add_2449_1/S1
-add_2449_1/S0
-add_2449_1/CI
-add_2449_3/S1
-add_2449_3/S0
-add_2449_5/S1
-add_2449_5/S0
-add_2449_7/S1
-add_2449_7/S0
-add_2449_9/S1
-add_2449_9/S0
-add_2449_11/S1
-add_2449_11/S0
-_add_1_918_add_4_13/S1
-_add_1_918_add_4_13/CO
-add_2449_13/S1
-add_2449_13/S0
-add_2449_15/S1
-add_2449_15/S0
-add_2449_17/S1
-add_2449_17/S0
-add_2449_19/S1
-add_2449_19/S0
-add_2449_21/S1
-add_2449_21/S0
+clockDivider_0/lockCounter_244_add_4_9/S1
+clockDivider_0/lockCounter_244_add_4_9/CO
+clockDivider_0/counter_243_add_4_9/S1
+clockDivider_0/counter_243_add_4_9/CO
+clockDivider_0/lockCounter_244_add_4_1/S0
+clockDivider_0/lockCounter_244_add_4_1/CI
+clockDivider_0/counter_243_add_4_1/S0
+clockDivider_0/counter_243_add_4_1/CI
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.10.3.144 -- WARNING: Map write only section -- Thu May 09 19:09:47 2019
+# map:  version Diamond (64-bit) 3.10.3.144 -- WARNING: Map write only section -- Wed May 15 14:07:07 2019
 
 SYSCONFIG SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=ENABLE SLAVE_PARALLEL_PORT=DISABLE BACKGROUND_RECONFIG=OFF DONE_EX=OFF DONE_OD=ON DONE_PULL=ON MCCLK_FREQ=2.4 TRANSFR=OFF CONFIG_IOVOLTAGE=1.8 CONFIG_SECURE=OFF WAKE_UP=21 COMPRESS_CONFIG=OFF CONFIG_MODE=JTAG INBUF=OFF ;
-LOCATE COMP "top_test1" SITE "F15" ;
-LOCATE COMP "top_test0" SITE "G16" ;
-LOCATE COMP "LED" SITE "B1" ;
-LOCATE COMP "top_test2" SITE "A12" ;
 LOCATE COMP "osc_en" SITE "T2" ;
 LOCATE COMP "top_spi_miso" SITE "T4" ;
+LOCATE COMP "LED" SITE "B1" ;
+LOCATE COMP "top_test0" SITE "G16" ;
+LOCATE COMP "top_test1" SITE "F15" ;
+LOCATE COMP "top_test2" SITE "A12" ;
 LOCATE COMP "top_test3" SITE "A11" ;
 LOCATE COMP "top_test4" SITE "A10" ;
 LOCATE COMP "top_test5" SITE "A9" ;
@@ -98,7 +35,7 @@ LOCATE COMP "top_rst_n" SITE "T6" ;
 LOCATE COMP "top_spi_mosi" SITE "R4" ;
 LOCATE COMP "top_spi_sclk" SITE "T3" ;
 LOCATE COMP "top_spi_cs" SITE "R3" ;
-FREQUENCY NET "serial_clk_c" 64.000000 MHz ;
-FREQUENCY NET "LED_I_0/CLKIt" 32.000000 MHz ;
+FREQUENCY NET "pll_clko" 64.000000 MHz ;
+FREQUENCY NET "pll_lock_I_0_112/CLKIt" 32.000000 MHz ;
 SCHEMATIC END ;
 [ END DESIGN PREFS ]

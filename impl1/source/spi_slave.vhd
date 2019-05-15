@@ -45,12 +45,15 @@ ENTITY spi_slave IS
     st_load_roe  : IN     STD_LOGIC;  --asynchronous roe load input
     tx_load_en   : IN     STD_LOGIC;  --asynchronous transmit buffer load enable
     tx_load_data : IN     STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --asynchronous tx data to load
-    trdy         : BUFFER STD_LOGIC := '0';  --transmit ready bit
-    rrdy         : BUFFER STD_LOGIC := '0';  --receive ready bit
-    roe          : BUFFER STD_LOGIC := '0';  --receive overrun error bit
+    trdy         : BUFFER STD_LOGIC;  --transmit ready bit
+    rrdy         : BUFFER STD_LOGIC;  --receive ready bit
+    roe          : BUFFER STD_LOGIC;  --receive overrun error bit
     rx_data      : OUT    STD_LOGIC_VECTOR(d_width-1 DOWNTO 0) := (OTHERS => '0');  --receive register output to logic
-    busy         : OUT    STD_LOGIC := '0';  --busy signal to logic ('1' during transaction)
-    miso         : OUT    STD_LOGIC := 'Z'); --master in, slave out
+    busy         : OUT    STD_LOGIC;  --busy signal to logic ('1' during transaction)
+    miso         : OUT    STD_LOGIC;  --master in, slave out
+	debug0		 : OUT	  STD_LOGIC;
+	debug1		 : OUT	  STD_LOGIC
+	);
 END spi_slave;
 
 ARCHITECTURE logic OF spi_slave IS
@@ -62,6 +65,11 @@ ARCHITECTURE logic OF spi_slave IS
   SIGNAL rx_buf  : STD_LOGIC_VECTOR(d_width-1 DOWNTO 0) := (OTHERS => '0');  --receiver buffer
   SIGNAL tx_buf  : STD_LOGIC_VECTOR(d_width-1 DOWNTO 0) := (OTHERS => '0');  --transmit buffer
 BEGIN
+
+  debug0	<= bit_cnt(d_width+8);
+  debug1	<= wr_add;
+
+
   busy <= NOT ss_n;  --high during transactions
   
   --adjust clock so writes are on rising edge and reads on falling edge
@@ -71,7 +79,7 @@ BEGIN
            NOT sclk WHEN OTHERS;
 
   --keep track of miso/mosi bit counts for data alignmnet
-  PROCESS(ss_n, clk)
+  PROCESS(ss_n, clk, reset_n, bit_cnt)
   BEGIN
     IF(ss_n = '1' OR reset_n = '0') THEN                         --this slave is not selected or being reset
      bit_cnt <= (conv_integer(NOT cpha) => '1', OTHERS => '0'); --reset miso/mosi bit count
@@ -82,7 +90,7 @@ BEGIN
     END IF;
   END PROCESS;
 
-  PROCESS(ss_n, clk, st_load_en, tx_load_en, rx_req)
+  PROCESS(ss_n, clk, st_load_en, tx_load_en, rx_req, reset_n, st_load_trdy, st_load_rrdy, st_load_roe, wr_add, rx_buf, tx_load_data, bit_cnt, rd_add)
   BEGIN
   
     --write address register ('0' for receive, '1' for status)
@@ -118,6 +126,8 @@ BEGIN
         rrdy <= mosi;  --new value written over spi bus
       ELSIF(wr_add = '0' AND bit_cnt(d_width+8) = '1') THEN
         rrdy <= '1';   --set when new data received
+	  ELSE
+		rrdy <= '0';
       END IF;
     END IF;
     

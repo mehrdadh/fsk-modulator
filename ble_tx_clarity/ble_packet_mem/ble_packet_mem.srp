@@ -1,0 +1,29 @@
+SCUBA, Version Diamond (64-bit) 3.10.3.144
+Thu May 09 19:32:30 2019
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : C:\lscc\diamond\3.10_x64\ispfpga\bin\nt64\scuba.exe -w -n ble_packet_mem -lang verilog -synth lse -bus_exp 7 -bb -arch sa5p00 -type ramdq -device LFE5U-25F -addr_width 8 -data_width 8 -num_words 256 -outdata REGISTERED -cascade 11 -resetmode SYNC -sync_reset -mem_init0 -writemode NORMAL -fdc C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_packet_mem/ble_packet_mem.fdc 
+    Circuit name     : ble_packet_mem
+    Module type      : RAM_DQ
+    Module Version   : 7.5
+    Ports            : 
+	Inputs       : Clock, ClockEn, Reset, WE, Address[7:0], Data[7:0]
+	Outputs      : Q[7:0]
+    I/O buffer       : not inserted
+    Memory file      : INIT_ALL_0s
+    EDIF output      : ble_packet_mem.edn
+    Verilog output   : ble_packet_mem.v
+    Verilog template : ble_packet_mem_tmpl.v
+    Verilog testbench: tb_ble_packet_mem_tmpl.v
+    Verilog purpose  : for synthesis and simulation
+    Bus notation     : big endian
+    Report output    : ble_packet_mem.srp
+    Element Usage    :
+         DP16KD : 1
+    Estimated Resource Usage:
+            EBR : 1

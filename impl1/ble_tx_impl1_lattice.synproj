@@ -33,23 +33,22 @@
 -lpf 1
 -p "C:/work/tinysdr_fpga_ble_tx"
 -ver "C:/work/tinysdr_fpga_ble_tx/impl1/source/topModule.v"
+"C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_packet_mem/ble_packet_mem.v"
 "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/pll_64M/pll_64M.v"
 "C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/FSKModulator.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/radioDefines.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/bleDefines.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/packetGenerator.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/sinModule.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/cosModule.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/IQSerializer.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/clockDivider.v"
-"C:/work/tinysdr_fpga_ble_tx/impl1/source/DEDFF.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/packetCounter.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/ble_packet.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_h.v"
 "C:/work/tinysdr_fpga_ble_tx/impl1/test.v"
 -lib "work" -vhd "C:/work/tinysdr_fpga_ble_tx/impl1/source/spi.vhd"
 "C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_slave.vhd"
+-ver "C:/work/tinysdr_fpga_ble_tx/impl1/source/ble_mem.v"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_ctrl.v"
+-lib "work" -vhd "C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_slave_out.vhd"
+"C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_out.vhd"
 -top topModule
 
 

@@ -28,6 +28,54 @@
             <spirit:views/>
             <spirit:ports>
                 <spirit:port>
+                    <spirit:name>ble_packet_mem_Clock</spirit:name>
+                    <spirit:displayName>ble_packet_mem_Clock</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.Clock</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_ClockEn</spirit:name>
+                    <spirit:displayName>ble_packet_mem_ClockEn</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.ClockEn</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_Reset</spirit:name>
+                    <spirit:displayName>ble_packet_mem_Reset</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.Reset</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_WE</spirit:name>
+                    <spirit:displayName>ble_packet_mem_WE</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.WE</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
                     <spirit:name>pll_64M_CLKI</spirit:name>
                     <spirit:displayName>pll_64M_CLKI</spirit:displayName>
                     <spirit:wire>
@@ -99,20 +147,68 @@
                         </lattice:attributes>
                     </spirit:vendorExtensions>
                 </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_Address</spirit:name>
+                    <spirit:displayName>ble_packet_mem_Address</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                        <spirit:vector>
+                            <spirit:left>7</spirit:left>
+                            <spirit:right>0</spirit:right>
+                        </spirit:vector>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.Address</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_Data</spirit:name>
+                    <spirit:displayName>ble_packet_mem_Data</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>in</spirit:direction>
+                        <spirit:vector>
+                            <spirit:left>7</spirit:left>
+                            <spirit:right>0</spirit:right>
+                        </spirit:vector>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.Data</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
+                <spirit:port>
+                    <spirit:name>ble_packet_mem_Q</spirit:name>
+                    <spirit:displayName>ble_packet_mem_Q</spirit:displayName>
+                    <spirit:wire>
+                        <spirit:direction>out</spirit:direction>
+                        <spirit:vector>
+                            <spirit:left>7</spirit:left>
+                            <spirit:right>0</spirit:right>
+                        </spirit:vector>
+                    </spirit:wire>
+                    <spirit:vendorExtensions>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="exportFrom">ble_packet_mem.Q</lattice:attribute>
+                        </lattice:attributes>
+                    </spirit:vendorExtensions>
+                </spirit:port>
             </spirit:ports>
         </spirit:model>
         <spirit:vendorExtensions>
             <lattice:device>LFE5U-25F-6BG256I</lattice:device>
             <lattice:synthesis>lse</lattice:synthesis>
             <lattice:date>2019-04-14.20:16:15</lattice:date>
-            <lattice:modified>2019-04-23.14:35:43</lattice:modified>
+            <lattice:modified>2019-05-09.19:33:14</lattice:modified>
             <lattice:diamond>3.10.3.144</lattice:diamond>
             <lattice:language>Verilog</lattice:language>
             <lattice:attributes>
-                <lattice:attribute lattice:name="AddComponent">false</lattice:attribute>
+                <lattice:attribute lattice:name="AddComponent">true</lattice:attribute>
                 <lattice:attribute lattice:name="Change4to5">false</lattice:attribute>
                 <lattice:attribute lattice:name="ChangeConfig">false</lattice:attribute>
-                <lattice:attribute lattice:name="ChangeConnect">false</lattice:attribute>
+                <lattice:attribute lattice:name="ChangeConnect">true</lattice:attribute>
                 <lattice:attribute lattice:name="ChangeDevice">false</lattice:attribute>
                 <lattice:attribute lattice:name="ChangeLocate">false</lattice:attribute>
                 <lattice:attribute lattice:name="ChangePack">false</lattice:attribute>
@@ -132,6 +228,311 @@
         <spirit:name>ble_tx_clarity</spirit:name>
         <spirit:version>1.0</spirit:version>
         <spirit:componentInstances>
+            <spirit:componentInstance>
+                <spirit:instanceName>ble_packet_mem</spirit:instanceName>
+                <spirit:componentRef>
+                    <spirit:vendor>Lattice Semiconductor Corporation</spirit:vendor>
+                    <spirit:library>LEGACY</spirit:library>
+                    <spirit:name>RAM_DQ</spirit:name>
+                    <spirit:version>7.5</spirit:version>
+                    <spirit:fileSets>
+                        <spirit:fileset>
+                            <spirit:name>Diamond_Simulation</spirit:name>
+                            <spirit:group>simulation</spirit:group>
+                            <spirit:file>
+                                <spirit:name>./ble_packet_mem/ble_packet_mem.v</spirit:name>
+                                <spirit:fileType>verilogSource</spirit:fileType>
+                            </spirit:file>
+                        </spirit:fileset>
+                        <spirit:fileset>
+                            <spirit:name>Diamond_Synthesis</spirit:name>
+                            <spirit:group>synthesis</spirit:group>
+                            <spirit:file>
+                                <spirit:name>./ble_packet_mem/ble_packet_mem.v</spirit:name>
+                                <spirit:fileType>verilogSource</spirit:fileType>
+                            </spirit:file>
+                        </spirit:fileset>
+                    </spirit:fileSets>
+                    <spirit:componentGenerators>
+                        <spirit:componentGenerator spirit:hidden="true" spirit:scope="instance">
+                            <spirit:name>Configuration</spirit:name>
+                            <spirit:apiType>none</spirit:apiType>
+                            <spirit:generatorExe>${sbp_path}/${instance}/generate_core.tcl</spirit:generatorExe>
+                            <spirit:group>CONFIG</spirit:group>
+                        </spirit:componentGenerator>
+                        <spirit:componentGenerator spirit:hidden="true" spirit:scope="instance">
+                            <spirit:name>CreateNGD</spirit:name>
+                            <spirit:apiType>none</spirit:apiType>
+                            <spirit:generatorExe>${sbp_path}/${instance}/generate_ngd.tcl</spirit:generatorExe>
+                            <spirit:group>CONFIG</spirit:group>
+                        </spirit:componentGenerator>
+                    </spirit:componentGenerators>
+                    <spirit:model>
+                        <spirit:views/>
+                        <spirit:ports>
+                            <spirit:port>
+                                <spirit:name>Clock</spirit:name>
+                                <spirit:displayName>Clock</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>ClockEn</spirit:name>
+                                <spirit:displayName>ClockEn</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>Reset</spirit:name>
+                                <spirit:displayName>Reset</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>WE</spirit:name>
+                                <spirit:displayName>WE</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>Address</spirit:name>
+                                <spirit:displayName>Address</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                    <spirit:vector>
+                                        <spirit:left>7</spirit:left>
+                                        <spirit:right>0</spirit:right>
+                                    </spirit:vector>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>Data</spirit:name>
+                                <spirit:displayName>Data</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>in</spirit:direction>
+                                    <spirit:vector>
+                                        <spirit:left>7</spirit:left>
+                                        <spirit:right>0</spirit:right>
+                                    </spirit:vector>
+                                </spirit:wire>
+                            </spirit:port>
+                            <spirit:port>
+                                <spirit:name>Q</spirit:name>
+                                <spirit:displayName>Q</spirit:displayName>
+                                <spirit:wire>
+                                    <spirit:direction>out</spirit:direction>
+                                    <spirit:vector>
+                                        <spirit:left>7</spirit:left>
+                                        <spirit:right>0</spirit:right>
+                                    </spirit:vector>
+                                </spirit:wire>
+                            </spirit:port>
+                        </spirit:ports>
+                    </spirit:model>
+                    <spirit:vendorExtensions>
+                        <lattice:synthesis>lse</lattice:synthesis>
+                        <lattice:modified>2019-05-09.19:33:14</lattice:modified>
+                        <lattice:attributes>
+                            <lattice:attribute lattice:name="AddComponent">false</lattice:attribute>
+                            <lattice:attribute lattice:name="BBox">false</lattice:attribute>
+                            <lattice:attribute lattice:name="Change4to5">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangeConfig">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangeConnect">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangeDevice">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangeLocate">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangePack">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangePart">false</lattice:attribute>
+                            <lattice:attribute lattice:name="ChangeSynthesis">false</lattice:attribute>
+                            <lattice:attribute lattice:name="CoreType">LPM</lattice:attribute>
+                            <lattice:attribute lattice:name="DCU_RXREFCLK">PRIMARY</lattice:attribute>
+                            <lattice:attribute lattice:name="DCU_TXREFCLK">PRIMARY</lattice:attribute>
+                            <lattice:attribute lattice:name="Migrate">false</lattice:attribute>
+                            <lattice:attribute lattice:name="RemovedComponent">false</lattice:attribute>
+                        </lattice:attributes>
+                        <lattice:elements/>
+                        <lattice:lpc>
+                            <lattice:lpcsection lattice:name="Device"/>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Family</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">ecp5u</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>OperatingCondition</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">IND</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Package</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">CABGA256</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>PartName</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">LFE5U-25F-6BG256I</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>PartType</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">LFE5U-25F</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>SpeedGrade</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">6</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Status</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">S</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcsection lattice:name="IP"/>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>CoreName</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">RAM_DQ</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>CoreRevision</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">7.5</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>CoreStatus</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Demo</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>CoreType</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">LPM</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Date</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">05/09/2019</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>ModuleName</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">ble_packet_mem</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>ParameterFileVersion</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">1.0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>SourceFormat</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">verilog</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Time</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">19:32:27</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>VendorName</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Lattice Semiconductor Corporation</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcsection lattice:name="Parameters"/>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Address</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">256</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>ByteSize</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">9</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>ClockEn</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Data</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">8</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Destination</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Synplicity</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>EDIF</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">1</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>EnECC</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Expression</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">BusA(0 to 7)</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>IO</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Init</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>MemFile</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant"></lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>MemFormat</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">bin</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Optimization</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Area</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Order</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Big Endian [MSB:LSB]</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>OutputEn</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">1</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Pipeline</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Reset</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Sync</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Reset1</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Sync</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>VHDL</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Verilog</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">1</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>Write</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">Normal</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>enByte</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>init_data</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">0</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcsection lattice:name="FilesGenerated"/>
+                            <lattice:lpcentry>
+                                <lattice:lpckey></lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">mem</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                            <lattice:lpcsection lattice:name="Command"/>
+                            <lattice:lpcentry>
+                                <lattice:lpckey>cmd_line</lattice:lpckey>
+                                <lattice:lpcvalue lattice:resolve="constant">-w -n ble_packet_mem -lang verilog -synth lse -bus_exp 7 -bb -arch sa5p00 -type ramdq -device LFE5U-25F -addr_width 8 -data_width 8 -num_words 256 -outdata REGISTERED -cascade 11 -resetmode SYNC -sync_reset -mem_init0 -writemode NORMAL</lattice:lpcvalue>
+                            </lattice:lpcentry>
+                        </lattice:lpc>
+                        <lattice:groups/>
+                    </spirit:vendorExtensions>
+                </spirit:componentRef>
+            </spirit:componentInstance>
             <spirit:componentInstance>
                 <spirit:instanceName>pll_64M</spirit:instanceName>
                 <spirit:componentRef>
@@ -226,7 +627,7 @@
                     </spirit:model>
                     <spirit:vendorExtensions>
                         <lattice:synthesis>lse</lattice:synthesis>
-                        <lattice:modified>2019-04-23.14:35:43</lattice:modified>
+                        <lattice:modified>2019-05-09.19:33:14</lattice:modified>
                         <lattice:attributes>
                             <lattice:attribute lattice:name="AddComponent">false</lattice:attribute>
                             <lattice:attribute lattice:name="BBox">false</lattice:attribute>
@@ -602,6 +1003,30 @@
         </spirit:componentInstances>
         <spirit:adHocConnections>
             <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Clock</spirit:name>
+                <spirit:displayName>ble_packet_mem_Clock</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Clock" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Clock"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_ClockEn</spirit:name>
+                <spirit:displayName>ble_packet_mem_ClockEn</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="ClockEn" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_ClockEn"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Reset</spirit:name>
+                <spirit:displayName>ble_packet_mem_Reset</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Reset" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Reset"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_WE</spirit:name>
+                <spirit:displayName>ble_packet_mem_WE</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="WE" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_WE"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
                 <spirit:name>pll_64M_CLKI</spirit:name>
                 <spirit:displayName>pll_64M_CLKI</spirit:displayName>
                 <spirit:internalPortReference spirit:portRef="CLKI" spirit:componentRef="pll_64M"/>
@@ -636,6 +1061,168 @@
                 <spirit:displayName>pll_64M_SEL</spirit:displayName>
                 <spirit:internalPortReference spirit:portRef="SEL" spirit:componentRef="pll_64M"/>
                 <spirit:externalPortReference spirit:portRef="pll_64M_SEL"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address</spirit:displayName>
+                <spirit:internalPortReference spirit:right="0" spirit:portRef="Address" spirit:componentRef="ble_packet_mem" spirit:left="7"/>
+                <spirit:externalPortReference spirit:right="0" spirit:portRef="ble_packet_mem_Address" spirit:left="7"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[0]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[0]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[0]"/>
+                <spirit:internalPortReference spirit:portRef="Address[0]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[1]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[1]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[1]"/>
+                <spirit:internalPortReference spirit:portRef="Address[1]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[2]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[2]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[2]"/>
+                <spirit:internalPortReference spirit:portRef="Address[2]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[3]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[3]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[3]"/>
+                <spirit:internalPortReference spirit:portRef="Address[3]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[4]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[4]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[4]"/>
+                <spirit:internalPortReference spirit:portRef="Address[4]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[5]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[5]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[5]"/>
+                <spirit:internalPortReference spirit:portRef="Address[5]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[6]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[6]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[6]"/>
+                <spirit:internalPortReference spirit:portRef="Address[6]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Address[7]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Address[7]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Address[7]"/>
+                <spirit:internalPortReference spirit:portRef="Address[7]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data</spirit:displayName>
+                <spirit:internalPortReference spirit:right="0" spirit:portRef="Data" spirit:componentRef="ble_packet_mem" spirit:left="7"/>
+                <spirit:externalPortReference spirit:right="0" spirit:portRef="ble_packet_mem_Data" spirit:left="7"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[0]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[0]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[0]"/>
+                <spirit:internalPortReference spirit:portRef="Data[0]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[1]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[1]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[1]"/>
+                <spirit:internalPortReference spirit:portRef="Data[1]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[2]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[2]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[2]"/>
+                <spirit:internalPortReference spirit:portRef="Data[2]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[3]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[3]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[3]"/>
+                <spirit:internalPortReference spirit:portRef="Data[3]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[4]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[4]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[4]"/>
+                <spirit:internalPortReference spirit:portRef="Data[4]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[5]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[5]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[5]"/>
+                <spirit:internalPortReference spirit:portRef="Data[5]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[6]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[6]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[6]"/>
+                <spirit:internalPortReference spirit:portRef="Data[6]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Data[7]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Data[7]</spirit:displayName>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Data[7]"/>
+                <spirit:internalPortReference spirit:portRef="Data[7]" spirit:componentRef="ble_packet_mem"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q</spirit:displayName>
+                <spirit:internalPortReference spirit:right="0" spirit:portRef="Q" spirit:componentRef="ble_packet_mem" spirit:left="7"/>
+                <spirit:externalPortReference spirit:right="0" spirit:portRef="ble_packet_mem_Q" spirit:left="7"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[0]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[0]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[0]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[0]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[1]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[1]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[1]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[1]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[2]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[2]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[2]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[2]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[3]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[3]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[3]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[3]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[4]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[4]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[4]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[4]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[5]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[5]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[5]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[5]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[6]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[6]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[6]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[6]"/>
+            </spirit:adHocConnection>
+            <spirit:adHocConnection>
+                <spirit:name>ble_packet_mem_Q[7]</spirit:name>
+                <spirit:displayName>ble_packet_mem_Q[7]</spirit:displayName>
+                <spirit:internalPortReference spirit:portRef="Q[7]" spirit:componentRef="ble_packet_mem"/>
+                <spirit:externalPortReference spirit:portRef="ble_packet_mem_Q[7]"/>
             </spirit:adHocConnection>
         </spirit:adHocConnections>
     </spirit:design>

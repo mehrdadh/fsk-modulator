@@ -1,0 +1,10 @@
+----------------------------------------------------------------------
+Report for cell ble_packet_mem.TECH
+Register bits:  0 of 24879 (0.000%)
+I/O cells:      0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                             DP16KD         1          100.0
+                                GSR         1          100.0
+                        VERIFIC_PWR         1          100.0
+                              TOTAL         3

@@ -20,7 +20,9 @@ tx_load_data:	IN	STD_LOGIC_VECTOR(7 DOWNTO 0);
 trdy:			OUT	STD_LOGIC;
 rrdy:			OUT STD_LOGIC;
 rx_data:		OUT	STD_LOGIC_VECTOR(7 DOWNTO 0);
-busy:			OUT	STD_LOGIC
+busy:			OUT	STD_LOGIC;
+debug0:			OUT	STD_LOGIC;
+debug1:			OUT	STD_LOGIC
 );
 end spi;
 
@@ -43,22 +45,35 @@ component spi_slave IS
     st_load_roe  : IN     STD_LOGIC;  --asynchronous roe load input
     tx_load_en   : IN     STD_LOGIC;  --asynchronous transmit buffer load enable
     tx_load_data : IN     STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --asynchronous tx data to load
-    trdy     	 : BUFFER    STD_LOGIC := '0';  --transmit ready bit
-    rrdy      	 : BUFFER    STD_LOGIC := '0';  --receive ready bit
-    roe      	 : BUFFER    STD_LOGIC := '0';  --receive overrun error bit
+    trdy         : BUFFER STD_LOGIC;  --transmit ready bit
+    rrdy         : BUFFER STD_LOGIC;  --receive ready bit
+    roe          : BUFFER STD_LOGIC;  --receive overrun error bit
     rx_data      : OUT    STD_LOGIC_VECTOR(d_width-1 DOWNTO 0) := (OTHERS => '0');  --receive register output to logic
-    busy         : OUT    STD_LOGIC := '0';  --busy signal to logic ('1' during transaction)
-    miso         : OUT    STD_LOGIC := 'Z'); --master in, slave out
+    busy         : OUT    STD_LOGIC;  --busy signal to logic ('1' during transaction)
+    miso         : OUT    STD_LOGIC;  --master in, slave out
+	debug0		 : OUT	  STD_LOGIC;
+	debug1		 : OUT	  STD_LOGIC
+	);
 END component;
 
 signal st_load_roe	:std_logic;
 signal roe			:std_logic;
 
 begin
+
+PROCESS (rst_n) begin
+	if (rst_n = '0') then
+		st_load_roe	<= '0';
+		roe			<= '0';
+	end if;
+END PROCESS;
+
+
 spi_slave_0: spi_slave
 generic map(
 	cpol	=>	'0',
-	cpha	=>	'1'
+	cpha	=>	'0',
+	d_width	=>	8
 )
 port map(
 	sclk			=> sclk,
@@ -77,6 +92,9 @@ port map(
     roe				=> roe,
     rx_data			=> rx_data,
     busy			=> busy,
-    miso			=> miso
+    miso			=> miso,
+	debug0			=> debug0,
+	debug1			=> debug1
+	
 );
 end BEHAVIOUR;

@@ -1,0 +1,51 @@
+<Project ModBy="Analyzer" Name="C:/work/tinysdr_fpga_ble_tx/debugTest.rvs" Date="2019-05-12">
+ <Core Name="topModule_LA0">
+  <Setting>
+   <Capture SamplesPerTrig="8192" NumTrigsCap="1"/>
+   <Event EventCnt="0" CntEnableRun="0"/>
+   <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
+  </Setting>
+  <Dataset Name="Base">
+   <Trace>
+    <Sig Name="test_state"/>
+    <Bus Name="ble_current_state" Radix="0">
+     <Sig Name="ble_current_state:0"/>
+     <Sig Name="ble_current_state:1"/>
+     <Sig Name="ble_current_state:2"/>
+     <Sig Name="ble_current_state:3"/>
+     <Sig Name="ble_current_state:4"/>
+     <Sig Name="ble_current_state:5"/>
+     <Sig Name="ble_current_state:6"/>
+     <Sig Name="ble_current_state:7"/>
+    </Bus>
+    <Bus Name="ble_reg_pkt_size" Radix="0">
+     <Sig Name="ble_reg_pkt_size:0"/>
+     <Sig Name="ble_reg_pkt_size:1"/>
+     <Sig Name="ble_reg_pkt_size:2"/>
+     <Sig Name="ble_reg_pkt_size:3"/>
+     <Sig Name="ble_reg_pkt_size:4"/>
+     <Sig Name="ble_reg_pkt_size:5"/>
+     <Sig Name="ble_reg_pkt_size:6"/>
+     <Sig Name="ble_reg_pkt_size:7"/>
+    </Bus>
+    <Sig Name="pll_clko"/>
+    <Sig Name="spi_rx_ready"/>
+    <Sig Name="ble_data_flag"/>
+    <Bus Name="ble_reg_data_count" Radix="0">
+     <Sig Name="ble_reg_data_count:0"/>
+     <Sig Name="ble_reg_data_count:1"/>
+     <Sig Name="ble_reg_data_count:2"/>
+     <Sig Name="ble_reg_data_count:3"/>
+     <Sig Name="ble_reg_data_count:4"/>
+     <Sig Name="ble_reg_data_count:5"/>
+     <Sig Name="ble_reg_data_count:6"/>
+     <Sig Name="ble_reg_data_count:7"/>
+    </Bus>
+   </Trace>
+   <Trigger>
+    <TU Operator="6" Name="TU1" ID="1" Value="1" Radix="0"/>
+    <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
+   </Trigger>
+  </Dataset>
+ </Core>
+</Project>

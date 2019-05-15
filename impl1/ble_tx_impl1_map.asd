@@ -3,13 +3,13 @@ Device = LFE5U-25F;
 Package = CABGA256;
 Performance = 6;
 LUTS_avail = 24288;
-LUTS_used = 367;
+LUTS_used = 156;
 FF_avail = 24485;
-FF_used = 165;
+FF_used = 79;
 INPUT_LVCMOS18 = 1;
 INPUT_LVCMOS25 = 4;
-OUTPUT_LVCMOS18 = 8;
-OUTPUT_LVCMOS25 = 4;
+OUTPUT_LVCMOS18 = 1;
+OUTPUT_LVCMOS25 = 11;
 IO_avail = 197;
 IO_used = 17;
 EBR_avail = 56;
@@ -31,7 +31,7 @@ DSP_PRADD_used = 0;
 ; end of DSP statistics
 ;
 ; Begin PLL Section
-Instance_Name = LED_I_0/PLLInst_0;
+Instance_Name = pll_lock_I_0_112/PLLInst_0;
 Type = EHXPLLL;
 CLKOP_Post_Divider_A_Input = DIVA;
 CLKOS_Post_Divider_B_Input = DIVB;

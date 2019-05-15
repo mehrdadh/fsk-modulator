@@ -1,0 +1,217 @@
+<top name = "ble_packet_mem"  library = "work"  arch = ""  entry = "Verilog">
+
+<clocks>
+    <clockitem name = "Clock"  type = "port" />
+</clocks>
+
+<!--
+    //=============================================================
+    //  Number of Clocks processed: 1
+    //
+    //  If a clock cannot be found in the top level pins section,
+    //  that means it is an internal clock.
+    //
+    //=============================================================
+-->
+
+<library name = "work">
+
+<unit name = "ble_packet_mem">
+
+    <!--
+        Top Level Pins: 28
+    -->
+
+    <pins>
+        <pitem  name = "Clock"  direction = "in"  />
+        <pitem  name = "ClockEn"  direction = "in"  />
+        <pitem  name = "Reset"  direction = "in"  />
+        <pitem  name = "WE"  direction = "in"  />
+        <pitem  name = "Address[7]"  direction = "in"  />
+        <pitem  name = "Address[6]"  direction = "in"  />
+        <pitem  name = "Address[5]"  direction = "in"  />
+        <pitem  name = "Address[4]"  direction = "in"  />
+        <pitem  name = "Address[3]"  direction = "in"  />
+        <pitem  name = "Address[2]"  direction = "in"  />
+        <pitem  name = "Address[1]"  direction = "in"  />
+        <pitem  name = "Address[0]"  direction = "in"  />
+        <pitem  name = "Data[7]"  direction = "in"  />
+        <pitem  name = "Data[6]"  direction = "in"  />
+        <pitem  name = "Data[5]"  direction = "in"  />
+        <pitem  name = "Data[4]"  direction = "in"  />
+        <pitem  name = "Data[3]"  direction = "in"  />
+        <pitem  name = "Data[2]"  direction = "in"  />
+        <pitem  name = "Data[1]"  direction = "in"  />
+        <pitem  name = "Data[0]"  direction = "in"  />
+        <pitem  name = "Q[7]"  direction = "out"  />
+        <pitem  name = "Q[6]"  direction = "out"  />
+        <pitem  name = "Q[5]"  direction = "out"  />
+        <pitem  name = "Q[4]"  direction = "out"  />
+        <pitem  name = "Q[3]"  direction = "out"  />
+        <pitem  name = "Q[2]"  direction = "out"  />
+        <pitem  name = "Q[1]"  direction = "out"  />
+        <pitem  name = "Q[0]"  direction = "out"  />
+    </pins>
+
+    <!--
+        Instances in netlist: 3
+    -->
+
+    <instance  name = "scuba_vhi_inst"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "Z"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "scuba_vhi"  />
+        </nets>
+    </instance>
+
+    <instance  name = "scuba_vlo_inst"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "Z"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "scuba_vlo"  />
+        </nets>
+    </instance>
+
+    <instance  name = "ble_packet_mem_0_0_0_0"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "DIA17"  direction = "in"  />
+        <pitem  name = "DIA16"  direction = "in"  />
+        <pitem  name = "DIA15"  direction = "in"  />
+        <pitem  name = "DIA14"  direction = "in"  />
+        <pitem  name = "DIA13"  direction = "in"  />
+        <pitem  name = "DIA12"  direction = "in"  />
+        <pitem  name = "DIA11"  direction = "in"  />
+        <pitem  name = "DIA10"  direction = "in"  />
+        <pitem  name = "DIA9"  direction = "in"  />
+        <pitem  name = "DIA8"  direction = "in"  />
+        <pitem  name = "DIA7"  direction = "in"  />
+        <pitem  name = "DIA6"  direction = "in"  />
+        <pitem  name = "DIA5"  direction = "in"  />
+        <pitem  name = "DIA4"  direction = "in"  />
+        <pitem  name = "DIA3"  direction = "in"  />
+        <pitem  name = "DIA2"  direction = "in"  />
+        <pitem  name = "DIA1"  direction = "in"  />
+        <pitem  name = "DIA0"  direction = "in"  />
+        <pitem  name = "ADA13"  direction = "in"  />
+        <pitem  name = "ADA12"  direction = "in"  />
+        <pitem  name = "ADA11"  direction = "in"  />
+        <pitem  name = "ADA10"  direction = "in"  />
+        <pitem  name = "ADA9"  direction = "in"  />
+        <pitem  name = "ADA8"  direction = "in"  />
+        <pitem  name = "ADA7"  direction = "in"  />
+        <pitem  name = "ADA6"  direction = "in"  />
+        <pitem  name = "ADA5"  direction = "in"  />
+        <pitem  name = "ADA4"  direction = "in"  />
+        <pitem  name = "ADA3"  direction = "in"  />
+        <pitem  name = "ADA2"  direction = "in"  />
+        <pitem  name = "ADA1"  direction = "in"  />
+        <pitem  name = "ADA0"  direction = "in"  />
+        <pitem  name = "CEA"  direction = "in"  />
+        <pitem  name = "OCEA"  direction = "in"  />
+        <pitem  name = "CLKA"  direction = "in"  />
+        <pitem  name = "WEA"  direction = "in"  />
+        <pitem  name = "CSA2"  direction = "in"  />
+        <pitem  name = "CSA1"  direction = "in"  />
+        <pitem  name = "CSA0"  direction = "in"  />
+        <pitem  name = "RSTA"  direction = "in"  />
+        <pitem  name = "DIB17"  direction = "in"  />
+        <pitem  name = "DIB16"  direction = "in"  />
+        <pitem  name = "DIB15"  direction = "in"  />
+        <pitem  name = "DIB14"  direction = "in"  />
+        <pitem  name = "DIB13"  direction = "in"  />
+        <pitem  name = "DIB12"  direction = "in"  />
+        <pitem  name = "DIB11"  direction = "in"  />
+        <pitem  name = "DIB10"  direction = "in"  />
+        <pitem  name = "DIB9"  direction = "in"  />
+        <pitem  name = "DIB8"  direction = "in"  />
+        <pitem  name = "DIB7"  direction = "in"  />
+        <pitem  name = "DIB6"  direction = "in"  />
+        <pitem  name = "DIB5"  direction = "in"  />
+        <pitem  name = "DIB4"  direction = "in"  />
+        <pitem  name = "DIB3"  direction = "in"  />
+        <pitem  name = "DIB2"  direction = "in"  />
+        <pitem  name = "DIB1"  direction = "in"  />
+        <pitem  name = "DIB0"  direction = "in"  />
+        <pitem  name = "ADB13"  direction = "in"  />
+        <pitem  name = "ADB12"  direction = "in"  />
+        <pitem  name = "ADB11"  direction = "in"  />
+        <pitem  name = "ADB10"  direction = "in"  />
+        <pitem  name = "ADB9"  direction = "in"  />
+        <pitem  name = "ADB8"  direction = "in"  />
+        <pitem  name = "ADB7"  direction = "in"  />
+        <pitem  name = "ADB6"  direction = "in"  />
+        <pitem  name = "ADB5"  direction = "in"  />
+        <pitem  name = "ADB4"  direction = "in"  />
+        <pitem  name = "ADB3"  direction = "in"  />
+        <pitem  name = "ADB2"  direction = "in"  />
+        <pitem  name = "ADB1"  direction = "in"  />
+        <pitem  name = "ADB0"  direction = "in"  />
+        <pitem  name = "CEB"  direction = "in"  />
+        <pitem  name = "OCEB"  direction = "in"  />
+        <pitem  name = "CLKB"  direction = "in"  />
+        <pitem  name = "WEB"  direction = "in"  />
+        <pitem  name = "CSB2"  direction = "in"  />
+        <pitem  name = "CSB1"  direction = "in"  />
+        <pitem  name = "CSB0"  direction = "in"  />
+        <pitem  name = "RSTB"  direction = "in"  />
+        <pitem  name = "DOA7"  direction = "out"  />
+        <pitem  name = "DOA6"  direction = "out"  />
+        <pitem  name = "DOA5"  direction = "out"  />
+        <pitem  name = "DOA4"  direction = "out"  />
+        <pitem  name = "DOA3"  direction = "out"  />
+        <pitem  name = "DOA2"  direction = "out"  />
+        <pitem  name = "DOA1"  direction = "out"  />
+        <pitem  name = "DOA0"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "scuba_vlo"  />
+        <nitem  name = "Data[7]"  />
+        <nitem  name = "Data[6]"  />
+        <nitem  name = "Data[5]"  />
+        <nitem  name = "Data[4]"  />
+        <nitem  name = "Data[3]"  />
+        <nitem  name = "Data[2]"  />
+        <nitem  name = "Data[1]"  />
+        <nitem  name = "Data[0]"  />
+        <nitem  name = "Address[7]"  />
+        <nitem  name = "Address[6]"  />
+        <nitem  name = "Address[5]"  />
+        <nitem  name = "Address[4]"  />
+        <nitem  name = "Address[3]"  />
+        <nitem  name = "Address[2]"  />
+        <nitem  name = "Address[1]"  />
+        <nitem  name = "Address[0]"  />
+        <nitem  name = "ClockEn"  />
+        <nitem  name = "Clock"  />
+        <nitem  name = "WE"  />
+        <nitem  name = "Reset"  />
+        <nitem  name = "scuba_vhi"  />
+        <nitem  name = "Q[7]"  />
+        <nitem  name = "Q[6]"  />
+        <nitem  name = "Q[5]"  />
+        <nitem  name = "Q[4]"  />
+        <nitem  name = "Q[3]"  />
+        <nitem  name = "Q[2]"  />
+        <nitem  name = "Q[1]"  />
+        <nitem  name = "Q[0]"  />
+        </nets>
+    </instance>
+
+    <!--
+        Views in design "ble_packet_mem": 0
+    -->
+
+    <views>
+    </views>
+
+</unit>
+
+</library>
+
+</top>

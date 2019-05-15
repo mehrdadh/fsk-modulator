@@ -1,0 +1,56 @@
+<Project ModBy="Inserter" SigType="0" Name="C:/work/tinysdr_fpga_ble_tx/debugTest.rvl" Date="2019-05-12">
+    <IP Version="1_6_042617"/>
+    <Design DesignEntry="Schematic/Mixed HDL" Synthesis="lse" DeviceFamily="ECP5U" DesignName="ble_tx"/>
+    <Core InsertDataset="0" Insert="1" Reveal_sig="223941431" Name="topModule_LA0" ID="0">
+        <Setting>
+            <Clock SampleClk="pll_clko" SampleEnable="0" EnableClk="" EnableClk_Pri="0"/>
+            <TraceBuffer Implementation="0" BitTimeStamp="0" hasTimeStamp="0" IncTrigSig="1" BufferDepth="8192"/>
+            <Capture Mode="0" MinSamplesPerTrig="256"/>
+            <Event CntEnable="0" MaxEventCnt="8"/>
+            <TrigOut Polarity="0" MinPulseWidth="0" TrigOutNetType="1" EnableTrigOut="0" TrigOutNet="reveal_debug_ble_tx_LA0_net"/>
+            <DistRAM Disable="0"/>
+        </Setting>
+        <Dataset Name="Base">
+            <Trace>
+                <Sig Type="SIG" Name="test_state"/>
+                <Bus Name="ble_current_state">
+                    <Sig Type="SIG" Name="ble_current_state:0"/>
+                    <Sig Type="SIG" Name="ble_current_state:1"/>
+                    <Sig Type="SIG" Name="ble_current_state:2"/>
+                    <Sig Type="SIG" Name="ble_current_state:3"/>
+                    <Sig Type="SIG" Name="ble_current_state:4"/>
+                    <Sig Type="SIG" Name="ble_current_state:5"/>
+                    <Sig Type="SIG" Name="ble_current_state:6"/>
+                    <Sig Type="SIG" Name="ble_current_state:7"/>
+                </Bus>
+                <Bus Name="ble_reg_pkt_size">
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:0"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:1"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:2"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:3"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:4"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:5"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:6"/>
+                    <Sig Type="SIG" Name="ble_reg_pkt_size:7"/>
+                </Bus>
+                <Sig Type="SIG" Name="pll_clko"/>
+                <Sig Type="SIG" Name="spi_rx_ready"/>
+                <Sig Type="SIG" Name="ble_data_flag"/>
+                <Bus Name="ble_reg_data_count">
+                    <Sig Type="SIG" Name="ble_reg_data_count:0"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:1"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:2"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:3"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:4"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:5"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:6"/>
+                    <Sig Type="SIG" Name="ble_reg_data_count:7"/>
+                </Bus>
+            </Trace>
+            <Trigger>
+                <TU Serialbits="0" Type="0" ID="1" Sig="spi_0/sclk,"/>
+                <TE MaxSequence="1" MaxEvnCnt="1" ID="1" Resource="1"/>
+            </Trigger>
+        </Dataset>
+    </Core>
+</Project>

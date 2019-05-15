@@ -1,0 +1,51 @@
+[Device]
+Family=ecp5u
+PartType=LFE5U-25F
+PartName=LFE5U-25F-6BG256I
+SpeedGrade=6
+Package=CABGA256
+OperatingCondition=IND
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=RAM_DQ
+CoreRevision=7.5
+ModuleName=ble_packet_mem
+SourceFormat=verilog
+ParameterFileVersion=1.0
+Date=05/09/2019
+Time=19:32:27
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+Address=256
+Data=8
+enByte=0
+ByteSize=9
+OutputEn=1
+ClockEn=0
+Optimization=Area
+Reset=Sync
+Reset1=Sync
+Init=0
+MemFile=
+MemFormat=bin
+EnECC=0
+Pipeline=0
+Write=Normal
+init_data=0
+
+[FilesGenerated]
+=mem
+
+[Command]
+cmd_line= -w -n ble_packet_mem -lang verilog -synth lse -bus_exp 7 -bb -arch sa5p00 -type ramdq -device LFE5U-25F -addr_width 8 -data_width 8 -num_words 256 -outdata REGISTERED -cascade 11 -resetmode SYNC -sync_reset -mem_init0 -writemode NORMAL
