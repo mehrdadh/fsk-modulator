@@ -1,93 +1,172 @@
 ----------------------------------------------------------------------
 Report for cell topModule.TECH
-Register bits:  79 of 24879 (0.318%)
+Register bits:  229 of 24879 (0.920%)
 I/O cells:      17
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C        10          100.0
+                              CCU2C        27          100.0
+                             DP16KD         1          100.0
                             EHXPLLL         1          100.0
-                            FD1P3AX         3          100.0
-                            FD1P3BX         1          100.0
-                            FD1P3DX         8          100.0
+                            FD1P3AX        31          100.0
+                            FD1P3BX         5          100.0
+                            FD1P3DX        29          100.0
+                            FD1P3IX        25          100.0
                             FD1P3JX         1          100.0
-                            FD1S3AX        20          100.0
+                            FD1S3AX        27          100.0
                             FD1S3AY         1          100.0
-                            FD1S3BX        10          100.0
-                            FD1S3DX        18          100.0
-                            FD1S3IX        17          100.0
+                            FD1S3BX        12          100.0
+                            FD1S3DX        32          100.0
+                            FD1S3IX        52          100.0
+                            FD1S3JX        14          100.0
                                 GSR         1          100.0
                                  IB         5          100.0
-                                INV         1          100.0
-                               LUT4       136          100.0
-                                 OB        11          100.0
-                                OBZ         1          100.0
-                              PFUMX         3          100.0
+                                INV         3          100.0
+                            L6MUX21         3          100.0
+                               LUT4       341          100.0
+                                 OB        12          100.0
+                              PFUMX        16          100.0
                            PLLREFCS         1          100.0
 SUB MODULES
+                              DEDFF         1
+                       FSKModulator         1
+                       IQSerializer         1
+                     ble_packet_mem         1
                        clockDivider         1
+                          cosModule         1
+                       packetReader         1
                             pll_64M         1
+                          sinModule         1
                                 spi         1
                            spi_ctrl         1
                spi_slave('0','0',8)         1
-                              TOTAL       254
+                              TOTAL       652
 ----------------------------------------------------------------------
-Report for cell clockDivider.v1
-Instance Path : clockDivider_0
+Report for cell FSKModulator.v1
+Instance Path : fskModule_0
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C        10          100.0
-                            FD1S3IX        17          100.0
-                               LUT4        14           10.3
-                              TOTAL        41
-----------------------------------------------------------------------
-Report for cell spi.v1
-Instance Path : spi_0
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1P3AX         3          100.0
-                            FD1P3BX         1          100.0
-                            FD1P3DX         8          100.0
-                            FD1P3JX         1          100.0
-                            FD1S3AX        16           80.0
-                            FD1S3AY         1          100.0
-                            FD1S3BX         9           90.0
-                            FD1S3DX         8           44.4
-                               LUT4        85           62.5
-                              PFUMX         1           33.3
+                            FD1P3IX         1            4.0
+                            FD1S3AX         3           11.1
+                            FD1S3IX        22           42.3
+                            FD1S3JX        13           92.9
+                               LUT4        45           13.2
+                              PFUMX         1            6.3
 SUB MODULES
-               spi_slave('0','0',8)         1
-                              TOTAL       134
+                          cosModule         1
+                          sinModule         1
+                              TOTAL        87
 ----------------------------------------------------------------------
-Report for cell spi_slave('0','0',8).v1
-Instance Path : spi_0.spi_slave_0
+Report for cell sinModule.v1
+Instance Path : fskModule_0.sin_instance
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3AX         3          100.0
-                            FD1P3BX         1          100.0
-                            FD1P3DX         8          100.0
-                            FD1P3JX         1          100.0
-                            FD1S3AX        16           80.0
-                            FD1S3AY         1          100.0
-                            FD1S3BX         9           90.0
-                            FD1S3DX         8           44.4
-                               LUT4        85           62.5
-                              PFUMX         1           33.3
-                              TOTAL       133
+                               LUT4         7            2.1
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell cosModule.v1
+Instance Path : fskModule_0.cos_instance
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        12            3.5
+                              TOTAL        12
 ----------------------------------------------------------------------
 Report for cell spi_ctrl.v1
 Instance Path : spi_ctrl_0
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1S3BX         1           10.0
-                            FD1S3DX        10           55.6
-                               LUT4        11            8.1
-                              PFUMX         1           33.3
-                              TOTAL        23
+                            FD1S3AX         9           33.3
+                            FD1S3IX         1            1.9
+                               LUT4        23            6.7
+                              PFUMX         2           12.5
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell spi.v1
+Instance Path : spi_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         2            6.5
+                            FD1P3BX         1           20.0
+                            FD1P3DX         9           31.0
+                            FD1P3JX         1          100.0
+                            FD1S3BX        10           83.3
+                            FD1S3DX        24           75.0
+                               LUT4        92           27.0
+                              PFUMX         1            6.3
+SUB MODULES
+               spi_slave('0','0',8)         1
+                              TOTAL       141
+----------------------------------------------------------------------
+Report for cell spi_slave('0','0',8).v1
+Instance Path : spi_0.spi_slave_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         2            6.5
+                            FD1P3BX         1           20.0
+                            FD1P3DX         9           31.0
+                            FD1P3JX         1          100.0
+                            FD1S3BX        10           83.3
+                            FD1S3DX        24           75.0
+                               LUT4        92           27.0
+                              PFUMX         1            6.3
+                              TOTAL       140
+----------------------------------------------------------------------
+Report for cell ble_packet_mem.v1
+Instance Path : mem_inf_q_7__I_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                             DP16KD         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell packetReader.v1
+Instance Path : packetReader_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         5           18.5
+                            FD1P3AX         1            3.2
+                            FD1P3BX         4           80.0
+                            FD1P3DX        20           69.0
+                            FD1S3BX         2           16.7
+                            FD1S3DX         8           25.0
+                            L6MUX21         3          100.0
+                               LUT4        71           20.8
+                              PFUMX         7           43.8
+                              TOTAL       121
+----------------------------------------------------------------------
+Report for cell IQSerializer.v1
+Instance Path : IQSerializer_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         1            3.7
+                            FD1S3IX        12           23.1
+                               LUT4        31            9.1
+                              PFUMX         4           25.0
+SUB MODULES
+                              DEDFF         1
+                              TOTAL        49
+----------------------------------------------------------------------
+Report for cell DEDFF.v1
+Instance Path : IQSerializer_0.DEDFF_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            3.8
+                               LUT4         3            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell clockDivider.v1
+Instance Path : clockDivider_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        10           37.0
+                            FD1S3IX        17           32.7
+                                INV         1           33.3
+                               LUT4        23            6.7
+                              TOTAL        51
 ----------------------------------------------------------------------
 Report for cell pll_64M.v1
-Instance Path : pll_lock_I_0_112
+Instance Path : pll_clko_I_0
                                   Cell usage:
                                cell     count   Res Usage(%)
                             EHXPLLL         1          100.0
+                                INV         1           33.3
                            PLLREFCS         1          100.0
-                              TOTAL         2
+                              TOTAL         3

@@ -106,10 +106,11 @@ print(hexstring(bits2hex(beacon)))
 print(''.join([b+' ' for b in beacon]))
 
 count = 0;
-for b in beacon:
-  print ("\t\t8'd" + str(count) + ":\t" + "data\t=\t1'b" + b + ";");
-  count += 1;
-print("\t\tdefault:\tdata\t=\t1'b0;")
+# for b in beacon:
+#   print ("\t\t8'd" + str(count) + ":\t" + "data\t=\t1'b" + b + ";");
+#   count += 1;
+# print("\t\tdefault:\tdata\t=\t1'b0;")
+
 # if __name__ == "__main__":
 #   print("start")
 #   data = [0x01, 0x02, 0x03, 0x04]

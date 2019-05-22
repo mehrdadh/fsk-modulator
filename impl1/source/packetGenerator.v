@@ -36,7 +36,6 @@ parameter [`percision-1:0] maxSize = `percision'd255;
 reg 		next_symVal;
 
 //data
-//reg [0:255] data;
 wire	data;
 
 //state

@@ -45,7 +45,7 @@ wire			pll_lock;
 wire			clkDivider_lock;
 wire			clkDivider_clko;
 
-wire			counter_0_countDone;
+//wire			counter_0_countDone;
 
 reg				sin_clkEN;
 reg				sin_rst;
@@ -89,20 +89,31 @@ wire					spi_ctrl_rst;
 wire					spi_rx_ready;
 
 /*	BLE Memory	*/
-wire 							mem_clk;
-wire							mem_clkE;
-wire							mem_rst;
-reg								mem_we;
-reg		[`BLE_Mem_Addr-1: 0]	mem_addr;
-reg		[`BLE_Mem_Data-1: 0]	mem_dataIn;
-wire	[`BLE_Mem_Data-1: 0]	mem_dataOut;
+wire 							mem_inf_clk;
+wire							mem_inf_clkE;
+wire							mem_inf_rst;
+reg								mem_inf_we;
+wire	[`BLE_Mem_Addr-1: 0]	mem_inf_addr;
+reg		[`BLE_Mem_Data-1: 0]	mem_inf_dataIn;
+wire	[`BLE_Mem_Data-1: 0]	mem_inf_q;
 
-reg		[`BLE_Mem_Data-1: 0]	mem_w_data;
-reg 	[`BLE_Mem_Addr-1: 0]	mem_w_addr;
-reg								mem_w_req;
 
-wire							ble_clk;
-reg						test_state;
+reg		[`BLE_Mem_Addr-1: 0]	ble_mem_w_addr;
+reg		[`BLE_Mem_Data-1: 0]	ble_mem_data_buff;
+reg 	[`BLE_Mem_Addr-1: 0]	ble_mem_addr_buff;
+reg								ble_mem_w_req;
+reg								mem_r_req;
+reg								ble_mem_operation;
+
+
+reg								pktReader_ready;
+wire	[`BLE_Mem_Addr-1: 0]	pktReader_mem_addr;
+wire	pr_debug0;
+wire	pr_debug1;
+
+
+wire	ble_clk;
+reg		test_state;
 //--------------------------------------------------------------------
 // Constant assignments
 //--------------------------------------------------------------------
@@ -119,6 +130,9 @@ assign	spi_ctrl_rst	= clkDivider_lock;
 assign	ble_clk	= clkDivider_clko;
 assign	ble_rst	= clkDivider_lock;
 
+assign mem_inf_addr	= (ble_mem_operation) ? pktReader_mem_addr : ble_mem_w_addr;	//one:read, zero:write
+//assign mem_inf_addr	= ble_mem_w_addr;
+
 always @(posedge pll_clko) begin
 	spi_sclk		<= top_spi_sclk;
 	spi_cs			<= top_spi_cs;
@@ -129,13 +143,13 @@ end
 
 //debugg
 assign top_test0	= spi_sclk;
-assign top_test1	= spi_mosi;
-assign top_test2	= spi_miso;
-assign top_test3	= spi_rx_req;
+assign top_test1	= clkDivider_lock;
+assign top_test2	= clkDivider_clko;
+assign top_test3	= fskModule_symVal;
 
-assign top_test4	= spi_debug0;
-assign top_test5	= spi_rrdy;
-assign top_test6	= spi_debug1;
+assign top_test4	= pr_debug0;
+assign top_test5	= pr_debug1;
+assign top_test6	= fskModule_symDone;
 
 //--------------------------------------------------------------------
 // State
@@ -202,15 +216,15 @@ always @(*) begin
 				ble_next_state		= ble_state_wait;
 			end
 			ble_state_data: begin			
-				if (ble_reg_data_count < 8'd10) begin
+				if (ble_reg_data_count < ble_reg_pkt_size) begin
 					ble_next_state	= ble_state_wait;
 				end else begin
 					ble_next_state	= ble_state_done;
 				end
-				test_state = `VCC;
 			end
 			ble_state_done: begin
-				ble_next_state	= ble_state_done;				
+				ble_next_state	= ble_state_done;
+				test_state = `VCC;
 			end
 			default: begin
 				ble_next_state	= ble_state_rst;
@@ -225,46 +239,52 @@ always @(negedge ble_clk, negedge ble_rst) begin
 		ble_flag_spi_pkt	<= VSS;
 		ble_flag_spi_data	<= VSS;
 		ble_reg_data_count	<= 8'd0;
+		pktReader_ready		<= VSS;
+		ble_mem_operation	<= VSS;
 	end else begin
 		case(ble_current_state)
 			ble_state_rst: begin
 				ble_flag_spi_pkt	<= VSS;
 				ble_flag_spi_data	<= VSS;
 				ble_reg_data_count	<= 8'd0;
-				mem_w_req			<= VSS;
+				ble_mem_w_req			<= VSS;
+				mem_r_req			<= VSS;
+				pktReader_ready		<= VSS;
+				ble_mem_operation	<= VSS;
 			end
 			ble_state_wait: begin
-				mem_w_req			<= VSS;
+				ble_mem_w_req			<= VSS;
+				mem_r_req			<= VSS;
 			end
 			ble_state_cmd: begin
-				mem_w_req			<= VSS;
 				if (spi_rx_data == 8'hAA) begin
 					ble_flag_spi_pkt	<= `VCC;
 				end else begin
 					ble_flag_spi_pkt	<= ble_flag_spi_pkt;
 				end
+				ble_mem_w_req			<= VSS;
 			end
 			ble_state_pktSize: begin
 				ble_reg_pkt_size 	<= spi_rx_data;
 				ble_flag_spi_data	<= `VCC;
 				ble_flag_spi_pkt	<= VSS;
+				ble_mem_w_req			<= VSS;
 			end
 			ble_state_data: begin
-				mem_w_data			<= spi_rx_data;
-				mem_w_addr			<= ble_reg_data_count;
-				mem_w_req			<= `VCC;
+				ble_mem_data_buff			<= spi_rx_data;
+				ble_mem_addr_buff			<= ble_reg_data_count;
+				ble_mem_w_req			<= `VCC;
 				
-				if (ble_reg_data_count < 8'd10) begin
-					ble_reg_data_count	<= ble_reg_data_count + 8'd1;
-				end else begin
-					ble_reg_data_count	<= ble_reg_data_count;
-				end
+				ble_reg_data_count	<= ble_reg_data_count + 8'd1;
 			end
 			ble_state_done: begin
-				mem_w_req	<= VSS;
+				ble_mem_w_req		<= VSS;
+				mem_r_req			<= `VCC;
+				pktReader_ready		<= `VCC;
+				ble_mem_operation	<= `VCC;
 			end
 			default: begin
-				mem_w_req	<= VSS;
+				ble_mem_w_req	<= VSS;
 			end
 		endcase
 	end
@@ -272,14 +292,17 @@ end
 
 
 /*	Memory State Machine	*/
-assign mem_clkE	= `VCC;
-assign mem_rst = pll_lock;
+assign mem_inf_clkE	= `VCC;
+assign mem_inf_rst	= clkDivider_lock;
+assign mem_inf_clk	= clkDivider_clko;
+
 reg [3:0] mem_current_state;
 reg [3:0] mem_next_state;
-parameter [3:0] mem_state_rst=4'd0, mem_state_wait=4'd1, mem_state_req=4'd2, mem_state_wr=4'd3;
+parameter [3:0] mem_state_rst=4'd0, mem_state_wait=4'd1, mem_state_w_req=4'd2, mem_state_wr=4'd3,
+mem_state_r_req = 4'd4;
 
-always @(posedge mem_clk) begin
-	if (mem_rst == VSS) begin
+always @(posedge mem_inf_clk, negedge mem_inf_rst) begin
+	if (mem_inf_rst == VSS) begin
 		mem_current_state	<= mem_state_rst;
 	end else begin
 		mem_current_state	<= mem_next_state;
@@ -287,7 +310,7 @@ always @(posedge mem_clk) begin
 end
 
 always @(*) begin
-	if (mem_rst == VSS) begin
+	if (mem_inf_rst == VSS) begin
 		mem_next_state	= mem_state_rst;
 	end else begin
 		case (mem_current_state)
@@ -295,21 +318,24 @@ always @(*) begin
 				mem_next_state	= mem_state_wait;
 			end
 			mem_state_wait: begin
-				if (mem_w_req == `VCC) begin
-					mem_next_state = mem_state_req;
+				if (ble_mem_w_req == `VCC) begin
+					mem_next_state = mem_state_w_req;
+				end else if (mem_r_req == `VCC) begin
+					mem_next_state = mem_state_r_req;
 				end else begin
 					mem_next_state = mem_state_wait;
 				end
+				
 			end
-			mem_state_req: begin
+			mem_state_w_req: begin
 				mem_next_state	= mem_state_wr;
 			end
 			mem_state_wr: begin
 				mem_next_state	= mem_state_wait;
 			end
-			//mem_state_addr: begin
-				//mem_next_state	= mem_state_wait;
-			//end
+			mem_state_r_req: begin
+				mem_next_state	= mem_state_r_req;
+			end
 			default: begin
 				mem_next_state	= mem_state_rst;
 			end
@@ -317,32 +343,36 @@ always @(*) begin
 	end
 end
 
-always @(negedge mem_clk) begin
+always @(negedge mem_inf_clk) begin
 	case(mem_current_state)
 		mem_state_rst: begin
-			mem_dataIn	<= `BLE_Mem_Data'd0;
-			mem_addr	<= `BLE_Mem_Addr'd0;
-			mem_we		<= VSS;
+			mem_inf_dataIn	<= `BLE_Mem_Data'd0;
+			ble_mem_w_addr	<= `BLE_Mem_Addr'd0;
+			mem_inf_we		<= VSS;
 		end
 		mem_state_wait: begin
-			mem_dataIn	<= mem_dataIn;
-			mem_addr	<= mem_addr;
-			mem_we		<= VSS;
+			mem_inf_dataIn	<= mem_inf_dataIn;
+			ble_mem_w_addr	<= ble_mem_w_addr;
+			mem_inf_we		<= VSS;
 		end
-		mem_state_req: begin
-			mem_dataIn	<= mem_w_data;
-			mem_addr	<= mem_w_addr;
-			mem_we		<= `VCC;
+		mem_state_w_req: begin
+			mem_inf_dataIn	<= ble_mem_data_buff;
+			ble_mem_w_addr	<= ble_mem_addr_buff;
+			mem_inf_we		<= `VCC;
 		end
 		mem_state_wr: begin
-			mem_dataIn	<= mem_dataIn;
-			mem_addr	<= mem_addr;
-			mem_we		<= `VCC;
+			mem_inf_dataIn	<= mem_inf_dataIn;
+			ble_mem_w_addr	<= ble_mem_w_addr;
+			mem_inf_we		<= `VCC;
+		end
+		mem_state_r_req: begin
+			mem_inf_we		<= VSS;
+			ble_mem_w_addr	<= 8'd1;
 		end
 		default: begin
-			mem_dataIn	<= `BLE_Mem_Data'd0;
-			mem_addr	<= `BLE_Mem_Addr'd0;
-			mem_we		<= VSS;
+			mem_inf_dataIn	<= `BLE_Mem_Data'd0;
+			ble_mem_w_addr	<= `BLE_Mem_Addr'd0;
+			mem_inf_we		<= VSS;
 		end
 	endcase
 end
@@ -367,11 +397,14 @@ clockDivider clockDivider_0(
 	.clkLock  (clkDivider_lock) 
 );
 
-packetCounter counter_0(
-	.clk       (clkDivider_clko),
-	.clkLock   (clkDivider_lock),
-	.countDone (counter_0_countDone) 
-);
+/* ######################################################
+Use these two for fix pre-loaded packet.
+###################################################### */
+//packetCounter counter_0(
+	//.clk       (clkDivider_clko),
+	//.clkLock   (clkDivider_lock),
+	//.countDone (counter_0_countDone) 
+//);
 
 //packetGenerator packetGen_0(
 	//.rst_n(counter_0_countDone),
@@ -381,26 +414,42 @@ packetCounter counter_0(
 	//.symVal(fskModule_symVal)
 //);
 
-//FSKModulator fskModule_0(
-	//.clk(clockDivider_clk_4M),
-	//.rst_n(counter_0_countDone),
-	//.enable(fskModule_start),
-	//.symVal(fskModule_symVal),
-	//.FSK_I(fskModule_I),
-	//.FSK_Q(fskModule_Q),
-	//.symDone(fskModule_symDone),
-	//.start(IQSerializer_start)
-//);
+packetReader packetReader_0(
+	.ready(pktReader_ready),
+	.clk(clkDivider_clko),
+/*	Memory interface	*/
+	.mem_q(mem_inf_q),
+	.mem_size(ble_reg_pkt_size),
+	.mem_addr(pktReader_mem_addr),
+/*	Modulator interface	*/
+	.symDone(fskModule_symDone),
+	.start(fskModule_start),
+	.symVal(fskModule_symVal),
+	.debug0(pr_debug0),
+	.debug1(pr_debug1)
+);
 
-//IQSerializer IQSerializer_0(
-	//.clk(pll_clko),
-	//.start(IQSerializer_start),
-	//.I(IQSerializer_I),
-	//.Q(IQSerializer_Q),
-	//.serial_N(serial_iq),
-	//.serial(),
-	//.serial_clk(serial_clk)
-//);
+
+FSKModulator fskModule_0(
+	.clk(clkDivider_clko),
+	.rst_n(clkDivider_lock),
+	.enable(fskModule_start),
+	.symVal(fskModule_symVal),
+	.FSK_I(fskModule_I),
+	.FSK_Q(fskModule_Q),
+	.symDone(fskModule_symDone),
+	.start(IQSerializer_start)
+);
+
+IQSerializer IQSerializer_0(
+	.clk(pll_clko),
+	.start(IQSerializer_start),
+	.I(IQSerializer_I),
+	.Q(IQSerializer_Q),
+	.serial_N(serial_iq),
+	.serial(),
+	.serial_clk(serial_clk)
+);
 
 spi_ctrl spi_ctrl_0(
 /*	User Interface	*/
@@ -444,34 +493,14 @@ spi spi_0(
 	.debug1(spi_debug1)
 );
 
-//spi_out spi_0(
-	///*SPI slave interface*/
-	//.sclk(spi_sclk),
-	//.cs_n(spi_cs),
-	//.mosi(spi_mosi),
-	//.miso(spi_miso),
-	///*User interface*/
-	//.rst_n(spi_rst),
-	//.rx_req(spi_rx_req),
-	//.st_load_en(spi_st_load_en),
-	//.st_load_trdy(spi_st_load_trdy),
-	//.st_load_rrdy(spi_st_load_rrdy),
-	//.tx_load_en(spi_tx_load_en),
-	//.tx_load_data(spi_tx_data),
-	//.trdy(spi_trdy),
-	//.rrdy(spi_rrdy),
-	//.rx_data(spi_rx_data),
-	//.busy(spi_busy)
-//);
-
 ble_packet_mem mem_0(
-	.Clock(mem_clk),
-	.ClockEn(mem_clkE),
-	.Reset(~mem_rst),
-	.WE(mem_we),
-	.Address(mem_addr),
-	.Data(mem_dataIn),
-	.Q(mem_dataOut)
+	.Clock(mem_inf_clk),
+	.ClockEn(mem_inf_clkE),
+	.Reset(~mem_inf_rst),
+	.WE(mem_inf_we),
+	.Address(mem_inf_addr),
+	.Data(mem_inf_dataIn),
+	.Q(mem_inf_q)
 );
     
 	

@@ -6,7 +6,7 @@ Performance Grade:      6
 PACKAGE:          CABGA256
 Package Status:                     Final          Version 1.33
 
-Wed May 15 14:07:25 2019
+Wed May 22 15:18:25 2019
 
 Pinout by Port Name:
 +--------------+----------+--------------+-------+-----------+-----------------------------------+
@@ -14,8 +14,8 @@ Pinout by Port Name:
 +--------------+----------+--------------+-------+-----------+-----------------------------------+
 | LED          | B1/7     | LVCMOS18_OUT | PL2A  |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
 | osc_en       | T2/6     | LVCMOS25_OUT | PL38D |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
-| serial_clk   | M3/6     | LVCMOS25_OUT | PL32D |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
-| serial_iq    | L3/6     | LVCMOS25_OUT | PL32C |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
+| serial_clk   | N1/6     | LVDS_OUT     | PL32A |           | DIFFDRIVE:3.5 CLAMP:ON            |
+| serial_iq    | L1/6     | LVDS_OUT     | PL26A |           | DIFFDRIVE:3.5 CLAMP:ON            |
 | top_clk      | M2/6     | LVCMOS25_IN  | PL26D |           | PULL:DOWN CLAMP:ON HYSTERESIS:ON  |
 | top_rst_n    | T6/8     | LVCMOS18_IN  | PB4A  |           | PULL:DOWN CLAMP:ON                |
 | top_spi_cs   | R3/6     | LVCMOS25_IN  | PL41B |           | PULL:DOWN CLAMP:ON HYSTERESIS:ON  |
@@ -177,9 +177,9 @@ Pinout by Pin Number:
 | K14/2    |     unused, PULL:DOWN |            |               | PR20D | RDQ20                    |           |
 | K15/2    |     unused, PULL:DOWN |            |               | PR23D | PCLKC2_0/RDQ20           |           |
 | K16/2    |     unused, PULL:DOWN |            |               | PR23C | PCLKT2_0/RDQ20           |           |
-| L1/6     |     unused, PULL:DOWN |            |               | PL26A | PCLKT6_1/LDQ32           |           |
-| L2/6     |     unused, PULL:DOWN |            |               | PL26B | PCLKC6_1/LDQ32           |           |
-| L3/6     | serial_iq             |            | LVCMOS25_OUT  | PL32C | LDQ32                    |           |
+| L1/6     | serial_iq+            | LOCATED    | LVDS_OUT      | PL26A | PCLKT6_1/LDQ32           |           |
+| L2/6     | serial_iq-            |            | LVDS_OUT      | PL26B | PCLKC6_1/LDQ32           |           |
+| L3/6     |     unused, PULL:DOWN |            |               | PL32C | LDQ32                    |           |
 | L4/6     |     unused, PULL:DOWN |            |               | PL29C | GR_PCLK6_1/LDQ32         |           |
 | L5/6     |     unused, PULL:DOWN |            |               | PL29D | LDQ32                    |           |
 | L12/3    |     unused, PULL:DOWN |            |               | PR29D | RDQ32                    |           |
@@ -189,7 +189,7 @@ Pinout by Pin Number:
 | L16/3    |     unused, PULL:DOWN |            |               | PR26A | PCLKT3_1/RDQ32           |           |
 | M1/6     |     unused, PULL:DOWN |            |               | PL26C | PCLKT6_0/LDQ32           |           |
 | M2/6     | top_clk               | LOCATED    | LVCMOS25_IN   | PL26D | PCLKC6_0/LDQ32           |           |
-| M3/6     | serial_clk            |            | LVCMOS25_OUT  | PL32D | LDQ32                    |           |
+| M3/6     |     unused, PULL:DOWN |            |               | PL32D | LDQ32                    |           |
 | M4/6     |     unused, PULL:DOWN |            |               | PL35C | LDQ32                    |           |
 | M5/6     |     unused, PULL:DOWN |            |               | PL44C | LDQ44                    |           |
 | M6/6     |     unused, PULL:DOWN |            |               | PL47A | LDQ44                    |           |
@@ -202,7 +202,7 @@ Pinout by Pin Number:
 | M14/3    |     unused, PULL:DOWN |            |               | PR32D | RDQ32                    |           |
 | M15/3    |     unused, PULL:DOWN |            |               | PR26D | PCLKC3_0/RDQ32           |           |
 | M16/3    |     unused, PULL:DOWN |            |               | PR26C | PCLKT3_0/RDQ32           |           |
-| N1/6     |     unused, PULL:DOWN |            |               | PL32A | LDQS32                   |           |
+| N1/6     | serial_clk+           | LOCATED    | LVDS_OUT      | PL32A | LDQS32                   |           |
 | N3/6     |     unused, PULL:DOWN |            |               | PL35D | LDQ32                    |           |
 | N4/6     |     unused, PULL:DOWN |            |               | PL38A | LDQ44                    |           |
 | N5/6     |     unused, PULL:DOWN |            |               | PL44D | LDQ44                    |           |
@@ -215,7 +215,7 @@ Pinout by Pin Number:
 | N14/3    |     unused, PULL:DOWN |            |               | PR35D | RDQ32                    |           |
 | N16/3    |     unused, PULL:DOWN |            |               | PR32A | RDQS32                   |           |
 | P1/6     |     unused, PULL:DOWN |            |               | PL35A | LDQ32                    |           |
-| P2/6     |     unused, PULL:DOWN |            |               | PL32B | LDQSN32                  |           |
+| P2/6     | serial_clk-           |            | LVDS_OUT      | PL32B | LDQSN32                  |           |
 | P3/6     |     unused, PULL:DOWN |            |               | PL38B | LDQ44                    |           |
 | P4/6     |     unused, PULL:DOWN |            |               | PL41A | LDQ44                    |           |
 | P5/6     |     unused, PULL:DOWN |            |               | PL47D | LLC_GPLL0C_IN/LDQ44      |           |
@@ -286,8 +286,8 @@ to Help Users Lock Down ALL the Pins Easily (by Simply Copy & Paste):
 
 LOCATE  COMP  "LED"  SITE  "B1";
 LOCATE  COMP  "osc_en"  SITE  "T2";
-LOCATE  COMP  "serial_clk"  SITE  "M3";
-LOCATE  COMP  "serial_iq"  SITE  "L3";
+LOCATE  COMP  "serial_clk"  SITE  "N1";
+LOCATE  COMP  "serial_iq"  SITE  "L1";
 LOCATE  COMP  "top_clk"  SITE  "M2";
 LOCATE  COMP  "top_rst_n"  SITE  "T6";
 LOCATE  COMP  "top_spi_cs"  SITE  "R3";
@@ -303,7 +303,7 @@ LOCATE  COMP  "top_test5"  SITE  "A9";
 LOCATE  COMP  "top_test6"  SITE  "B9";
 
 #PLL
-LOCATE  COMP  "pll_lock_I_0_112/PLLInst_0"  SITE  "PLL_BL0" ;
+LOCATE  COMP  "pll_clko_I_0/PLLInst_0"  SITE  "PLL_BL0" ;
 
 
 
@@ -314,5 +314,5 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
-Wed May 15 14:07:25 2019
+Wed May 22 15:18:25 2019
 

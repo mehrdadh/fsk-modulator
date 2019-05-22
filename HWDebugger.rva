@@ -26,47 +26,93 @@
   <LACoreCount>1</LACoreCount>
   <WinUI CoreIndex="0">
    <TraceSigTreeData>
-    <TraceSignal IsHidden="false" Name="TU1" NodeType="0" PortIndex="28"/>
+    <TraceSignal IsHidden="false" Name="TU1" NodeType="0" PortIndex="54"/>
     <TraceSignal IsHidden="false" Name="test_state" NodeType="0" PortIndex="0"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state" NodeType="1" PortIndex="1">
-     <BusRadix Radix="0"/>
+    <TraceSignal IsHidden="false" Name="mem_r_req" NodeType="0" PortIndex="1"/>
+    <TraceSignal IsHidden="false" Name="mem_current_state" NodeType="1" PortIndex="2">
+     <BusRadix Radix="2"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal IsHidden="false" Name="ble_current_state:0" NodeType="2" PortIndex="1"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:1" NodeType="2" PortIndex="2"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:2" NodeType="2" PortIndex="3"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:3" NodeType="2" PortIndex="4"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:4" NodeType="2" PortIndex="5"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:5" NodeType="2" PortIndex="6"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:6" NodeType="2" PortIndex="7"/>
-    <TraceSignal IsHidden="false" Name="ble_current_state:7" NodeType="2" PortIndex="8"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size" NodeType="1" PortIndex="9">
-     <BusRadix Radix="0"/>
+    <TraceSignal IsHidden="false" Name="mem_current_state:0" NodeType="2" PortIndex="2"/>
+    <TraceSignal IsHidden="false" Name="mem_current_state:1" NodeType="2" PortIndex="3"/>
+    <TraceSignal IsHidden="false" Name="mem_current_state:2" NodeType="2" PortIndex="4"/>
+    <TraceSignal IsHidden="false" Name="mem_current_state:3" NodeType="2" PortIndex="5"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr" NodeType="1" PortIndex="6">
+     <BusRadix Radix="2"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:0" NodeType="2" PortIndex="9"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:1" NodeType="2" PortIndex="10"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:2" NodeType="2" PortIndex="11"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:3" NodeType="2" PortIndex="12"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:4" NodeType="2" PortIndex="13"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:5" NodeType="2" PortIndex="14"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:6" NodeType="2" PortIndex="15"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_pkt_size:7" NodeType="2" PortIndex="16"/>
-    <TraceSignal IsHidden="false" Name="pll_clko" NodeType="0" PortIndex="17"/>
-    <TraceSignal IsHidden="false" Name="spi_rx_ready" NodeType="0" PortIndex="18"/>
-    <TraceSignal IsHidden="false" Name="ble_data_flag" NodeType="0" PortIndex="19"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count" NodeType="1" PortIndex="20">
-     <BusRadix Radix="0"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:0" NodeType="2" PortIndex="6"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:1" NodeType="2" PortIndex="7"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:2" NodeType="2" PortIndex="8"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:3" NodeType="2" PortIndex="9"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:4" NodeType="2" PortIndex="10"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:5" NodeType="2" PortIndex="11"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:6" NodeType="2" PortIndex="12"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_addr:7" NodeType="2" PortIndex="13"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q" NodeType="1" PortIndex="14">
+     <BusRadix Radix="3"/>
      <IsExpanded Expand="false"/>
     </TraceSignal>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:0" NodeType="2" PortIndex="20"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:1" NodeType="2" PortIndex="21"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:2" NodeType="2" PortIndex="22"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:3" NodeType="2" PortIndex="23"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:4" NodeType="2" PortIndex="24"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:5" NodeType="2" PortIndex="25"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:6" NodeType="2" PortIndex="26"/>
-    <TraceSignal IsHidden="false" Name="ble_reg_data_count:7" NodeType="2" PortIndex="27"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:0" NodeType="2" PortIndex="14"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:1" NodeType="2" PortIndex="15"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:2" NodeType="2" PortIndex="16"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:3" NodeType="2" PortIndex="17"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:4" NodeType="2" PortIndex="18"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:5" NodeType="2" PortIndex="19"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:6" NodeType="2" PortIndex="20"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_q:7" NodeType="2" PortIndex="21"/>
+    <TraceSignal IsHidden="false" Name="mem_inf_we" NodeType="0" PortIndex="22"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/ble_oct_req" NodeType="0" PortIndex="23"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/ble_oct_rdy" NodeType="0" PortIndex="24"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mod_current_state" NodeType="1" PortIndex="25">
+     <BusRadix Radix="2"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mod_current_state:0" NodeType="2" PortIndex="25"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mod_current_state:1" NodeType="2" PortIndex="26"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mod_current_state:2" NodeType="2" PortIndex="27"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mod_current_state:3" NodeType="2" PortIndex="28"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_current_state" NodeType="1" PortIndex="29">
+     <BusRadix Radix="2"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_current_state:0" NodeType="2" PortIndex="29"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_current_state:1" NodeType="2" PortIndex="30"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_current_state:2" NodeType="2" PortIndex="31"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_current_state:3" NodeType="2" PortIndex="32"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/symCounter" NodeType="1" PortIndex="33">
+     <BusRadix Radix="2"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="packetReader_0/symCounter:0" NodeType="2" PortIndex="33"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/symCounter:1" NodeType="2" PortIndex="34"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/symCounter:2" NodeType="2" PortIndex="35"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/symDone" NodeType="0" PortIndex="36"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr" NodeType="1" PortIndex="37">
+     <BusRadix Radix="2"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:0" NodeType="2" PortIndex="37"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:1" NodeType="2" PortIndex="38"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:2" NodeType="2" PortIndex="39"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:3" NodeType="2" PortIndex="40"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:4" NodeType="2" PortIndex="41"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:5" NodeType="2" PortIndex="42"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:6" NodeType="2" PortIndex="43"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_addr:7" NodeType="2" PortIndex="44"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size" NodeType="1" PortIndex="45">
+     <BusRadix Radix="2"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:0" NodeType="2" PortIndex="45"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:1" NodeType="2" PortIndex="46"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:2" NodeType="2" PortIndex="47"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:3" NodeType="2" PortIndex="48"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:4" NodeType="2" PortIndex="49"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:5" NodeType="2" PortIndex="50"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:6" NodeType="2" PortIndex="51"/>
+    <TraceSignal IsHidden="false" Name="packetReader_0/mem_size:7" NodeType="2" PortIndex="52"/>
+    <TraceSignal IsHidden="false" Name="fskModule_0/symVal" NodeType="0" PortIndex="53"/>
    </TraceSigTreeData>
    <TriggerUI UserSelect="0" PreSelectType="0" PreSelect="1" UserSelectPos="0"/>
    <CoreRun Run="true"/>

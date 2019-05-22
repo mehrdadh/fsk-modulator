@@ -115,8 +115,8 @@ always @(posedge clk) begin
 	end
 end
 
-always @(negedge clk) begin
-	if (rst_n == VSS) begin
+always @(negedge clk, negedge rst_n) begin
+	if ((rst_n == VSS) | (enable == VSS)) begin
 		sampleCount	<= `percision'd4095;
 		symDone		<= VSS;
 	end else begin

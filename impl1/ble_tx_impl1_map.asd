@@ -3,17 +3,18 @@ Device = LFE5U-25F;
 Package = CABGA256;
 Performance = 6;
 LUTS_avail = 24288;
-LUTS_used = 156;
+LUTS_used = 393;
 FF_avail = 24485;
-FF_used = 79;
+FF_used = 229;
 INPUT_LVCMOS18 = 1;
 INPUT_LVCMOS25 = 4;
 OUTPUT_LVCMOS18 = 1;
-OUTPUT_LVCMOS25 = 11;
+OUTPUT_LVCMOS25 = 9;
+OUTPUT_LVDS = 2;
 IO_avail = 197;
-IO_used = 17;
+IO_used = 19;
 EBR_avail = 56;
-EBR_used = 0;
+EBR_used = 1;
 ;
 ; start of DSP statistics
 MULT18X18D = 0;
@@ -30,8 +31,23 @@ DSP_PRADD_avail = 56;
 DSP_PRADD_used = 0;
 ; end of DSP statistics
 ;
+; Begin EBR Section
+Instance_Name = mem_inf_q_7__I_0/ble_packet_mem_0_0_0_0;
+Type = DP16KD;
+Width_A = 8;
+Depth_A = 256;
+REGMODE_A = OUTREG;
+REGMODE_B = NOREG;
+RESETMODE = SYNC;
+ASYNC_RESET_RELEASE = SYNC;
+WRITEMODE_A = NORMAL;
+WRITEMODE_B = NORMAL;
+GSR = ENABLED;
+MEM_INIT_FILE = INIT_ALL_0s;
+MEM_LPC_FILE = ble_packet_mem.lpc;
+; End EBR Section
 ; Begin PLL Section
-Instance_Name = pll_lock_I_0_112/PLLInst_0;
+Instance_Name = pll_clko_I_0/PLLInst_0;
 Type = EHXPLLL;
 CLKOP_Post_Divider_A_Input = DIVA;
 CLKOS_Post_Divider_B_Input = DIVB;

@@ -32,7 +32,6 @@ C:/work/tinysdr_fpga_ble_tx/ble_tx_clarity/ble_tx_clarity.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/FSKModulator.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/radioDefines.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/bleDefines.v = Verilog
-C:/work/tinysdr_fpga_ble_tx/impl1/source/packetGenerator.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/sinModule.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/cosModule.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/IQSerializer.v = Verilog
@@ -46,6 +45,7 @@ C:/work/tinysdr_fpga_ble_tx/impl1/source/spi.vhd = VHDL, work
 C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_slave.vhd = VHDL, work
 C:/work/tinysdr_fpga_ble_tx/impl1/source/ble_mem.v = Verilog
 C:/work/tinysdr_fpga_ble_tx/impl1/source/spi_ctrl.v = Verilog
+C:/work/tinysdr_fpga_ble_tx/impl1/source/packetReader.v = Verilog
 [HDL_Defines]
 SBP_SYNTHESIS=
 [HDL_Param]

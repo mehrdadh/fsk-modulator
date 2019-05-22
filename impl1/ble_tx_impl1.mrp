@@ -14,25 +14,28 @@ Target Vendor:  LATTICE
 Target Device:  LFE5U-25FCABGA256
 Target Performance:   6
 Mapper:  sa5p00,  version:  Diamond (64-bit) 3.10.3.144
-Mapped on:  05/15/19  14:07:07
+Mapped on:  05/22/19  15:18:02
 
 Design Summary
 --------------
 
-   Number of registers:     79 out of 24879 (0%)
-      PFU registers:           79 out of 24288 (0%)
+   Number of registers:    229 out of 24879 (1%)
+      PFU registers:          229 out of 24288 (1%)
       PIO registers:            0 out of   591 (0%)
-   Number of SLICEs:       109 out of 12144 (1%)
-      SLICEs as Logic/ROM:    109 out of 12144 (1%)
+   Number of SLICEs:       271 out of 12144 (2%)
+      SLICEs as Logic/ROM:    271 out of 12144 (2%)
       SLICEs as RAM:            0 out of  9108 (0%)
-      SLICEs as Carry:         10 out of 12144 (0%)
-   Number of LUT4s:        156 out of 24288 (1%)
-      Number used as logic LUTs:        136
+      SLICEs as Carry:         27 out of 12144 (0%)
+   Number of LUT4s:        393 out of 24288 (2%)
+      Number used as logic LUTs:        339
       Number used as distributed RAM:     0
-      Number used as ripple logic:       20
+      Number used as ripple logic:       54
       Number used as shift registers:     0
-   Number of PIO sites used: 17 out of 197 (9%)
-   Number of block RAMs:  0 out of 56 (0%)
+   Number of PIO sites used: 19 out of 197 (10%)
+      Number of PIO sites used for single ended IOs: 15
+      Number of PIO sites used for differential IOs: 4 (represented by 2 PIO
+     comps in NCD)
+   Number of block RAMs:  1 out of 56 (2%)
    Number of GSRs:  1 out of 1 (100%)
    JTAG used :      No
    Readback used :  No
@@ -57,95 +60,126 @@ Design Summary
         Number Of Mapped DSP Components:
    --------------------------------
    MULT18X18D          0
-   MULT9X9D            0
-   ALU54B              0
-   ALU24B              0
 
                                     Page 1
 
 
 
 
-Design:  topModule                                     Date:  05/15/19  14:07:07
+Design:  topModule                                     Date:  05/22/19  15:18:02
 
 Design Summary (cont)
 ---------------------
+   MULT9X9D            0
+   ALU54B              0
+   ALU24B              0
    PRADD18A            0
    PRADD9A             0
    --------------------------------
    Number of Used DSP MULT Sites:  0 out of 56 (0 %)
    Number of Used DSP ALU Sites:  0 out of 28 (0 %)
    Number of Used DSP PRADD Sites:  0 out of 56 (0 %)
-   Number of clocks:  5
-     Net pll_clko: 16 loads, 16 rising, 0 falling (Driver:
-     pll_lock_I_0_112/PLLInst_0 )
-     Net top_test0_c: 39 loads, 13 rising, 26 falling (Driver: spi_sclk_96 )
-     Net clkDivider_clko: 7 loads, 7 rising, 0 falling (Driver:
+   Number of clocks:  6
+     Net serial_clk_c: 25 loads, 17 rising, 8 falling (Driver:
+     pll_clko_I_0/PLLInst_0 )
+     Net top_test0_c: 39 loads, 13 rising, 26 falling (Driver: spi_sclk_109 )
+     Net top_test2_c: 89 loads, 27 rising, 62 falling (Driver:
      clockDivider_0/clkOut_28 )
+     Net top_test6_c: 2 loads, 2 rising, 0 falling (Driver:
+     fskModule_0/symDone_60 )
      Net top_clk_c: 1 loads, 1 rising, 0 falling (Driver: PIO top_clk )
-     Net pll_lock_I_0_112/CLKIt: 1 loads, 1 rising, 0 falling (Driver:
-     pll_lock_I_0_112/PLLRefcs_0 )
-   Number of Clock Enables:  13
+     Net pll_clko_I_0/CLKIt: 1 loads, 1 rising, 0 falling (Driver:
+     pll_clko_I_0/PLLRefcs_0 )
+   Number of Clock Enables:  30
+     Net clk_N_207_enable_64: 8 loads, 8 LSLICEs
+     Net pktReader_ready: 1 loads, 1 LSLICEs
+     Net clk_N_207_enable_36: 4 loads, 4 LSLICEs
+     Net ble_next_state_7__N_69: 6 loads, 6 LSLICEs
+     Net clk_N_207_enable_29: 2 loads, 2 LSLICEs
+     Net clk_N_207_enable_13: 1 loads, 1 LSLICEs
+     Net fskModule_0/top_test2_c_enable_1: 1 loads, 1 LSLICEs
+     Net clk_N_207_enable_50: 4 loads, 4 LSLICEs
+     Net clk_N_207_enable_57: 4 loads, 4 LSLICEs
      Net spi_0/spi_slave_0/bit_cnt_2: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_7__N_287: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_6__N_292: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_5__N_294: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_4__N_296: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/bit_cnt_1: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_3__N_298: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_2__N_300: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/rx_buf_1__N_302: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_1__N_556: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/sclk_N_638_enable_1: 1 loads, 1 LSLICEs
      Net spi_0/spi_slave_0/top_test0_c_enable_1: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/sclk_N_384_enable_1: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_7__N_541: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/bit_cnt_1: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_6__N_546: 1 loads, 1 LSLICEs
      Net spi_0/spi_slave_0/top_test0_c_enable_2: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_2__N_554: 1 loads, 1 LSLICEs
      Net spi_0/spi_slave_0/top_test0_c_enable_3: 1 loads, 1 LSLICEs
-   Number of LSRs:  24
-     Net spi_rst: 8 loads, 8 LSLICEs
-     Net clockDivider_0/n573: 5 loads, 5 LSLICEs
-     Net pll_lock: 6 loads, 6 LSLICEs
-     Net n1924: 7 loads, 7 LSLICEs
-     Net top_rst_n_N_66: 1 loads, 0 LSLICEs
-     Net spi_0/spi_slave_0/n1927: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1926: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1925: 1 loads, 1 LSLICEs
-     Net trdy_N_389: 1 loads, 1 LSLICEs
-     Net rrdy_N_394: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1919: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1922: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1921: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1928: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1929: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1930: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1931: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1932: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1933: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1934: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1935: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1936: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/n1937: 1 loads, 1 LSLICEs
-     Net spi_0/spi_slave_0/roe_N_398: 1 loads, 1 LSLICEs
-   Number of nets driven by tri-state buffers:  0
-   Top 10 highest fanout non-clock nets:
+     Net spi_0/spi_slave_0/rx_buf_4__N_550: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_3__N_552: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rx_buf_5__N_548: 1 loads, 1 LSLICEs
+     Net packetReader_0/clk_N_207_enable_28: 4 loads, 4 LSLICEs
+     Net packetReader_0/top_test6_c_enable_2: 1 loads, 1 LSLICEs
+     Net packetReader_0/clk_N_207_enable_19: 4 loads, 4 LSLICEs
+     Net packetReader_0/clk_N_207_enable_6: 1 loads, 1 LSLICEs
+     Net packetReader_0/clk_N_207_enable_7: 1 loads, 1 LSLICEs
+     Net packetReader_0/clk_N_207_enable_9: 2 loads, 2 LSLICEs
+     Net packetReader_0/clk_N_207_enable_11: 1 loads, 1 LSLICEs
+     Net packetReader_0/top_test2_c_enable_2: 1 loads, 1 LSLICEs
+   Number of LSRs:  36
+     Net pktReader_ready: 22 loads, 22 LSLICEs
+     Net n2090: 4 loads, 4 LSLICEs
+     Net mem_next_state_3__N_122: 1 loads, 1 LSLICEs
+     Net n6455: 2 loads, 1 LSLICEs
 
                                     Page 2
 
 
 
 
-Design:  topModule                                     Date:  05/15/19  14:07:07
+Design:  topModule                                     Date:  05/22/19  15:18:02
 
 Design Summary (cont)
 ---------------------
-     Net spi_rst: 55 loads
-     Net spi_next_state_3_N_261_3: 31 loads
+     Net IQSerializer_start: 4 loads, 4 LSLICEs
+     Net n1111: 5 loads, 5 LSLICEs
+     Net n5528: 1 loads, 1 LSLICEs
+     Net spi_next_state_3_N_515_3: 1 loads, 1 LSLICEs
+     Net mem_next_state_3__N_120: 9 loads, 9 LSLICEs
+     Net spi_rst: 8 loads, 8 LSLICEs
+     Net spi_0/spi_slave_0/n6458: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6461: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6452: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6444: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/bit_cnt_15__N_539: 10 loads, 10 LSLICEs
+     Net spi_0/spi_slave_0/roe_N_652: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6451: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6445: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/trdy_N_643: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/rrdy_N_648: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6446: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6460: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6454: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6450: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6447: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6443: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6448: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6456: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6457: 1 loads, 1 LSLICEs
+     Net spi_0/spi_slave_0/n6449: 1 loads, 1 LSLICEs
+     Net top_rst_n_N_131: 1 loads, 0 LSLICEs
+     Net packetReader_0/fskModule_start: 13 loads, 13 LSLICEs
+     Net IQSerializer_0/n2974: 2 loads, 2 LSLICEs
+     Net IQSerializer_0/n2989: 2 loads, 2 LSLICEs
+     Net clockDivider_0/n1097: 5 loads, 5 LSLICEs
+     Net pll_lock: 6 loads, 6 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net spi_rst: 52 loads
+     Net packetReader_0/mod_current_state_1: 31 loads
+     Net spi_next_state_3_N_515_3: 29 loads
+     Net pktReader_ready: 24 loads
+     Net packetReader_0/mod_current_state_0: 23 loads
+     Net clk_N_207_enable_29: 22 loads
+     Net mem_next_state_3__N_120: 20 loads
      Net spi_tx_load_en: 19 loads
-     Net top_test6_c: 15 loads
-     Net top_test1_c: 14 loads
-     Net n1987: 13 loads
-     Net spi_0/spi_slave_0/rd_add: 12 loads
-     Net pll_lock: 10 loads
-     Net spi_tx_data_7__N_248: 10 loads
-     Net spi_0/spi_slave_0/n1409: 9 loads
+     Net sampleCount_0: 16 loads
+     Net sampleCount_1: 16 loads
 
 
 
@@ -158,6 +192,16 @@ Design Errors/Warnings
 ----------------------
 
 WARNING - map: Pref conflicts. Ignoring PERIOD PORT "top_clk" 31.250000 ns HIGH
+
+                                    Page 3
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+Design Errors/Warnings (cont)
+-----------------------------
      15.625000 ns ;
         Keeping PERIOD PORT "top_clk" 31.250000 ns ;
      .
@@ -169,39 +213,29 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| osc_en              | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| serial_iq           | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| serial_clk          | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| top_spi_miso        | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| LED                 | OUTPUT    | LVCMOS18  |            |
-+---------------------+-----------+-----------+------------+
-| top_test0           | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| top_test1           | OUTPUT    | LVCMOS25  |            |
+| top_test3           | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | top_test2           | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| top_test3           | OUTPUT    | LVCMOS25  |            |
+| top_test1           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_test0           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| LED                 | OUTPUT    | LVCMOS18  |            |
 +---------------------+-----------+-----------+------------+
 | top_test4           | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| serial_clk          | OUTPUT    | LVDS      |            |
++---------------------+-----------+-----------+------------+
+| serial_iq           | OUTPUT    | LVDS      |            |
++---------------------+-----------+-----------+------------+
+| osc_en              | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| top_spi_miso        | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | top_test5           | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | top_test6           | OUTPUT    | LVCMOS25  |            |
-
-                                    Page 3
-
-
-
-
-Design:  topModule                                     Date:  05/15/19  14:07:07
-
-IO (PIO) Attributes (cont)
---------------------------
 +---------------------+-----------+-----------+------------+
 | top_clk             | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -217,36 +251,101 @@ IO (PIO) Attributes (cont)
 Removed logic
 -------------
 
-Signal sclk_N_384 was merged into signal top_test0_c
-Signal n659 was merged into signal spi_0/spi_slave_0/miso_N_383
-Signal spi_0/spi_slave_0/n1942 was merged into signal spi_rst
-Signal n1946 was merged into signal pll_lock
+Signal sclk_N_638 was merged into signal top_test0_c
+Signal clk_N_427 was merged into signal serial_clk_c
+Signal clk_N_207 was merged into signal top_test2_c
+Signal clockDivider_0/pll_lock_N_173 was merged into signal pll_lock
+Signal packetReader_0/symVal_N_271_0 was merged into signal
+     packetReader_0/symCounter_0
+Signal packetReader_0/ready_N_205 was merged into signal pktReader_ready
+
+                                    Page 4
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+Removed logic (cont)
+--------------------
+Signal n6488 was merged into signal packetReader_0/fskModule_start
+Signal spi_0/spi_slave_0/n6463 was merged into signal spi_rst
+Signal n6492 was merged into signal spi_next_state_3_N_515_3
 Signal VCC_net undriven or does not drive anything - clipped.
-Signal clockDivider_0/lockCounter_244_add_4_9/S1 undriven or does not drive
+Signal clockDivider_0/lockCounter_945_add_4_1/S0 undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/lockCounter_244_add_4_9/CO undriven or does not drive
+Signal clockDivider_0/lockCounter_945_add_4_1/CI undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/counter_243_add_4_9/S1 undriven or does not drive anything
-     - clipped.
-Signal clockDivider_0/counter_243_add_4_9/CO undriven or does not drive anything
-     - clipped.
-Signal clockDivider_0/lockCounter_244_add_4_1/S0 undriven or does not drive
+Signal clockDivider_0/lockCounter_945_add_4_9/S1 undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/lockCounter_244_add_4_1/CI undriven or does not drive
+Signal clockDivider_0/lockCounter_945_add_4_9/CO undriven or does not drive
      anything - clipped.
-Signal clockDivider_0/counter_243_add_4_1/S0 undriven or does not drive anything
+Signal clockDivider_0/counter_944_add_4_1/S0 undriven or does not drive anything
      - clipped.
-Signal clockDivider_0/counter_243_add_4_1/CI undriven or does not drive anything
+Signal clockDivider_0/counter_944_add_4_1/CI undriven or does not drive anything
      - clipped.
-Block i1588 was optimized away.
-Block spi_0/spi_slave_0/i319_1_lut was optimized away.
-Block spi_0/spi_slave_0/reset_n_I_0_1_lut_rep_56 was optimized away.
-Block pll_lock_I_0_1_lut_rep_60 was optimized away.
+Signal clockDivider_0/counter_944_add_4_9/S1 undriven or does not drive anything
+     - clipped.
+Signal clockDivider_0/counter_944_add_4_9/CO undriven or does not drive anything
+     - clipped.
+Signal packetReader_0/mem_addr_946_add_4_9/S1 undriven or does not drive
+     anything - clipped.
+Signal packetReader_0/mem_addr_946_add_4_9/CO undriven or does not drive
+     anything - clipped.
+Signal packetReader_0/mem_addr_946_add_4_1/S0 undriven or does not drive
+     anything - clipped.
+Signal packetReader_0/mem_addr_946_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal ble_reg_data_count_943_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal ble_reg_data_count_943_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal _add_1_1209_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal _add_1_1209_add_4_1/CI undriven or does not drive anything - clipped.
+Signal _add_1_1209_add_4_13/S1 undriven or does not drive anything - clipped.
+Signal _add_1_1209_add_4_13/CO undriven or does not drive anything - clipped.
+Signal ble_reg_data_count_943_add_4_9/S1 undriven or does not drive anything -
+     clipped.
+Signal ble_reg_data_count_943_add_4_9/CO undriven or does not drive anything -
+     clipped.
+Block i5265 was optimized away.
+Block pll_clko_I_0/i5263 was optimized away.
+Block clockDivider_0/i5264 was optimized away.
+Block clockDivider_0/pll_lock_I_0_1_lut was optimized away.
+Block packetReader_0/sub_63_inv_0_i1_1_lut was optimized away.
+Block packetReader_0/ready_I_0_1_lut was optimized away.
+Block packetReader_0/i1447_1_lut_rep_111 was optimized away.
+Block spi_0/spi_slave_0/reset_n_I_0_1_lut_rep_86 was optimized away.
+Block spi_0/spi_slave_0/ss_n_I_0_310_1_lut_rep_115 was optimized away.
 Block i2 was optimized away.
 
 Memory Usage
 ------------
 
+    
+         
+
+                                    Page 5
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+Memory Usage (cont)
+-------------------
+    INFO: Design contains EBR with GSR enabled. The GSR is only applicable for
+         output registers except FIFO. 
+    /mem_inf_q_7__I_0:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 0
+    PFU Registers: 0
+    -Contains EBR ble_packet_mem_0_0_0_0:  TYPE= DP16KD,  Width_A= 8,  Depth_A=
+         256,  REGMODE_A= OUTREG,  REGMODE_B= NOREG,  RESETMODE= SYNC,
+         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
+         GSR= ENABLED,  MEM_INIT_FILE= INIT_ALL_0s,  MEM_LPC_FILE=
+         ble_packet_mem.lpc
 
      
 
@@ -254,24 +353,14 @@ PLL/DLL Summary
 ---------------
 
 PLL 1:                                     Pin/Node Value
-  PLL Instance Name:                                pll_lock_I_0_112/PLLInst_0
+  PLL Instance Name:                                pll_clko_I_0/PLLInst_0
   PLL Type:                                         EHXPLLL
   Input Clock:                             NODE     GND_net
   Input Clock2:                            PIN      top_clk_c
-
-                                    Page 4
-
-
-
-
-Design:  topModule                                     Date:  05/15/19  14:07:07
-
-PLL/DLL Summary (cont)
-----------------------
   Input Clock select:                               NONE
-  Output Clock(P):                         NODE     pll_clko
-  Feedback Signal:                         NODE     pll_clko
-  Reset Signal:                            NODE     top_rst_n_N_66
+  Output Clock(P):                         PIN,NODE serial_clk_c
+  Feedback Signal:                         NODE     serial_clk_c
+  Reset Signal:                            NODE     top_rst_n_N_131
   Standby Signal:                          NODE     GND_net
   PLL LOCK signal:                         NODE     pll_lock
   Input Clock Frequency (MHz):                      32.0000
@@ -301,6 +390,16 @@ PLL/DLL Summary (cont)
   CLKOS2 Desired Phase Shift(degree):               0
   CLKOS2 Trim Option Rising/Falling:                NONE
   CLKOS2 Trim Option Delay:                         NONE
+
+                                    Page 6
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+PLL/DLL Summary (cont)
+----------------------
   CLKOS3 Desired Phase Shift(degree):               0
   CLKOS3 Trim Option Rising/Falling:                NONE
   CLKOS3 Trim Option Delay:                         NONE
@@ -308,9 +407,11 @@ PLL/DLL Summary (cont)
 ASIC Components
 ---------------
 
-Instance Name: pll_lock_I_0_112/PLLInst_0
+Instance Name: mem_inf_q_7__I_0/ble_packet_mem_0_0_0_0
+         Type: DP16KD
+Instance Name: pll_clko_I_0/PLLInst_0
          Type: EHXPLLL
-Instance Name: pll_lock_I_0_112/PLLRefcs_0
+Instance Name: pll_clko_I_0/PLLRefcs_0
          Type: PLLREFCS
 
 GSR Usage
@@ -319,21 +420,11 @@ GSR Usage
 GSR Component:
    The Global Set Reset (GSR) resource has been used to implement a global reset
         of the design. The reset signal used for GSR control is
-        'bit_cnt_15__N_285'.
+        'clk_N_207_enable_29'.
         
 
      GSR Property:
    The design components with GSR property set to ENABLED will respond to global
-
-                                    Page 5
-
-
-
-
-Design:  topModule                                     Date:  05/15/19  14:07:07
-
-GSR Usage (cont)
-----------------
         set reset while the components with GSR property set to DISABLED will
         not.
         
@@ -342,90 +433,305 @@ GSR Usage (cont)
 -------------------------------------
 
      These components have the GSR property set to DISABLED. The components will
-     not respond to the reset signal 'bit_cnt_15__N_285' via the GSR component.
+     not respond to the reset signal 'clk_N_207_enable_29' via the GSR
+     component.
 
      Type and number of components of the type: 
-   Register = 61 
+   Register = 185 
 
      Type and instance name of component: 
-   Register : spi_mosi_98
-   Register : top_spi_miso_99
-   Register : spi_sclk_96
-   Register : clockDivider_0/clkOut_28
-   Register : clockDivider_0/counter_243__i7
-   Register : clockDivider_0/counter_243__i6
-   Register : clockDivider_0/counter_243__i5
-   Register : clockDivider_0/counter_243__i4
-   Register : clockDivider_0/counter_243__i3
-   Register : clockDivider_0/counter_243__i2
-   Register : clockDivider_0/counter_243__i1
-   Register : clockDivider_0/lockCounter_244__i7
-   Register : clockDivider_0/lockCounter_244__i6
-   Register : clockDivider_0/lockCounter_244__i5
-   Register : clockDivider_0/lockCounter_244__i4
-   Register : clockDivider_0/lockCounter_244__i3
-   Register : clockDivider_0/lockCounter_244__i2
-   Register : clockDivider_0/lockCounter_244__i1
-   Register : clockDivider_0/lockCounter_244__i0
-   Register : clockDivider_0/counter_243__i0
-   Register : spi_cs_97
-   Register : spi_0/spi_slave_0/tx_buf_i0_i7_409_410_reset
-   Register : spi_0/spi_slave_0/rd_add_230
-   Register : spi_0/spi_slave_0/rx_buf_7__234
-   Register : spi_0/spi_slave_0/rx_buf_6__235
-   Register : spi_0/spi_slave_0/rx_buf_5__236
-   Register : spi_0/spi_slave_0/tx_buf_i0_i7_409_410_set
-   Register : spi_0/spi_slave_0/rx_buf_4__237
-   Register : spi_0/spi_slave_0/tx_buf_i0_i0_401_402_set
-   Register : spi_0/spi_slave_0/rx_buf_3__238
-   Register : spi_0/spi_slave_0/rx_buf_2__239
-   Register : spi_0/spi_slave_0/rx_buf_1__240
-   Register : spi_0/spi_slave_0/rx_buf_0__241
-   Register : spi_0/spi_slave_0/trdy_231
-   Register : spi_0/spi_slave_0/rrdy_232
-   Register : spi_0/spi_slave_0/wr_add_229
-   Register : spi_0/spi_slave_0/tx_buf_i0_i0_401_402_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i6_413_414_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i6_413_414_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i5_417_418_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i5_417_418_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i4_421_422_set
+   Register : spi_mosi_111
+   Register : top_spi_miso_112
+   Register : ble_mem_addr_buff_i0_i0
+   Register : ble_mem_w_addr__i0
+   Register : mem_inf_we_127
+   Register : spi_sclk_109
+   Register : ble_mem_w_req_119
+   Register : fskModule_0/FSK_I__i8
+   Register : fskModule_0/FSK_I__i5
+   Register : fskModule_0/FSK_I__i4
+   Register : fskModule_0/FSK_I__i0
+   Register : fskModule_0/firstFlag_56
+   Register : fskModule_0/start_57
+   Register : fskModule_0/FSK_I__i2
+   Register : fskModule_0/cos_phase_FSM_i1
+   Register : fskModule_0/FSK_Q__i0
 
-                                    Page 6
+                                    Page 7
 
 
 
 
-Design:  topModule                                     Date:  05/15/19  14:07:07
+Design:  topModule                                     Date:  05/22/19  15:18:02
 
 GSR Usage (cont)
 ----------------
-   Register : spi_0/spi_slave_0/tx_buf_i0_i4_421_422_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i3_425_426_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i3_425_426_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i2_429_430_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i2_429_430_reset
-   Register : spi_0/spi_slave_0/tx_buf_i0_i1_433_434_set
-   Register : spi_0/spi_slave_0/tx_buf_i0_i1_433_434_reset
+   Register : fskModule_0/lastSym_55
+   Register : fskModule_0/sin_phase_947__i0
+   Register : fskModule_0/cos_phase_FSM_i8
+   Register : fskModule_0/cos_phase_FSM_i7
+   Register : fskModule_0/cos_phase_FSM_i6
+   Register : fskModule_0/cos_phase_FSM_i5
+   Register : fskModule_0/cos_phase_FSM_i4
+   Register : fskModule_0/cos_phase_FSM_i3
+   Register : fskModule_0/cos_phase_FSM_i2
+   Register : fskModule_0/FSK_I__i12
+   Register : fskModule_0/FSK_Q__i2
+   Register : fskModule_0/FSK_Q__i4
+   Register : fskModule_0/FSK_Q__i6
+   Register : fskModule_0/FSK_Q__i7
+   Register : fskModule_0/FSK_Q__i12
+   Register : fskModule_0/sin_phase_947__i1
+   Register : fskModule_0/sin_phase_947__i2
+   Register : spi_cs_110
+   Register : mem_inf_dataIn__i0
+   Register : ble_reg_pkt_size_i0_i0
+   Register : ble_mem_data_buff_i0_i0
+   Register : mem_r_req_120
+   Register : ble_mem_w_addr__i7
+   Register : ble_mem_w_addr__i6
+   Register : ble_mem_w_addr__i5
+   Register : ble_mem_w_addr__i4
+   Register : ble_mem_w_addr__i3
+   Register : ble_mem_w_addr__i2
+   Register : ble_mem_w_addr__i1
+   Register : ble_mem_addr_buff_i0_i7
+   Register : ble_mem_addr_buff_i0_i6
+   Register : ble_mem_addr_buff_i0_i5
+   Register : ble_mem_addr_buff_i0_i4
+   Register : ble_mem_addr_buff_i0_i3
+   Register : ble_mem_addr_buff_i0_i2
+   Register : ble_mem_addr_buff_i0_i1
+   Register : mem_inf_dataIn__i1
+   Register : mem_inf_dataIn__i2
+   Register : mem_inf_dataIn__i3
+   Register : mem_inf_dataIn__i4
+   Register : mem_inf_dataIn__i5
+   Register : mem_inf_dataIn__i6
+   Register : mem_inf_dataIn__i7
+   Register : ble_reg_pkt_size_i0_i1
+   Register : ble_reg_pkt_size_i0_i2
+   Register : ble_reg_pkt_size_i0_i3
+   Register : ble_reg_pkt_size_i0_i4
+   Register : ble_reg_pkt_size_i0_i5
+   Register : ble_reg_pkt_size_i0_i6
+   Register : ble_reg_pkt_size_i0_i7
+   Register : ble_mem_data_buff_i0_i1
+   Register : ble_mem_data_buff_i0_i2
+   Register : ble_mem_data_buff_i0_i3
+   Register : ble_mem_data_buff_i0_i4
+   Register : ble_mem_data_buff_i0_i5
+   Register : ble_mem_data_buff_i0_i6
+
+                                    Page 8
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+GSR Usage (cont)
+----------------
+   Register : ble_mem_data_buff_i0_i7
+   Register : spi_0/spi_slave_0/tx_buf_i0_i1_1763_1764_set
+   Register : spi_0/spi_slave_0/rd_add_230
+   Register : spi_0/spi_slave_0/tx_buf_i0_i2_1759_1760_reset
+   Register : spi_0/spi_slave_0/rx_buf_1__240
+   Register : spi_0/spi_slave_0/tx_buf_i0_i2_1759_1760_set
+   Register : spi_0/spi_slave_0/i223_277
+   Register : spi_0/spi_slave_0/rx_buf_0__241
+   Register : spi_0/spi_slave_0/rx_buf_7__234
+   Register : spi_0/spi_slave_0/wr_add_229
+   Register : spi_0/spi_slave_0/rx_buf_6__235
    Register : spi_0/spi_slave_0/roe_233
-   Register : spi_ctrl_0/spi_current_state_FSM_i4
-   Register : spi_ctrl_0/spi_current_state_FSM_i3
-   Register : spi_ctrl_0/spi_current_state_FSM_i11
+   Register : spi_0/spi_slave_0/tx_buf_i0_i3_1755_1756_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i3_1755_1756_set
+   Register : spi_0/spi_slave_0/rx_buf_2__239
+   Register : spi_0/spi_slave_0/trdy_231
+   Register : spi_0/spi_slave_0/rrdy_232
+   Register : spi_0/spi_slave_0/tx_buf_i0_i6_1771_1772_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i6_1771_1772_set
+   Register : spi_0/spi_slave_0/miso_268
+   Register : spi_0/spi_slave_0/bit_cnt_i1
+   Register : spi_0/spi_slave_0/rx_buf_4__237
+   Register : spi_0/spi_slave_0/tx_buf_i0_i7_1767_1768_reset
+   Register : spi_0/spi_slave_0/rx_buf_3__238
+   Register : spi_0/spi_slave_0/tx_buf_i0_i7_1767_1768_set
+   Register : spi_0/spi_slave_0/rx_buf_5__236
+   Register : spi_0/spi_slave_0/tx_buf_i0_i4_1751_1752_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i4_1751_1752_set
+   Register : spi_0/spi_slave_0/tx_buf_i0_i0_1747_1748_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i5_1743_1744_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i5_1743_1744_set
+   Register : spi_0/spi_slave_0/bit_cnt_i2
+   Register : spi_0/spi_slave_0/bit_cnt_i3
+   Register : spi_0/spi_slave_0/bit_cnt_i4
+   Register : spi_0/spi_slave_0/bit_cnt_i5
+   Register : spi_0/spi_slave_0/bit_cnt_i6
+   Register : spi_0/spi_slave_0/bit_cnt_i7
+   Register : spi_0/spi_slave_0/bit_cnt_i8
+   Register : spi_0/spi_slave_0/bit_cnt_i9
+   Register : spi_0/spi_slave_0/bit_cnt_i10
+   Register : spi_0/spi_slave_0/bit_cnt_i11
+   Register : spi_0/spi_slave_0/bit_cnt_i12
+   Register : spi_0/spi_slave_0/bit_cnt_i13
+   Register : spi_0/spi_slave_0/bit_cnt_i14
+   Register : spi_0/spi_slave_0/bit_cnt_i15
+   Register : spi_0/spi_slave_0/bit_cnt_i16
+   Register : spi_0/spi_slave_0/tx_buf_i0_i1_1763_1764_reset
+   Register : spi_0/spi_slave_0/tx_buf_i0_i0_1747_1748_set
+   Register : packetReader_0/mem_addr_946__i1
+   Register : packetReader_0/symCounter_i0_i0
+   Register : packetReader_0/symCounter_i0_i1
+   Register : packetReader_0/mod_current_state_i1
+   Register : packetReader_0/ble_oct_rdy_113
+   Register : packetReader_0/ble_mod_done_114
+   Register : packetReader_0/symCounter_i0_i2
+   Register : packetReader_0/ble_oct_i0
+
+                                    Page 9
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+GSR Usage (cont)
+----------------
+   Register : packetReader_0/start_121
+   Register : packetReader_0/countRst_122
+   Register : packetReader_0/debug1_123
+   Register : packetReader_0/ble_oct_req_120
+   Register : packetReader_0/mem_addr_946__i0
+   Register : packetReader_0/debug0_115
+   Register : packetReader_0/symVal_117
+   Register : packetReader_0/ble_oct_i7
+   Register : packetReader_0/ble_oct_i6
+   Register : packetReader_0/ble_oct_i5
+   Register : packetReader_0/ble_oct_i4
+   Register : packetReader_0/ble_oct_i3
+   Register : packetReader_0/ble_oct_i2
+   Register : packetReader_0/ble_oct_i1
+   Register : packetReader_0/mem_addr_946__i6
+   Register : packetReader_0/mem_addr_946__i7
+   Register : packetReader_0/mod_current_state_i3
+   Register : packetReader_0/mem_addr_946__i2
+   Register : packetReader_0/mod_current_state_i2
+   Register : packetReader_0/mem_addr_946__i5
+   Register : packetReader_0/mem_addr_946__i4
+   Register : packetReader_0/mem_current_state_FSM_i1
+   Register : packetReader_0/mem_addr_946__i3
+   Register : packetReader_0/mem_current_state_FSM_i2
+   Register : packetReader_0/mem_current_state_FSM_i3
+   Register : packetReader_0/mem_current_state_FSM_i4
+   Register : packetReader_0/mem_current_state_FSM_i5
+   Register : IQSerializer_0/ICounter_949__i1
+   Register : IQSerializer_0/QCounter_942__i1
+   Register : IQSerializer_0/current_state_FSM_i0
+   Register : IQSerializer_0/current_state_FSM_i1
+   Register : IQSerializer_0/current_state_FSM_i2
+   Register : IQSerializer_0/current_state_FSM_i3
+   Register : IQSerializer_0/current_state_FSM_i4
+   Register : IQSerializer_0/ICounter_949__i2
+   Register : IQSerializer_0/ICounter_949__i3
+   Register : IQSerializer_0/QCounter_942__i2
+   Register : IQSerializer_0/QCounter_942__i3
+   Register : IQSerializer_0/DEDFF_0/pose_edge_14
+   Register : IQSerializer_0/DEDFF_0/neg_edge_15
+   Register : clockDivider_0/clkOut_28
+   Register : clockDivider_0/lockCounter_945__i0
+   Register : clockDivider_0/counter_944__i0
+   Register : clockDivider_0/lockCounter_945__i1
+   Register : clockDivider_0/lockCounter_945__i2
+   Register : clockDivider_0/lockCounter_945__i3
+   Register : clockDivider_0/lockCounter_945__i4
+   Register : clockDivider_0/lockCounter_945__i5
+   Register : clockDivider_0/lockCounter_945__i6
+   Register : clockDivider_0/lockCounter_945__i7
+   Register : clockDivider_0/counter_944__i1
+   Register : clockDivider_0/counter_944__i2
+   Register : clockDivider_0/counter_944__i3
+   Register : clockDivider_0/counter_944__i4
+   Register : clockDivider_0/counter_944__i5
+   Register : clockDivider_0/counter_944__i6
+
+                                   Page 10
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+GSR Usage (cont)
+----------------
+   Register : clockDivider_0/counter_944__i7
+
+     Components with synchronous local reset also reset by asynchronous GSR
+----------------------------------------------------------------------
+
+     These components have the GSR property set to ENABLED and the local reset
+     is synchronous. The components will respond to the synchronous local reset
+     and to the unrelated asynchronous reset signal 'clk_N_207_enable_29' via
+     the GSR component.
+
+     Type and number of components of the type: 
+   Register = 22 
+   DP16KD = 1
+
+     Type and instance name of component: 
+   Register : fskModule_0/symDone_60
+   Register : fskModule_0/sampleCount_i0
+   Register : fskModule_0/sampleCount_i11
+   Register : fskModule_0/sampleCount_i10
+   Register : fskModule_0/sampleCount_i9
+   Register : fskModule_0/sampleCount_i8
+   Register : fskModule_0/sampleCount_i7
+   Register : fskModule_0/sampleCount_i6
+   Register : fskModule_0/sampleCount_i5
+   Register : fskModule_0/sampleCount_i4
+   Register : fskModule_0/sampleCount_i3
+   Register : fskModule_0/sampleCount_i2
+   Register : fskModule_0/sampleCount_i1
+   Register : ble_reg_data_count_943__i0
+   Register : ble_reg_data_count_943__i1
+   Register : ble_reg_data_count_943__i2
+   Register : ble_reg_data_count_943__i3
+   Register : ble_reg_data_count_943__i4
+   Register : ble_reg_data_count_943__i5
+   Register : ble_reg_data_count_943__i6
+   Register : ble_reg_data_count_943__i7
    Register : spi_ctrl_0/spi_current_state_FSM_i10
-   Register : spi_ctrl_0/spi_current_state_FSM_i9
-   Register : spi_ctrl_0/spi_current_state_FSM_i8
-   Register : spi_ctrl_0/spi_current_state_FSM_i7
-   Register : spi_ctrl_0/spi_current_state_FSM_i6
-   Register : spi_ctrl_0/spi_current_state_FSM_i5
-   Register : spi_ctrl_0/spi_current_state_FSM_i2
-   Register : spi_ctrl_0/spi_current_state_FSM_i1
+   DP16KD : mem_inf_q_7__I_0/ble_packet_mem_0_0_0_0
+
+     EBR components with enabled GSR
+-------------------------------
+
+     These EBR components have the GSR property set to ENABLED. The components
+     will respond to the asynchronous reset signal 'clk_N_207_enable_29' via the
+     GSR component.
+
+     Type and number of components of the type: 
+   DP16KD = 1
+
+     Type and instance name of component: 
+   DP16KD : mem_inf_q_7__I_0/ble_packet_mem_0_0_0_0
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs  
+
+                                   Page 11
+
+
+
+
+Design:  topModule                                     Date:  05/22/19  15:18:02
+
+Run Time and Memory Usage (cont)
+--------------------------------
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 109 MB
+   Peak Memory Usage: 111 MB
         
 
 
@@ -457,7 +763,31 @@ Run Time and Memory Usage
 
 
 
-                                    Page 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Page 12
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

@@ -1,19 +1,20 @@
-rvl_alias "pll_clko" "pll_clko";
+rvl_alias "clkDivider_clko" "clkDivider_clko";
+RVL_ALIAS "clkDivider_clko" "clkDivider_clko"; 
+RVL_ALIAS "clkDivider_clko" "clkDivider_clko"; 
 LOCATE COMP "top_rst_n" SITE "T6" ;
 IOBUF PORT "top_rst_n" IO_TYPE=LVCMOS18 ;
 LOCATE COMP "top_clk" SITE "M2" ;
 IOBUF PORT "top_clk" IO_TYPE=LVCMOS25 ;
 LOCATE COMP "osc_en" SITE "T2" ;
 IOBUF PORT "osc_en" IO_TYPE=LVCMOS25 ;
-
-
-//LOCATE COMP "serial_iq" SITE "L1" ;
-//IOBUF PORT "serial_iq" IO_TYPE=LVDS DRIVE=NA ;
-//LOCATE COMP "serial_clk" SITE "N1" ;
-//IOBUF PORT "serial_clk" IO_TYPE=LVDS DRIVE=NA ;
+//Serializer Pins
+LOCATE COMP "serial_iq" SITE "L1" ;
+IOBUF PORT "serial_iq" IO_TYPE=LVDS DRIVE=NA ;
+LOCATE COMP "serial_clk" SITE "N1" ;
+IOBUF PORT "serial_clk" IO_TYPE=LVDS DRIVE=NA ;
+//Test and GPIOs
 LOCATE COMP "LED" SITE "B1" ;
 IOBUF PORT "LED" IO_TYPE=LVCMOS18 ;
-
 LOCATE COMP "top_test0" SITE "G16" ;
 IOBUF PORT "top_test0" IO_TYPE=LVCMOS25 ;
 LOCATE COMP "top_test1" SITE "F15" ;
@@ -37,8 +38,7 @@ LOCATE COMP "top_spi_sclk" SITE "T3" ;
 IOBUF PORT "top_spi_sclk" IO_TYPE=LVCMOS25 ;
 LOCATE COMP "top_spi_cs" SITE "R3" ;
 IOBUF PORT "top_spi_cs" IO_TYPE=LVCMOS25 ;
-
 SYSCONFIG CONFIG_IOVOLTAGE=1.8 SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=ENABLE SLAVE_PARALLEL_PORT=DISABLE MCCLK_FREQ=2.4 CONFIG_MODE=JTAG ;
 BLOCK RESETPATHS ;
 PERIOD PORT "top_clk" 31.250000 ns ;
-BLOCK JTAGPATHS;
+BLOCK JTAGPATHS ;
