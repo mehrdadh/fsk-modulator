@@ -3,34 +3,43 @@ Report for cell topModule
    Instance path: topModule
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     271.00        100.0
-                                  LUT4	     339.00        100.0
+                                  SLIC	     277.00        100.0
+                                  LUT4	     333.00        100.0
                                  IOBUF	         17        100.0
-                                PFUREG	        229        100.0
+                                PFUREG	        233        100.0
                                 RIPPLE	         27        100.0
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-                              spi_ctrl	          1         5.1
-                                   spi	          1        26.3
-                               pll_64M	          1         0.0
-                          packetReader	          1        17.5
-                          clockDivider	          1         7.3
+                          clockDivider	          1         7.1
                         ble_packet_mem	          1         0.0
-                          IQSerializer	          1         6.5
-                          FSKModulator	          1        11.4
+                              spi_ctrl	          1         5.4
+                                   spi	          1        26.8
+                               pll_64M	          1         0.0
+                          packetReader	          1        17.2
+                          IQSerializer	          1         6.1
+                          FSKModulator	          1        10.4
+---------------------------------------------------
+Report for cell packetReader
+   Instance path: topModule/packetReader_0
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      47.75        17.2
+                                  LUT4	      64.00        19.2
+                                PFUREG	         36        15.5
+                                RIPPLE	          5        18.5
 ---------------------------------------------------
 Report for cell FSKModulator
    Instance path: topModule/fskModule_0
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      30.92        11.4
-                                  LUT4	      45.33        13.4
-                                PFUREG	         39        17.0
+                                  SLIC	      28.92        10.4
+                                  LUT4	      35.33        10.6
+                                PFUREG	         39        16.7
 SUB MODULES
                                   cell	      count    SLC Usage(%)
+                             cosModule	          1         2.2
                              sinModule	          1         0.6
-                             cosModule	          1         2.6
 ---------------------------------------------------
 Report for cell sinModule
    Instance path: topModule/fskModule_0/sin_instance
@@ -43,35 +52,44 @@ Report for cell cosModule
    Instance path: topModule/fskModule_0/cos_instance
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	       7.17         2.6
-                                  LUT4	      12.00         3.5
+                                  SLIC	       6.17         2.2
+                                  LUT4	      11.00         3.3
 ---------------------------------------------------
 Report for cell spi_ctrl
    Instance path: topModule/spi_ctrl_0
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      13.92         5.1
-                                  LUT4	      23.33         6.9
-                                PFUREG	         10         4.4
+                                  SLIC	      15.00         5.4
+                                  LUT4	      22.33         6.7
+                                PFUREG	         11         4.7
 ---------------------------------------------------
-Report for cell spi
-   Instance path: topModule/spi_0
+Report for cell clockDivider
+   Instance path: topModule/clockDivider_0
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      71.17        26.3
-                                  LUT4	      90.00        26.5
-                                PFUREG	         47        20.5
+                                  SLIC	      19.67         7.1
+                                  LUT4	      20.33         6.1
+                                PFUREG	         17         7.3
+                                RIPPLE	         10        37.0
+---------------------------------------------------
+Report for cell IQSerializer
+   Instance path: topModule/IQSerializer_0
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      16.92         6.1
+                                  LUT4	      29.00         8.7
+                                PFUREG	         13         5.6
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-                  spi_slave('0','0',8)	          1        26.3
+                                 DEDFF	          1         0.8
 ---------------------------------------------------
-Report for cell spi_slave('0','0',8)
-   Instance path: topModule/spi_0/spi_slave_0
+Report for cell DEDFF
+   Instance path: topModule/IQSerializer_0/DEDFF_0
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      71.17        26.3
-                                  LUT4	      90.00        26.5
-                                PFUREG	         47        20.5
+                                  SLIC	       2.33         0.8
+                                  LUT4	       3.00         0.9
+                                PFUREG	          2         0.9
 ---------------------------------------------------
 Report for cell ble_packet_mem
    Instance path: topModule/mem_inf_q_7__I_0
@@ -79,44 +97,26 @@ Report for cell ble_packet_mem
                                   cell	      count    Res Usage(%)
                                    EBR	          1        100.0
 ---------------------------------------------------
-Report for cell packetReader
-   Instance path: topModule/packetReader_0
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	      47.50        17.5
-                                  LUT4	      68.00        20.1
-                                PFUREG	         35        15.3
-                                RIPPLE	          5        18.5
----------------------------------------------------
-Report for cell IQSerializer
-   Instance path: topModule/IQSerializer_0
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	      17.50         6.5
-                                  LUT4	      31.00         9.1
-                                PFUREG	         13         5.7
-SUB MODULES
-                                  cell	      count    SLC Usage(%)
-                                 DEDFF	          1         0.9
----------------------------------------------------
-Report for cell DEDFF
-   Instance path: topModule/IQSerializer_0/DEDFF_0
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	       2.33         0.9
-                                  LUT4	       3.00         0.9
-                                PFUREG	          2         0.9
----------------------------------------------------
-Report for cell clockDivider
-   Instance path: topModule/clockDivider_0
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	      19.67         7.3
-                                  LUT4	      21.33         6.3
-                                PFUREG	         17         7.4
-                                RIPPLE	         10        37.0
----------------------------------------------------
 Report for cell pll_64M
    Instance path: topModule/pll_clko_I_0
                      Cell usage:
                                   cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell spi
+   Instance path: topModule/spi_0
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      74.33        26.8
+                                  LUT4	      91.00        27.3
+                                PFUREG	         47        20.2
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                  spi_slave('0','0',8)	          1        26.8
+---------------------------------------------------
+Report for cell spi_slave('0','0',8)
+   Instance path: topModule/spi_0/spi_slave_0
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      74.33        26.8
+                                  LUT4	      91.00        27.3
+                                PFUREG	         47        20.2

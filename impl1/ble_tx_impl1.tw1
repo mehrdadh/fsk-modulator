@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.10.3.144
-Wed May 22 15:18:06 2019
+Wed May 22 17:58:33 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -48,7 +48,7 @@ Passed: The following path meets requirements by 4.997ns (weighted slack = 9.994
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              IQSerializer_0/ICounter_949__i3  (from serial_clk_c -)
+   Source:         FF         Q              IQSerializer_0/ICounter_971__i3  (from serial_clk_c -)
    Destination:    FF         Data in        IQSerializer_0/DEDFF_0/pose_edge_14  (to serial_clk_c +)
 
    Delay:               3.074ns  (44.0% logic, 56.0% route), 4 logic levels.
@@ -65,11 +65,11 @@ Passed: The following path meets requirements by 4.997ns (weighted slack = 9.994
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.488 */SLICE_30.CLK to *0/SLICE_30.Q0 IQSerializer_0/SLICE_30 (from serial_clk_c)
-ROUTE         8   e 0.573 *0/SLICE_30.Q0 to */SLICE_179.A1 IQSerializer_0/ICounter_3
-CTOOFX_DEL  ---     0.398 */SLICE_179.A1 to *LICE_179.OFX0 IQSerializer_0/i5025/SLICE_179
-ROUTE         1   e 0.573 *LICE_179.OFX0 to */SLICE_217.A1 IQSerializer_0/n6377
-CTOF_DEL    ---     0.234 */SLICE_217.A1 to */SLICE_217.F1 IQSerializer_0/SLICE_217
-ROUTE         1   e 0.573 */SLICE_217.F1 to *0/SLICE_28.C0 IQSerializer_0/n6379
+ROUTE         8   e 0.573 *0/SLICE_30.Q0 to */SLICE_178.A1 IQSerializer_0/ICounter_3
+CTOOFX_DEL  ---     0.398 */SLICE_178.A1 to *LICE_178.OFX0 IQSerializer_0/i5064/SLICE_178
+ROUTE         1   e 0.573 *LICE_178.OFX0 to */SLICE_209.A0 IQSerializer_0/n6391
+CTOF_DEL    ---     0.234 */SLICE_209.A0 to */SLICE_209.F0 IQSerializer_0/SLICE_209
+ROUTE         1   e 0.573 */SLICE_209.F0 to *0/SLICE_28.C0 IQSerializer_0/n6393
 CTOF_DEL    ---     0.234 *0/SLICE_28.C0 to *0/SLICE_28.F0 IQSerializer_0/SLICE_28
 ROUTE         1   e 0.001 *0/SLICE_28.F0 to */SLICE_28.DI0 IQSerializer_0/DEDFF_0/Q1 (to serial_clk_c)
                   --------
@@ -90,54 +90,56 @@ Preference: PERIOD PORT "top_clk" 31.250000 ns ;
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 5.616ns (weighted slack = 11.232ns)
+Passed: The following path meets requirements by 5.687ns (weighted slack = 11.374ns)
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              clockDivider_0/lockCounter_945__i3  (from serial_clk_c +)
-   Destination:    FF         Data in        spi_0/spi_slave_0/tx_buf_i0_i0_1747_1748_reset  (to top_test0_c -)
+   Source:         FF         Q              clockDivider_0/lockCounter_967__i5  (from serial_clk_c +)
+   Destination:    FF         Data in        spi_0/spi_slave_0/miso_268  (to top_test0_c -)
 
-   Delay:              10.136ns  (32.2% logic, 67.8% route), 12 logic levels.
+   Delay:              10.170ns  (36.0% logic, 64.0% route), 13 logic levels.
 
  Constraint Details:
 
-     10.136ns physical path delay clockDivider_0/SLICE_23 to spi_0/spi_slave_0/SLICE_130 meets
+     10.170ns physical path delay clockDivider_0/SLICE_23 to spi_0/spi_slave_0/SLICE_125 meets
      15.625ns delay constraint less
-     -0.127ns M_SET requirement (totaling 15.752ns) by 5.616ns
+     -0.232ns DIN_SET requirement (totaling 15.857ns) by 5.687ns
 
  Physical Path Details:
 
-      Data path clockDivider_0/SLICE_23 to spi_0/spi_slave_0/SLICE_130:
+      Data path clockDivider_0/SLICE_23 to spi_0/spi_slave_0/SLICE_125:
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.522 */SLICE_23.CLK to *0/SLICE_23.Q0 clockDivider_0/SLICE_23 (from serial_clk_c)
-ROUTE         2   e 0.573 *0/SLICE_23.Q0 to */SLICE_229.D1 clockDivider_0/lockCounter_3
-CTOF_DEL    ---     0.234 */SLICE_229.D1 to */SLICE_229.F1 clockDivider_0/SLICE_229
-ROUTE         1   e 0.573 */SLICE_229.F1 to */SLICE_219.C1 clockDivider_0/n5533
-CTOF_DEL    ---     0.234 */SLICE_219.C1 to */SLICE_219.F1 clockDivider_0/SLICE_219
-ROUTE         2   e 0.573 */SLICE_219.F1 to    SLICE_62.A1 clockDivider_0/n6459
-CTOF_DEL    ---     0.234    SLICE_62.A1 to    SLICE_62.F1 SLICE_62
-ROUTE        10   e 0.573    SLICE_62.F1 to    SLICE_36.B0 clockDivider_0/n2929
-CTOF_DEL    ---     0.234    SLICE_36.B0 to    SLICE_36.F0 SLICE_36
-ROUTE        22   e 0.573    SLICE_36.F0 to */SLICE_171.A0 clk_N_207_enable_29
-CTOOFX_DEL  ---     0.398 */SLICE_171.A0 to *LICE_171.OFX0 spi_ctrl_0/i5058/SLICE_171
-ROUTE         3   e 0.573 *LICE_171.OFX0 to */SLICE_264.B0 spi_rx_req
-CTOF_DEL    ---     0.234 */SLICE_264.B0 to */SLICE_264.F0 spi_0/spi_slave_0/SLICE_264
-ROUTE         8   e 0.573 */SLICE_264.F0 to    SLICE_43.D0 spi_0/spi_slave_0/n6480
-CTOF_DEL    ---     0.234    SLICE_43.D0 to    SLICE_43.F0 SLICE_43
-ROUTE         5   e 0.573    SLICE_43.F0 to   SLICE_183.C0 spi_rx_data_0
-CTOF_DEL    ---     0.234   SLICE_183.C0 to   SLICE_183.F0 SLICE_183
-ROUTE         4   e 0.573   SLICE_183.F0 to */SLICE_197.A1 spi_tx_data_0
-CTOF_DEL    ---     0.234 */SLICE_197.A1 to */SLICE_197.F1 spi_0/spi_slave_0/SLICE_197
-ROUTE         2   e 0.573 */SLICE_197.F1 to */SLICE_137.C1 spi_0/spi_slave_0/n6756
-CTOF_DEL    ---     0.234 */SLICE_137.C1 to */SLICE_137.F1 spi_0/spi_slave_0/SLICE_137
-ROUTE         2   e 0.573 */SLICE_137.F1 to */SLICE_129.D0 spi_0/spi_slave_0/tx_buf_0
-CTOF_DEL    ---     0.234 */SLICE_129.D0 to */SLICE_129.F0 spi_0/spi_slave_0/SLICE_129
-ROUTE         2   e 0.573 */SLICE_129.F0 to */SLICE_130.M0 spi_0/spi_slave_0/n16 (to top_test0_c)
+ROUTE         2   e 0.573 *0/SLICE_23.Q0 to */SLICE_225.C1 clockDivider_0/lockCounter_5
+CTOF_DEL    ---     0.234 */SLICE_225.C1 to */SLICE_225.F1 clockDivider_0/SLICE_225
+ROUTE         1   e 0.573 */SLICE_225.F1 to */SLICE_208.C1 clockDivider_0/n12
+CTOF_DEL    ---     0.234 */SLICE_208.C1 to */SLICE_208.F1 clockDivider_0/SLICE_208
+ROUTE         2   e 0.573 */SLICE_208.F1 to */SLICE_193.A0 clockDivider_0/n6551
+CTOF_DEL    ---     0.234 */SLICE_193.A0 to */SLICE_193.F0 clockDivider_0/SLICE_193
+ROUTE        10   e 0.573 */SLICE_193.F0 to    SLICE_34.B0 clockDivider_0/n2959
+CTOF_DEL    ---     0.234    SLICE_34.B0 to    SLICE_34.F0 SLICE_34
+ROUTE        21   e 0.573    SLICE_34.F0 to */SLICE_176.D0 clk_N_219_enable_26
+CTOOFX_DEL  ---     0.398 */SLICE_176.D0 to *LICE_176.OFX0 spi_ctrl_0/i5140/SLICE_176
+ROUTE         4   e 0.573 *LICE_176.OFX0 to */SLICE_286.B0 spi_rx_req
+CTOF_DEL    ---     0.234 */SLICE_286.B0 to */SLICE_286.F0 spi_0/spi_slave_0/SLICE_286
+ROUTE         2   e 0.573 */SLICE_286.F0 to    SLICE_46.C1 spi_0/spi_slave_0/n6121
+CTOF_DEL    ---     0.234    SLICE_46.C1 to    SLICE_46.F1 SLICE_46
+ROUTE         5   e 0.573    SLICE_46.F1 to   SLICE_182.C0 spi_rx_data_7
+CTOF_DEL    ---     0.234   SLICE_182.C0 to   SLICE_182.F0 SLICE_182
+ROUTE         4   e 0.208   SLICE_182.F0 to   SLICE_182.A1 spi_tx_data_7
+CTOF_DEL    ---     0.234   SLICE_182.A1 to   SLICE_182.F1 SLICE_182
+ROUTE         2   e 0.573   SLICE_182.F1 to */SLICE_129.C1 spi_0/spi_slave_0/n6889
+CTOF_DEL    ---     0.234 */SLICE_129.C1 to */SLICE_129.F1 spi_0/spi_slave_0/SLICE_129
+ROUTE         3   e 0.573 */SLICE_129.F1 to */SLICE_232.B0 spi_0/spi_slave_0/tx_buf_7
+CTOF_DEL    ---     0.234 */SLICE_232.B0 to */SLICE_232.F0 spi_0/spi_slave_0/SLICE_232
+ROUTE         1   e 0.573 */SLICE_232.F0 to */SLICE_125.D1 spi_0/spi_slave_0/miso_N_670
+CTOOFX_DEL  ---     0.398 */SLICE_125.D1 to *LICE_125.OFX0 spi_0/spi_slave_0/SLICE_125
+ROUTE         1   e 0.001 *LICE_125.OFX0 to *SLICE_125.DI0 spi_0/spi_slave_0/miso_N_668 (to top_test0_c)
                   --------
-                   10.136   (32.2% logic, 67.8% route), 12 logic levels.
+                   10.170   (36.0% logic, 64.0% route), 13 logic levels.
 
-Report:   20.018ns is the minimum period for this preference.
+Report:   19.876ns is the minimum period for this preference.
 
 Report Summary
 --------------
@@ -151,7 +153,7 @@ MHz ;                                   |   64.000 MHz|  177.620 MHz|   4
 FREQUENCY NET "pll_clko_I_0/CLKIt"      |             |             |
 32.000000 MHz ;                         |            -|            -|   0  
                                         |             |             |
-PERIOD PORT "top_clk" 31.250000 ns ;    |    31.250 ns|    20.018 ns|  12  
+PERIOD PORT "top_clk" 31.250000 ns ;    |    31.250 ns|    19.876 ns|  13  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -167,45 +169,45 @@ Found 5 clocks:
 Clock Domain: pll_clko_I_0/CLKIt   Source: pll_clko_I_0/PLLRefcs_0.PLLCSOUT   Loads: 1
    No transfer within this clock domain is found
 
-Clock Domain: top_test6_c   Source: fskModule_0/SLICE_168.Q0   Loads: 7
+Clock Domain: top_test6_c   Source: fskModule_0/SLICE_169.Q0   Loads: 7
    Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
 
    Data transfers from:
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 5
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 4
+
+Clock Domain: top_test0_c   Source: SLICE_164.Q0   Loads: 40
+   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
+
+   Data transfers from:
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 16
+
+   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 19
+
+Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0   Loads: 94
+   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
+
+   Data transfers from:
+   Clock Domain: top_test6_c   Source: fskModule_0/SLICE_169.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 6
+
+   Clock Domain: top_test0_c   Source: SLICE_164.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 9
+
+   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 18
 
 Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP   Loads: 26
    Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;
 
    Data transfers from:
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 20
-
-   Clock Domain: top_test0_c   Source: SLICE_163.Q0
+   Clock Domain: top_test0_c   Source: SLICE_164.Q0
       Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 2
 
-Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0   Loads: 91
-   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
-
-   Data transfers from:
-   Clock Domain: top_test6_c   Source: fskModule_0/SLICE_168.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 6
-
-   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 18
-
-   Clock Domain: top_test0_c   Source: SLICE_163.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 9
-
-Clock Domain: top_test0_c   Source: SLICE_163.Q0   Loads: 40
-   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
-
-   Data transfers from:
-   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 19
-
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 16
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 20
 
 
 Timing summary (Setup):
@@ -214,11 +216,11 @@ Timing summary (Setup):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 14238 paths, 6 nets, and 1568 connections (90.79% coverage)
+Constraints cover 15333 paths, 6 nets, and 1547 connections (90.73% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.10.3.144
-Wed May 22 15:18:07 2019
+Wed May 22 17:58:34 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -260,19 +262,19 @@ Passed: The following path meets requirements by 0.168ns
 
  Constraint Details:
 
-      0.285ns physical path delay IQSerializer_0/SLICE_34 to IQSerializer_0/SLICE_34 meets
+      0.285ns physical path delay IQSerializer_0/SLICE_32 to IQSerializer_0/SLICE_32 meets
       0.117ns DIN_HLD and
       0.000ns delay constraint requirement (totaling 0.117ns) by 0.168ns
 
  Physical Path Details:
 
-      Data path IQSerializer_0/SLICE_34 to IQSerializer_0/SLICE_34:
+      Data path IQSerializer_0/SLICE_32 to IQSerializer_0/SLICE_32:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.151 */SLICE_34.CLK to *0/SLICE_34.Q1 IQSerializer_0/SLICE_34 (from serial_clk_c)
-ROUTE         5   e 0.058 *0/SLICE_34.Q1 to *0/SLICE_34.A1 IQSerializer_0/next_state_3__N_453
-CTOF_DEL    ---     0.075 *0/SLICE_34.A1 to *0/SLICE_34.F1 IQSerializer_0/SLICE_34
-ROUTE         1   e 0.001 *0/SLICE_34.F1 to */SLICE_34.DI1 IQSerializer_0/n2561 (to serial_clk_c)
+REG_DEL     ---     0.151 */SLICE_32.CLK to *0/SLICE_32.Q1 IQSerializer_0/SLICE_32 (from serial_clk_c)
+ROUTE         5   e 0.058 *0/SLICE_32.Q1 to *0/SLICE_32.A1 IQSerializer_0/next_state_3__N_466
+CTOF_DEL    ---     0.075 *0/SLICE_32.A1 to *0/SLICE_32.F1 IQSerializer_0/SLICE_32
+ROUTE         1   e 0.001 *0/SLICE_32.F1 to */SLICE_32.DI1 IQSerializer_0/n2610 (to serial_clk_c)
                   --------
                     0.285   (79.3% logic, 20.7% route), 2 logic levels.
 
@@ -300,17 +302,17 @@ Passed: The following path meets requirements by 0.102ns
 
  Constraint Details:
 
-      0.219ns physical path delay fskModule_0/SLICE_64 to fskModule_0/SLICE_64 meets
+      0.219ns physical path delay fskModule_0/SLICE_65 to fskModule_0/SLICE_65 meets
       0.117ns M_HLD and
       0.000ns delay constraint requirement (totaling 0.117ns) by 0.102ns
 
  Physical Path Details:
 
-      Data path fskModule_0/SLICE_64 to fskModule_0/SLICE_64:
+      Data path fskModule_0/SLICE_65 to fskModule_0/SLICE_65:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.161 */SLICE_64.CLK to *0/SLICE_64.Q1 fskModule_0/SLICE_64 (from top_test2_c)
-ROUTE         3   e 0.058 *0/SLICE_64.Q1 to *0/SLICE_64.M0 fskModule_0/n603 (to top_test2_c)
+REG_DEL     ---     0.161 */SLICE_65.CLK to *0/SLICE_65.Q1 fskModule_0/SLICE_65 (from top_test2_c)
+ROUTE         3   e 0.058 *0/SLICE_65.Q1 to *0/SLICE_65.M0 fskModule_0/n620 (to top_test2_c)
                   --------
                     0.219   (73.5% logic, 26.5% route), 1 logic levels.
 
@@ -342,45 +344,45 @@ Found 5 clocks:
 Clock Domain: pll_clko_I_0/CLKIt   Source: pll_clko_I_0/PLLRefcs_0.PLLCSOUT   Loads: 1
    No transfer within this clock domain is found
 
-Clock Domain: top_test6_c   Source: fskModule_0/SLICE_168.Q0   Loads: 7
+Clock Domain: top_test6_c   Source: fskModule_0/SLICE_169.Q0   Loads: 7
    Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
 
    Data transfers from:
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 5
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 4
+
+Clock Domain: top_test0_c   Source: SLICE_164.Q0   Loads: 40
+   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
+
+   Data transfers from:
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 16
+
+   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 19
+
+Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0   Loads: 94
+   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
+
+   Data transfers from:
+   Clock Domain: top_test6_c   Source: fskModule_0/SLICE_169.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 6
+
+   Clock Domain: top_test0_c   Source: SLICE_164.Q0
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 9
+
+   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
+      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 18
 
 Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP   Loads: 26
    Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;
 
    Data transfers from:
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 20
-
-   Clock Domain: top_test0_c   Source: SLICE_163.Q0
+   Clock Domain: top_test0_c   Source: SLICE_164.Q0
       Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 2
 
-Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0   Loads: 91
-   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
-
-   Data transfers from:
-   Clock Domain: top_test6_c   Source: fskModule_0/SLICE_168.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 6
-
-   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 18
-
-   Clock Domain: top_test0_c   Source: SLICE_163.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 9
-
-Clock Domain: top_test0_c   Source: SLICE_163.Q0   Loads: 40
-   Covered under: PERIOD PORT "top_clk" 31.250000 ns ;
-
-   Data transfers from:
-   Clock Domain: serial_clk_c   Source: pll_clko_I_0/PLLInst_0.CLKOP
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 19
-
-   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_164.Q0
-      Covered under: PERIOD PORT "top_clk" 31.250000 ns ;   Transfers: 16
+   Clock Domain: top_test2_c   Source: clockDivider_0/SLICE_165.Q0
+      Covered under: FREQUENCY NET "serial_clk_c" 64.000000 MHz ;   Transfers: 20
 
 
 Timing summary (Hold):
@@ -389,7 +391,7 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 14238 paths, 6 nets, and 1668 connections (96.58% coverage)
+Constraints cover 15333 paths, 6 nets, and 1642 connections (96.30% coverage)
 
 
 

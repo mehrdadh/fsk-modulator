@@ -18,7 +18,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/work/tinysdr_fpga_ble_tx/impl1/ble_tx_impl1.bit</File>
-			<FileTime>05/22/19 15:19:32</FileTime>
+			<FileTime>05/22/19 17:59:51</FileTime>
 			<JedecChecksum>N/A</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>

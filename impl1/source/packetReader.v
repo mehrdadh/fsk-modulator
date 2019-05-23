@@ -11,6 +11,7 @@ output reg	[`BLE_Mem_Addr-1:0]	mem_addr,
 input			symDone,
 output reg		start,
 output reg		symVal,
+output reg		packetDone,
 output reg		debug0,
 output reg		debug1
 );
@@ -89,12 +90,16 @@ always @(negedge clk, negedge ready) begin
 		mem_addr		<= `BLE_Mem_Addr'd0;
 		ble_oct_rdy		<= VSS;
 		ble_mod_done	<= VSS;
+		packetDone		<= VSS;
 	end else begin
 		case (mem_current_state)
 			mem_state_init: begin
 				mem_addr		<= `BLE_Mem_Addr'd0;
 				ble_oct_rdy		<= VSS;
 				ble_mod_done	<= VSS;
+				
+				packetDone		<= VSS;
+				
 				debug0		<= VSS;
 			end
 			mem_state_addr: begin
@@ -116,6 +121,8 @@ always @(negedge clk, negedge ready) begin
 				mem_addr	<= mem_addr;
 				ble_oct_rdy	<= VSS;
 				ble_mod_done	<= VCC;
+				
+				packetDone		<= VCC;
 				
 				debug0		<= VSS;
 			end

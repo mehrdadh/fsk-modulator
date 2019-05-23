@@ -91,7 +91,7 @@ wire					spi_rx_ready;
 /*	BLE Memory	*/
 wire 							mem_inf_clk;
 wire							mem_inf_clkE;
-wire							mem_inf_rst;
+reg								mem_inf_rst;
 reg								mem_inf_we;
 wire	[`BLE_Mem_Addr-1: 0]	mem_inf_addr;
 reg		[`BLE_Mem_Data-1: 0]	mem_inf_dataIn;
@@ -108,12 +108,13 @@ reg								ble_mem_operation;
 
 reg								pktReader_ready;
 wire	[`BLE_Mem_Addr-1: 0]	pktReader_mem_addr;
+wire							pktReader_done;
+
 wire	pr_debug0;
 wire	pr_debug1;
 
 
 wire	ble_clk;
-reg		test_state;
 //--------------------------------------------------------------------
 // Constant assignments
 //--------------------------------------------------------------------
@@ -163,7 +164,9 @@ always @(*) begin
 	end
 end
 
-/*	BLE State Machine	*/
+/*#################################
+BLE State Machine
+###################################*/
 reg			ble_flag_spi_pkt;
 reg			ble_flag_spi_data;
 reg [7:0]	ble_reg_pkt_size;
@@ -185,12 +188,10 @@ end
 always @(*) begin
 	if (ble_rst == VSS) begin
 		ble_next_state	= ble_state_rst;
-		test_state = VSS;
 	end else begin
 		case(ble_current_state)
 			ble_state_rst: begin
 				ble_next_state		= ble_state_wait;
-				test_state = VSS;
 			end
 			ble_state_wait: begin
 				if (spi_rx_ready == `VCC) begin
@@ -223,8 +224,11 @@ always @(*) begin
 				end
 			end
 			ble_state_done: begin
-				ble_next_state	= ble_state_done;
-				test_state = `VCC;
+				if (pktReader_done == `VCC) begin
+					ble_next_state	= ble_state_rst;
+				end else begin
+					ble_next_state	= ble_state_done;
+				end
 			end
 			default: begin
 				ble_next_state	= ble_state_rst;
@@ -241,6 +245,7 @@ always @(negedge ble_clk, negedge ble_rst) begin
 		ble_reg_data_count	<= 8'd0;
 		pktReader_ready		<= VSS;
 		ble_mem_operation	<= VSS;
+		mem_inf_rst			<= VSS;
 	end else begin
 		case(ble_current_state)
 			ble_state_rst: begin
@@ -251,10 +256,12 @@ always @(negedge ble_clk, negedge ble_rst) begin
 				mem_r_req			<= VSS;
 				pktReader_ready		<= VSS;
 				ble_mem_operation	<= VSS;
+				mem_inf_rst			<= VSS;
 			end
 			ble_state_wait: begin
-				ble_mem_w_req			<= VSS;
+				ble_mem_w_req		<= VSS;
 				mem_r_req			<= VSS;
+				mem_inf_rst			<= `VCC;
 			end
 			ble_state_cmd: begin
 				if (spi_rx_data == 8'hAA) begin
@@ -291,9 +298,11 @@ always @(negedge ble_clk, negedge ble_rst) begin
 end
 
 
-/*	Memory State Machine	*/
+/*###############################
+Memory State Machine
+#################################*/
 assign mem_inf_clkE	= `VCC;
-assign mem_inf_rst	= clkDivider_lock;
+//assign mem_inf_rst	= clkDivider_lock;
 assign mem_inf_clk	= clkDivider_clko;
 
 reg [3:0] mem_current_state;
@@ -325,7 +334,6 @@ always @(*) begin
 				end else begin
 					mem_next_state = mem_state_wait;
 				end
-				
 			end
 			mem_state_w_req: begin
 				mem_next_state	= mem_state_wr;
@@ -334,7 +342,7 @@ always @(*) begin
 				mem_next_state	= mem_state_wait;
 			end
 			mem_state_r_req: begin
-				mem_next_state	= mem_state_r_req;
+				mem_next_state	= mem_state_wait;
 			end
 			default: begin
 				mem_next_state	= mem_state_rst;
@@ -376,7 +384,6 @@ always @(negedge mem_inf_clk) begin
 		end
 	endcase
 end
-
 
 //--------------------------------------------------------------------
 // Component instances
@@ -425,6 +432,7 @@ packetReader packetReader_0(
 	.symDone(fskModule_symDone),
 	.start(fskModule_start),
 	.symVal(fskModule_symVal),
+	.packetDone(pktReader_done),
 	.debug0(pr_debug0),
 	.debug1(pr_debug1)
 );
