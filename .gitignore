@@ -1,8 +1,18 @@
-*.html
-#impl*/
-*.xml
-.build_status
-.run_manager.ini
-.recovery
-#*.dir/
+# synthesis
 *.log
+*.twr
+*.ngd
+*.areareo
+*.lsedata
+
+# bit
+*.bit
+
+# project
+impl1/
+*.recovery
+*.xml
+*.ini
+*.dir
+*.html
+*.ccl
