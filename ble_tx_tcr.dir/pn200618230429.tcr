@@ -1,0 +1,22 @@
+#Start recording tcl command: 6/18/2020 22:53:46
+#Project Location: Z:/tmp/fsk-modulator; Project name: ble_tx
+prj_project open "Z:/tmp/fsk-modulator/ble_tx.ldf"
+prj_run Export -impl impl1 -task Bitgen
+prj_src remove "Z:/tmp/fsk-modulator/test.sch"
+prj_src remove "Z:/tmp/fsk-modulator/impl1/source/FSKModulator.v" "Z:/tmp/fsk-modulator/impl1/source/radioDefines.v" "Z:/tmp/fsk-modulator/impl1/source/bleDefines.v" "Z:/tmp/fsk-modulator/impl1/source/packetGenerator.v" "Z:/tmp/fsk-modulator/impl1/source/sinModule.v" "Z:/tmp/fsk-modulator/impl1/source/cosModule.v" "Z:/tmp/fsk-modulator/impl1/source/IQSerializer.v" "Z:/tmp/fsk-modulator/impl1/source/clockDivider.v" "Z:/tmp/fsk-modulator/impl1/source/DEDFF.v" "Z:/tmp/fsk-modulator/impl1/source/packetCounter.v" "Z:/tmp/fsk-modulator/impl1/source/ble_packet.v" "Z:/tmp/fsk-modulator/impl1/source/spi_h.v" "Z:/tmp/fsk-modulator/impl1/source/spi.vhd" "Z:/tmp/fsk-modulator/impl1/source/spi_slave.vhd" "Z:/tmp/fsk-modulator/impl1/source/ble_mem.v" "Z:/tmp/fsk-modulator/impl1/source/spi_ctrl.v" "Z:/tmp/fsk-modulator/impl1/source/packetReader.v"
+prj_src remove "Z:/tmp/fsk-modulator/impl1/source/topModule.v"
+prj_src add "Z:/tmp/fsk-modulator/source/rtl/ble_mem.v" "Z:/tmp/fsk-modulator/source/rtl/ble_packet.v" "Z:/tmp/fsk-modulator/source/rtl/bleDefines.v" "Z:/tmp/fsk-modulator/source/rtl/clockDivider.v" "Z:/tmp/fsk-modulator/source/rtl/cosModule.v" "Z:/tmp/fsk-modulator/source/rtl/DEDFF.v" "Z:/tmp/fsk-modulator/source/rtl/FSKModulator.v" "Z:/tmp/fsk-modulator/source/rtl/IQSerializer.v" "Z:/tmp/fsk-modulator/source/rtl/packetCounter.v" "Z:/tmp/fsk-modulator/source/rtl/packetGenerator.v" "Z:/tmp/fsk-modulator/source/rtl/packetReader.v" "Z:/tmp/fsk-modulator/source/rtl/radioDefines.v" "Z:/tmp/fsk-modulator/source/rtl/sinModule.v" "Z:/tmp/fsk-modulator/source/rtl/spi.vhd" "Z:/tmp/fsk-modulator/source/rtl/spi_ctrl.v" "Z:/tmp/fsk-modulator/source/rtl/spi_h.v" "Z:/tmp/fsk-modulator/source/rtl/spi_out.vhd" "Z:/tmp/fsk-modulator/source/rtl/spi_slave.vhd" "Z:/tmp/fsk-modulator/source/rtl/spi_slave_out.vhd" "Z:/tmp/fsk-modulator/source/rtl/topModule.v"
+prj_src remove "Z:/tmp/fsk-modulator/ble_tx_clarity/ble_tx_clarity.sbx"
+prj_src add "Z:/tmp/fsk-modulator/project/ble_tx_clarity/ble_tx_clarity.v"
+prj_src remove "Z:/tmp/fsk-modulator/project/ble_tx_clarity/ble_tx_clarity.v"
+prj_src add "Z:/tmp/fsk-modulator/project/ble_tx_clarity/ble_tx_clarity.sbx"
+prj_run Export -impl impl1 -task Bitgen
+prj_src add -exclude "Z:/tmp/fsk-modulator/project/ble_tx.lpf"
+prj_src enable "Z:/tmp/fsk-modulator/project/ble_tx.lpf"
+prj_src remove "Z:/tmp/fsk-modulator/ble_tx.lpf"
+prj_src add -exclude "Z:/tmp/fsk-modulator/source/ble_tx.lpf"
+prj_src enable "Z:/tmp/fsk-modulator/source/ble_tx.lpf"
+prj_src remove "Z:/tmp/fsk-modulator/project/ble_tx.lpf"
+prj_project save
+prj_project close
+#Stop recording: 6/18/2020 23:04:29
