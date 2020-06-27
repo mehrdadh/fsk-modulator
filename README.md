@@ -4,3 +4,4 @@ We implement an FSK modulator to generate BLE packets on Lattice ECP5 FPGA and I
 ## Contributers
 - [Mehrdad Hessar](https://github.com/mehrdadh)
 - [Ali Najafi](https://github.com/anajafi)
+- [Vikram Iyer](https://github.com/viyer)
