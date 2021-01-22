@@ -63,7 +63,8 @@ wire [`ILength-1:0] IQSerializer_I;
 wire [`QLength-1:0]	IQSerializer_Q;
 wire 				IQSerializer_start;
 
-/*	SPI	and SPI CTRL	*/reg						spi_sclk;
+/*	SPI	and SPI CTRL	*/
+reg						spi_sclk;
 reg						spi_cs;
 reg						spi_mosi;
 wire					spi_miso;
@@ -510,7 +511,5 @@ ble_packet_mem mem_0(
 	.Data(mem_inf_dataIn),
 	.Q(mem_inf_q)
 );
-    
-	
-endmodule
 
+endmodule
